@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="joueur/|cartes/|autres/|application/|console/|joueur/heros/|cartes/carte/|cartes/carte/|cartes/effet/|cartes/effet/|cartes/serviteur/|cartes/serviteur/|cartes/sort/|cartes/sort/|autres/cible/|autres/cible/|autres/personnage/|autres/personnage/|joueur/deck/|joueur/deck/|joueur/main/|joueur/main/|joueur/plateau/|joueur/plateau/|joueur/heros/heros/|joueur/heros/heros/|joueur/heros/pouvoir/|joueur/heros/pouvoir/" kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
