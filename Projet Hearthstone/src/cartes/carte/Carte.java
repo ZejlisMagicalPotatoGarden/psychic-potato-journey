@@ -1,4 +1,4 @@
-package carte;
+package cartes.carte;
 
 public abstract class Carte {
 /**
@@ -20,10 +20,11 @@ public abstract class Carte {
 	private String classe;
 	
 
-	public Carte(String nom, int cout) {
+	public Carte(String nom, int cout, String classe) {
 		super();
 		this.nom = nom;
 		this.cout = cout;
+		this.classe = classe;
 	}
 	
 	
@@ -75,6 +76,6 @@ public abstract class Carte {
 	}
 
 	
-	public abstract void JouerCarte();
+	public abstract void jouerCarte();
 }
 

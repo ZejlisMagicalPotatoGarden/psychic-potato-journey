@@ -1,4 +1,6 @@
-package personnage;
+package partie.autres.personnage;
+
+import partie.autres.cible.Cible;
 
 public interface Personnage {
 /**
@@ -12,8 +14,7 @@ public interface Personnage {
  * @see Serviteur
  * @see Heros
  */
-	public abstract void Attaquer(Cible cible);
-	public abstract void PrendreDegats(int x);
-	public abstract void Mourir();
+	public abstract void prendreDegats(int x);
+	public abstract void mourir();	
 }
 

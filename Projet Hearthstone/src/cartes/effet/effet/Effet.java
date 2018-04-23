@@ -1,6 +1,6 @@
-package effet;
+package cartes.effet.effet;
 
-import cible.Cible;
+import partie.autres.cible.Cible;
 
 public abstract class Effet {
 /**
@@ -83,5 +83,6 @@ public abstract class Effet {
 		return true;
 	}
 	
-	public abstract void Activer(Cible c);
+	public abstract void activer(Cible c);
+	public abstract boolean isActivable();
 }
