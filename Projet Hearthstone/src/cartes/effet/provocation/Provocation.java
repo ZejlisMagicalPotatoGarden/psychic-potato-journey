@@ -1,38 +1,23 @@
-package cartes.effet.effet;
+package cartes.effet.provocation;
 
+import cartes.effet.effet.Effet;
 import partie.autres.cible.Cible;
 
-public abstract class Effet {
-/**
- * Classe abstraite représentant un effet quelconque, il possède un nom, une description et
- * un type(entrée, mort, attaque, immédiat ...)
- * Il peut etre activé sur une cible
- * Les sorts, les pouvoirs et parfois les erviteurs possèdent des effets
- * 
- * @author GRESSET Nathan
- * @author GRINWALD Louis
- * 
- * @see Serviteur
- * @see Sort
- * @see Pouvoir
- * @see Personnage
- * @see Cible
- */
-	
+public class Provocation extends Effet {
+
 	private String description;
 	private String nom;
 	private String type;
 	private boolean ciblable;
-
 	
-	public Effet(String description, String nom, String type, boolean ciblable) {
-		super();
-		this.description = description;
-		this.nom = nom;
-		this.type = type;
-		this.ciblable = ciblable;
+	
+	public Provocation() {
+		super("Empeche les serviteurs d'attaquer le héros","Provocation","Provocation",false);
+		this.description = "Empeche les serviteurs d'attaquer le héros";
+		this.nom = "Provocation";
+		this.type = "Provocation";
+		this.ciblable = false;
 	}
-	
 	
 	public String getDescription() {
 		return description;
@@ -59,16 +44,16 @@ public abstract class Effet {
 		this.ciblable = ciblable;
 	}
 
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (obj == null)
+		if (!super.equals(obj))
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Effet other = (Effet) obj;
+		Provocation other = (Provocation) obj;
 		if (ciblable != other.ciblable)
 			return false;
 		if (description == null) {
@@ -90,11 +75,19 @@ public abstract class Effet {
 	}
 	@Override
 	public String toString() {
-		return "Effet [description=" + description + ", nom=" + nom + ", type=" + type + ", ciblable=" + ciblable + "]";
+		return "Provocation [description=" + description + ", nom=" + nom + ", type=" + type + ", ciblable=" + ciblable
+				+ "]";
 	}
 
+	
+	@Override
+	public void activer(Cible c) {
+		//Cet effet ne s'active jamais
+	}
 
-	public abstract void activer(Cible c);
-	public abstract boolean isActivable(Cible c);
-
+	@Override
+	public boolean isActivable(Cible c) {
+		//cet effet ne s'active jamais
+		return false;
+	}
 }

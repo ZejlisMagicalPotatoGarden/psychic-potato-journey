@@ -1,39 +1,33 @@
-package cartes.effet.effet;
+package cartes.effet.degats;
 
+import cartes.effet.effet.Effet;
 import partie.autres.cible.Cible;
+import partie.autres.personnage.Personnage;
 
-public abstract class Effet {
-/**
- * Classe abstraite représentant un effet quelconque, il possède un nom, une description et
- * un type(entrée, mort, attaque, immédiat ...)
- * Il peut etre activé sur une cible
- * Les sorts, les pouvoirs et parfois les erviteurs possèdent des effets
- * 
- * @author GRESSET Nathan
- * @author GRINWALD Louis
- * 
- * @see Serviteur
- * @see Sort
- * @see Pouvoir
- * @see Personnage
- * @see Cible
- */
-	
+public class Effet_degats extends Effet {
+
+	private int nbDegats;
 	private String description;
 	private String nom;
 	private String type;
 	private boolean ciblable;
-
 	
-	public Effet(String description, String nom, String type, boolean ciblable) {
-		super();
+	
+	public Effet_degats(String description, String nom, String type, int nbDegats) {
+		super(description, nom, type, true);
+		this.nbDegats = nbDegats;
 		this.description = description;
 		this.nom = nom;
 		this.type = type;
-		this.ciblable = ciblable;
+		this.ciblable = true;
 	}
 	
-	
+	public int getNbDegats() {
+		return nbDegats;
+	}
+	public void setNbDegats(int nbDegats) {
+		this.nbDegats = nbDegats;
+	}
 	public String getDescription() {
 		return description;
 	}
@@ -59,22 +53,23 @@ public abstract class Effet {
 		this.ciblable = ciblable;
 	}
 
-	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (obj == null)
+		if (!super.equals(obj))
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Effet other = (Effet) obj;
+		Effet_degats other = (Effet_degats) obj;
 		if (ciblable != other.ciblable)
 			return false;
 		if (description == null) {
 			if (other.description != null)
 				return false;
 		} else if (!description.equals(other.description))
+			return false;
+		if (nbDegats != other.nbDegats)
 			return false;
 		if (nom == null) {
 			if (other.nom != null)
@@ -90,11 +85,21 @@ public abstract class Effet {
 	}
 	@Override
 	public String toString() {
-		return "Effet [description=" + description + ", nom=" + nom + ", type=" + type + ", ciblable=" + ciblable + "]";
+		return "Effet_degats [nbDegats=" + nbDegats + ", description=" + description + ", nom=" + nom + ", type=" + type
+				+ ", ciblable=" + ciblable + "]";
 	}
 
+	
+	@Override
+	public void activer(Cible c) {
+		for(Personnage s : c.getCibles()){
+			s.prendreDegats(nbDegats);
+		}
+	}
 
-	public abstract void activer(Cible c);
-	public abstract boolean isActivable(Cible c);
+	@Override
+	public boolean isActivable(Cible c) {
+		return !(c == null);
+	}
 
 }

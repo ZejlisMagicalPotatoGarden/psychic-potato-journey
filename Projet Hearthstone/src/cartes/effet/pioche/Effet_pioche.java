@@ -1,38 +1,29 @@
-package cartes.effet.effet;
+package cartes.effet.pioche;
 
+import cartes.effet.effet.Effet;
 import partie.autres.cible.Cible;
+import partie.joueur.joueur.Joueur;
 
-public abstract class Effet {
-/**
- * Classe abstraite représentant un effet quelconque, il possède un nom, une description et
- * un type(entrée, mort, attaque, immédiat ...)
- * Il peut etre activé sur une cible
- * Les sorts, les pouvoirs et parfois les erviteurs possèdent des effets
- * 
- * @author GRESSET Nathan
- * @author GRINWALD Louis
- * 
- * @see Serviteur
- * @see Sort
- * @see Pouvoir
- * @see Personnage
- * @see Cible
- */
-	
+public class Effet_pioche extends Effet {
+
+	private Joueur joueur;
+	private int nbPioche;
 	private String description;
 	private String nom;
 	private String type;
 	private boolean ciblable;
-
 	
-	public Effet(String description, String nom, String type, boolean ciblable) {
-		super();
+	
+	public Effet_pioche(String description, String nom, String type, Joueur joueur,
+			int nbPioche) {
+		super(description, nom, type, false);
+		this.nbPioche = nbPioche;
+		this.joueur = joueur;
 		this.description = description;
 		this.nom = nom;
 		this.type = type;
-		this.ciblable = ciblable;
+		this.ciblable = false;
 	}
-	
 	
 	public String getDescription() {
 		return description;
@@ -52,6 +43,18 @@ public abstract class Effet {
 	public void setType(String type) {
 		this.type = type;
 	}
+	public Joueur getJoueur() {
+		return joueur;
+	}
+	public void setJoueur(Joueur joueur) {
+		this.joueur = joueur;
+	}
+	public int getNbPioche() {
+		return nbPioche;
+	}
+	public void setNbPioche(int nbPioche) {
+		this.nbPioche = nbPioche;
+	}
 	public boolean isCiblable() {
 		return ciblable;
 	}
@@ -64,17 +67,24 @@ public abstract class Effet {
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (obj == null)
+		if (!super.equals(obj))
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Effet other = (Effet) obj;
+		Effet_pioche other = (Effet_pioche) obj;
 		if (ciblable != other.ciblable)
 			return false;
 		if (description == null) {
 			if (other.description != null)
 				return false;
 		} else if (!description.equals(other.description))
+			return false;
+		if (joueur == null) {
+			if (other.joueur != null)
+				return false;
+		} else if (!joueur.equals(other.joueur))
+			return false;
+		if (nbPioche != other.nbPioche)
 			return false;
 		if (nom == null) {
 			if (other.nom != null)
@@ -90,11 +100,19 @@ public abstract class Effet {
 	}
 	@Override
 	public String toString() {
-		return "Effet [description=" + description + ", nom=" + nom + ", type=" + type + ", ciblable=" + ciblable + "]";
+		return "Effet_pioche [joueur=" + joueur + ", nbPioche=" + nbPioche + ", description=" + description + ", nom="
+				+ nom + ", type=" + type + ", ciblable=" + ciblable + "]";
 	}
 
+	
+	@Override
+	public void activer(Cible c) {
+		this.joueur.piocher(this.nbPioche);
+	}
 
-	public abstract void activer(Cible c);
-	public abstract boolean isActivable(Cible c);
+	@Override
+	public boolean isActivable(Cible c) {
+		return true;
+	}
 
 }
