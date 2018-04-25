@@ -1,5 +1,7 @@
 package cartes.carte;
 
+import partie.joueur.plateau.Plateau;
+
 public abstract class Carte {
 /**
  * Classe abstraite représentant une carte dans le jeu Hearthstone, elle possède un nom,
@@ -76,6 +78,7 @@ public abstract class Carte {
 	}
 
 	
-	public abstract void jouerCarte();
+	public abstract void jouerCarte(Plateau p);
+	public abstract boolean isJouable(Plateau p);
 }
 

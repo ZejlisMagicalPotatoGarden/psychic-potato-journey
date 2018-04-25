@@ -10,16 +10,14 @@ public class Effet_degats extends Effet {
 	private String description;
 	private String nom;
 	private String type;
-	private boolean ciblable;
 	
 	
 	public Effet_degats(String description, String nom, String type, int nbDegats) {
-		super(description, nom, type, true);
+		super(description, nom, type);
 		this.nbDegats = nbDegats;
 		this.description = description;
 		this.nom = nom;
 		this.type = type;
-		this.ciblable = true;
 	}
 	
 	public int getNbDegats() {
@@ -46,12 +44,6 @@ public class Effet_degats extends Effet {
 	public void setType(String type) {
 		this.type = type;
 	}
-	public boolean isCiblable() {
-		return ciblable;
-	}
-	public void setCiblable(boolean ciblable) {
-		this.ciblable = ciblable;
-	}
 
 	@Override
 	public boolean equals(Object obj) {
@@ -62,8 +54,6 @@ public class Effet_degats extends Effet {
 		if (getClass() != obj.getClass())
 			return false;
 		Effet_degats other = (Effet_degats) obj;
-		if (ciblable != other.ciblable)
-			return false;
 		if (description == null) {
 			if (other.description != null)
 				return false;
@@ -86,7 +76,7 @@ public class Effet_degats extends Effet {
 	@Override
 	public String toString() {
 		return "Effet_degats [nbDegats=" + nbDegats + ", description=" + description + ", nom=" + nom + ", type=" + type
-				+ ", ciblable=" + ciblable + "]";
+				+ "]";
 	}
 
 	
@@ -96,10 +86,12 @@ public class Effet_degats extends Effet {
 			s.prendreDegats(nbDegats);
 		}
 	}
-
 	@Override
 	public boolean isActivable(Cible c) {
 		return !(c == null);
 	}
-
+	@Override
+	public boolean isCiblable(){
+		return true;
+	}
 }

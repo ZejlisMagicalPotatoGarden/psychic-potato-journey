@@ -1,17 +1,21 @@
 package partie.joueur.heros.heros;
 
 import partie.autres.personnage.Personnage;
-import partie.partie.Partie;
+import partie.joueur.heros.pouvoir.Pouvoir;
+import partie.joueur.joueur.Joueur;
 
 public class Heros implements Personnage {
 
+	//VIE MAX ?------------------------------------
 	private String nom;
 	private int vie;
+	private Pouvoir pouvoir;
 
-	public Heros(String nom, int vie) {
+	public Heros(String nom, int vie, Pouvoir pouvoir) {
 		super();
 		this.nom = nom;
 		this.vie = vie;
+		this.pouvoir = pouvoir;
 	}
 	
 	public String getNom() {
@@ -26,7 +30,14 @@ public class Heros implements Personnage {
 	public void setVie(int vie) {
 		this.vie = vie;
 	}
-	
+	public Pouvoir getPouvoir() {
+		return pouvoir;
+	}
+	public void setPouvoir(Pouvoir pouvoir) {
+		this.pouvoir = pouvoir;
+	}
+
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -41,24 +52,29 @@ public class Heros implements Personnage {
 				return false;
 		} else if (!nom.equals(other.nom))
 			return false;
+		if (pouvoir == null) {
+			if (other.pouvoir != null)
+				return false;
+		} else if (!pouvoir.equals(other.pouvoir))
+			return false;
 		if (vie != other.vie)
 			return false;
 		return true;
 	}
 	@Override
 	public String toString() {
-		return "Heros [nom=" + nom + ", vie=" + vie + "]";
+		return "Heros [nom=" + nom + ", vie=" + vie + ", pouvoir=" + pouvoir + "]";
 	}
 
 	
 	@Override
 	public void prendreDegats(int x) {
-		setVie(getVie() - x);
+		this.vie = this.vie - x;
 	}
 
 	@Override
-	public void mourir() {
-		Partie.Gagner();
+	public void mourir(Joueur j) {
+		//Terminer la partie
 	}
 
 	
@@ -69,7 +85,6 @@ public class Heros implements Personnage {
 	@Override
 	public void augmenterVie(int bonusVie) {
 		//Un héros ne gagne pas de vie max pour l'instant
-		
 	}
 
 }

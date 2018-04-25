@@ -1,34 +1,19 @@
-package cartes.effet.effet;
+package cartes.effets;
 
+import cartes.effet.effet.Effet;
 import partie.autres.cible.Cible;
 
-public abstract class Effet {
-/**
- * Classe abstraite représentant un effet quelconque, il possède un nom, une description et
- * un type(entrée, mort, attaque, immédiat ...)
- * Il peut etre activé sur une cible
- * Les sorts, les pouvoirs et parfois les erviteurs possèdent des effets
- * 
- * @author GRESSET Nathan
- * @author GRINWALD Louis
- * 
- * @see Serviteur
- * @see Sort
- * @see Pouvoir
- * @see Personnage
- * @see Cible
- */
-	
+public class Effet_modele extends Effet {
+
 	private String description;
 	private String nom;
 	private String type;
-
 	
-	public Effet(String description, String nom, String type) {
-		super();
-		this.description = description;
-		this.nom = nom;
-		this.type = type;
+	public Effet_modele() {
+		super("Ne fait rien parce que c'est un modèle", "Effet modèle", "Entrée/Mort/Aura/...");
+		this.description = "Ne fait rien parce que c'est un modèle";
+		this.nom = "Effet modèle";
+		this.type = "Entrée/Mort/Aura/...";
 	}
 	
 	
@@ -56,11 +41,11 @@ public abstract class Effet {
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (obj == null)
+		if (!super.equals(obj))
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Effet other = (Effet) obj;
+		Effet_modele other = (Effet_modele) obj;
 		if (description == null) {
 			if (other.description != null)
 				return false;
@@ -80,12 +65,21 @@ public abstract class Effet {
 	}
 	@Override
 	public String toString() {
-		return "Effet [description=" + description + ", nom=" + nom + ", type=" + type + "]";
+		return "Effet_modele [description=" + description + ", nom=" + nom + ", type=" + type + "]";
 	}
 
 
-	public abstract void activer(Cible c);
-	public abstract boolean isActivable(Cible c);
-	public abstract boolean isCiblable();
+	@Override
+	public void activer(Cible c) {
+		//Fait un truc normalement
+	}
+	@Override
+	public boolean isActivable(Cible c) {
+		return false;
+	}
+	@Override
+	public boolean isCiblable() {
+		return false;
+	}
 
 }

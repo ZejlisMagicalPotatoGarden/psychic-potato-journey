@@ -1,6 +1,7 @@
 package partie.autres.personnage;
 
 import partie.autres.cible.Cible;
+import partie.joueur.joueur.Joueur;
 
 public interface Personnage {
 /**
@@ -16,7 +17,7 @@ public interface Personnage {
  * @see Heros
  */
 	public abstract void prendreDegats(int x);
-	public abstract void mourir();
+	public abstract void mourir(Joueur j);
 	public abstract void augmenterAttaque(int bonusAttaque);
 	public abstract void augmenterVie(int bonusVie);	
 }

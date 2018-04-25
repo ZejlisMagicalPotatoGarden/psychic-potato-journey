@@ -3,35 +3,28 @@ package cartes.effet.invocation;
 import cartes.effet.effet.Effet;
 import cartes.serviteur.Serviteur;
 import partie.autres.cible.Cible;
-import partie.joueur.plateau.Plateau;
+import partie.partie.Partie;
 
 public class Effet_invocation extends Effet {
 
-	private Plateau plateau;
+	private Partie partie;
 	private Serviteur serviteur;
 	private String description;
 	private String nom;
 	private String type;
-	private boolean ciblable;
 	
 	
-	public Effet_invocation(String description, String nom, String type, Plateau plateau,
-			Serviteur serviteur) {
-		super(description, nom, type, false);
-		this.plateau = plateau;
+	public Effet_invocation(String description, String nom, String type, Serviteur serviteur, 
+			Partie partie) {
+		super(description, nom, type);
 		this.serviteur = serviteur;
 		this.description = description;
 		this.nom = nom;
 		this.type = type;
-		this.ciblable = true;
+		this.partie = partie;
 	}
 	
-	public Plateau getPlateau() {
-		return plateau;
-	}
-	public void setJoueur(Plateau plateau) {
-		this.plateau = plateau;
-	}
+	
 	public Serviteur getServiteur() {
 		return serviteur;
 	}
@@ -56,19 +49,68 @@ public class Effet_invocation extends Effet {
 	public void setType(String type) {
 		this.type = type;
 	}
-
-
-	
-
-	
-	@Override
-	public void activer(Cible c) {
-		this.serviteur.invoquer();
+	public Partie getPartie() {
+		return partie;
+	}
+	public void setPartie(Partie partie) {
+		this.partie = partie;
 	}
 
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Effet_invocation other = (Effet_invocation) obj;
+		if (description == null) {
+			if (other.description != null)
+				return false;
+		} else if (!description.equals(other.description))
+			return false;
+		if (nom == null) {
+			if (other.nom != null)
+				return false;
+		} else if (!nom.equals(other.nom))
+			return false;
+		if (partie == null) {
+			if (other.partie != null)
+				return false;
+		} else if (!partie.equals(other.partie))
+			return false;
+		if (serviteur == null) {
+			if (other.serviteur != null)
+				return false;
+		} else if (!serviteur.equals(other.serviteur))
+			return false;
+		if (type == null) {
+			if (other.type != null)
+				return false;
+		} else if (!type.equals(other.type))
+			return false;
+		return true;
+	}
+	@Override
+	public String toString() {
+		return "Effet_invocation [partie=" + partie + ", serviteur=" + serviteur + ", description=" + description
+				+ ", nom=" + nom + ", type=" + type + "]";
+	}
+
+
+	@Override
+	public void activer(Cible c) {
+		this.serviteur.invoquer(this.partie.getJoueurQuiJoue().getPlateau());
+	}
 	@Override
 	public boolean isActivable(Cible c) {
-		return !(plateau.isPlein());
+		return !(this.partie.getJoueurQuiJoue().getPlateau().isPlein());
+	}
+	@Override
+	public boolean isCiblable(){
+		return false;
 	}
 
 }

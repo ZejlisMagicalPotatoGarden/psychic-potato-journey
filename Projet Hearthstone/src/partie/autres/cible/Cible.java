@@ -57,12 +57,14 @@ public class Cible {
 		cibles.add(p.getJoueur2().getHeros());
 	}
 	
+	
 	public ArrayList<Personnage> getCibles() {
 		return cibles;
 	}
 	public void setCibles(ArrayList<Personnage> cibles) {
 		this.cibles = cibles;
 	}
+	
 	
 	@Override
 	public boolean equals(Object obj) {
@@ -86,5 +88,29 @@ public class Cible {
 	}
 	
 	
+	public void prendreDegats(int x){
+		for(Personnage p : getCibles()){
+			p.prendreDegats(x);
+		}
+	}
+	public void augmenterAttaque(int bonusAttaque) {
+		for(Personnage p : getCibles()){
+			p.augmenterAttaque(bonusAttaque);
+		}
+	}
+	public void augmenterVie(int bonusVie) {
+		for(Personnage p : getCibles()){
+			p.augmenterVie(bonusVie);
+		}
+	}
+	public int getAttaque() {
+		int attaque = 0;
+		Serviteur s = new Serviteur(null, 0, null, 0, 0, null);
+		for(Personnage p : getCibles()){
+			if(p.getClass() == s.getClass());
+				attaque = attaque + ((Serviteur) p).getAttaque();
+		}
+		return attaque;
+	}
 	
 }

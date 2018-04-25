@@ -6,10 +6,12 @@ public class Partie {
 
 	private Joueur joueur1;
 	private Joueur joueur2;
+	private boolean tourJ1; 
 	
 	public Partie(Joueur joueur1, Joueur joueur2) {
 		this.joueur1 = joueur1;
 		this.joueur2 = joueur2;
+		this.tourJ1 = true;
 	}
 	
 	public Joueur getJoueur1() {
@@ -24,10 +26,17 @@ public class Partie {
 	public void setJoueur2(Joueur joueur2) {
 		this.joueur2 = joueur2;
 	}
+	public boolean isTourJ1() {
+		return tourJ1;
+	}
+	public void setTourJ1(boolean tourJ1) {
+		this.tourJ1 = tourJ1;
+	}
 
+	
 	@Override
 	public String toString() {
-		return "Partie [joueur1=" + joueur1 + ", joueur2=" + joueur2 + "]";
+		return "Partie [joueur1=" + joueur1 + ", joueur2=" + joueur2 + ", tourJ1=" + tourJ1 + "]";
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -48,11 +57,19 @@ public class Partie {
 				return false;
 		} else if (!joueur2.equals(other.joueur2))
 			return false;
+		if (tourJ1 != other.tourJ1)
+			return false;
 		return true;
 	}
+
 	
-	public static void Gagner(){
-		System.out.println("Quelqu'un a gagné");
+	public static void Gagner(Joueur gagnant){
+		System.out.printf("%s (%s) a gagné\n",gagnant,gagnant.getHeros().getNom());
 	}
-	
+	public Joueur getJoueurQuiJoue(){
+		if(this.tourJ1)
+			return this.joueur1;
+		else
+			return this.joueur2;
+	}
 }

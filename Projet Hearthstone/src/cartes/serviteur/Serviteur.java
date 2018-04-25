@@ -4,6 +4,7 @@ import cartes.carte.Carte;
 import cartes.effet.effet.Effet;
 import partie.autres.cible.Cible;
 import partie.autres.personnage.Personnage;
+import partie.joueur.joueur.Joueur;
 import partie.joueur.plateau.Plateau;
 
 public class Serviteur extends Carte implements Personnage {
@@ -16,11 +17,10 @@ public class Serviteur extends Carte implements Personnage {
 	private int vie;
 	private int attaque;
 	private Effet effet;
-	private Plateau plateau;
 	
 
 	public Serviteur(String nom, int cout, String classe, int vieMax, int attaque,
-			Effet effet, Plateau plateau) {
+			Effet effet) {
 		super(nom, cout, classe);
 		this.nom = nom;
 		this.cout = cout;
@@ -29,7 +29,6 @@ public class Serviteur extends Carte implements Personnage {
 		this.vie = vieMax;
 		this.attaque = attaque;
 		this.effet = effet;
-		this.plateau = plateau;
 	}
 
 	
@@ -75,45 +74,87 @@ public class Serviteur extends Carte implements Personnage {
 	public void setEffet(Effet effet) {
 		this.effet = effet;
 	}
-	public Plateau getPlateau() {
-		return plateau;
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Serviteur other = (Serviteur) obj;
+		if (attaque != other.attaque)
+			return false;
+		if (classe == null) {
+			if (other.classe != null)
+				return false;
+		} else if (!classe.equals(other.classe))
+			return false;
+		if (cout != other.cout)
+			return false;
+		if (effet == null) {
+			if (other.effet != null)
+				return false;
+		} else if (!effet.equals(other.effet))
+			return false;
+		if (nom == null) {
+			if (other.nom != null)
+				return false;
+		} else if (!nom.equals(other.nom))
+			return false;
+		if (vie != other.vie)
+			return false;
+		if (vieMax != other.vieMax)
+			return false;
+		return true;
 	}
-	public void setPlateau(Plateau plateau) {
-		this.plateau = plateau;
+	@Override
+	public String toString() {
+		return "Serviteur [nom=" + nom + ", cout=" + cout + ", classe=" + classe + ", vieMax=" + vieMax + ", vie=" + vie
+				+ ", attaque=" + attaque + ", effet=" + effet + "]";
 	}
+
 
 	@Override
 	public void prendreDegats(int x) {
 		this.vie = this.vie - x;
 		System.out.printf("%s prend %d point(s) de dégats\n",this.nom,x);
-		if(this.vie <= 0)
-			mourir();
 	}
 
 	@Override
-	public void mourir() {
+	public void mourir(Joueur j) {
 		System.out.printf("%s est mort",this.nom);
 		if(checkEffet("Mort") && this.effet.isActivable(null)){
 			//Un effet de mort ne demande jamais a l'utilisateur une cible
 			this.effet.activer(null);
 		}
-		this.plateau.removeServiteur(this);
+		j.getPlateau().removeServiteur(this);
 	}
 
 	@Override
-	public void jouerCarte() {
-		if(checkEffet("Entrée") && this.effet.isActivable(null)){
-			//Un effet de mort ne demande jamais a l'utilisateur une cible
-			this.effet.activer(null);
+	public void jouerCarte(Plateau p) {
+		if(checkEffet("Entrée")){
+			if(this.effet.isCiblable()){
+				//Demander une cible
+				Cible c = null;
+				if(this.effet.isActivable(c))
+					this.effet.activer(c);
+			}
+			else
+				this.effet.activer(null);
 		}
+		invoquer(p);
 	}
 	
-	public void invoquer(){
-		this.plateau.addServiteur(this);
+	public void invoquer(Plateau p){
+		p.addServiteur(this);
 	}
 	
 	public void attaquer(Cible cible) {
-		// TODO Auto-generated method stub
+		cible.prendreDegats(this.attaque);
+		prendreDegats(cible.getAttaque());
 	}
 
 	@Override
@@ -131,4 +172,18 @@ public class Serviteur extends Carte implements Personnage {
 		return this.effet.getType().contains(type);
 	}
 
+
+	@Override
+	public boolean isJouable(Plateau p) {
+		if (p.isPlein())
+			return false;
+		if(checkEffet("Entrée")){
+			return(this.effet.isActivable(null));
+		}
+		return true;
+	}
+
+	public boolean isMort(){
+		return(this.vie <= 0);
+	}
 }

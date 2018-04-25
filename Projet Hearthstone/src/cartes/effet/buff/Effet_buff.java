@@ -1,8 +1,7 @@
 package cartes.effet.buff;
 
 import cartes.effet.effet.Effet;
-import partie.autres.cible.Cible;
-import partie.autres.personnage.Personnage;
+import partie.autres.cible.Cible;;
 
 public class Effet_buff extends Effet {
 
@@ -11,7 +10,6 @@ public class Effet_buff extends Effet {
 	private String nom;
 	private String description;
 	private String type;
-	private boolean ciblable;
 	
 	public Effet_buff(String description, String nom, String type, int bonusAttaque, int bonusVie) {
 		super(description, nom, type);
@@ -96,15 +94,16 @@ public class Effet_buff extends Effet {
 
 	@Override
 	public void activer(Cible c) {
-		for(Personnage s : c.getCibles()){
-			s.augmenterVie(this.bonusVie);
-			s.augmenterAttaque(this.bonusAttaque);
-		}
+		c.augmenterVie(bonusVie);
+		c.augmenterAttaque(bonusAttaque);
 	}
-
 	@Override
 	public boolean isActivable(Cible c) {
 		return !(c == null);
+	}
+	@Override
+	public boolean isCiblable(){
+		return true;
 	}
 
 }

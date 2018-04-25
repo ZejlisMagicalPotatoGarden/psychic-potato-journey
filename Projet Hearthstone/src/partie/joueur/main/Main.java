@@ -3,21 +3,25 @@ package partie.joueur.main;
 import java.util.ArrayList;
 
 import cartes.carte.Carte;
+import partie.joueur.plateau.Plateau;
 
 public class Main {
 	
 	private ArrayList<Carte> cartes;
 
+	
 	public Main() {
 		this.cartes = new ArrayList<Carte>();
 	}
 		
+	
 	public ArrayList<Carte> getCartes() {
 		return cartes;
 	}
 	public void setCartes(ArrayList<Carte> cartes) {
 		this.cartes = cartes;
 	}
+	
 	
 	@Override
 	public String toString() {
@@ -46,17 +50,26 @@ public class Main {
 	public void removeCarte(Carte c){
 		this.cartes.remove(this.cartes.indexOf(c));
 	}
-		
-	public void jouerCarte(String nom){
-		Carte c2;
+	public Carte getCarte(String nom){
+		Carte carte = null;
 		for(Carte c : getCartes()){
 			if(c.getNom().equals(nom)){
-				c2 = c;
+				carte = c;
 				break;
 			}
 		}
-		//il faut gerer le warning ici
-		c2.jouerCarte();
+		return carte;
+	}
+	public void jouerCarte(String nom, Plateau p){
+		Carte carte = getCarte(nom);
+		if(carte == null){
+			System.out.printf("%s n'est pas dans cette main\n",nom);
+			//Erreur, faire une exception
+		}
+		if(carte.isJouable(p))
+			carte.jouerCarte(p);
+		else
+			System.out.printf("%s n'est pas jouable",carte);
 	}
 
 }

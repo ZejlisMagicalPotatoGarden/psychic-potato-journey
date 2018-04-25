@@ -8,15 +8,13 @@ public class Provocation extends Effet {
 	private String description;
 	private String nom;
 	private String type;
-	private boolean ciblable;
 	
 	
 	public Provocation() {
-		super("Empeche les serviteurs d'attaquer le héros","Provocation","Provocation",false);
+		super("Empeche les serviteurs d'attaquer le héros","Provocation","Provocation");
 		this.description = "Empeche les serviteurs d'attaquer le héros";
 		this.nom = "Provocation";
 		this.type = "Provocation";
-		this.ciblable = false;
 	}
 	
 	public String getDescription() {
@@ -37,12 +35,6 @@ public class Provocation extends Effet {
 	public void setType(String type) {
 		this.type = type;
 	}
-	public boolean isCiblable() {
-		return ciblable;
-	}
-	public void setCiblable(boolean ciblable) {
-		this.ciblable = ciblable;
-	}
 
 
 	@Override
@@ -54,8 +46,6 @@ public class Provocation extends Effet {
 		if (getClass() != obj.getClass())
 			return false;
 		Provocation other = (Provocation) obj;
-		if (ciblable != other.ciblable)
-			return false;
 		if (description == null) {
 			if (other.description != null)
 				return false;
@@ -75,8 +65,7 @@ public class Provocation extends Effet {
 	}
 	@Override
 	public String toString() {
-		return "Provocation [description=" + description + ", nom=" + nom + ", type=" + type + ", ciblable=" + ciblable
-				+ "]";
+		return "Provocation [description=" + description + ", nom=" + nom + ", type=" + type + "]";
 	}
 
 	
@@ -84,10 +73,13 @@ public class Provocation extends Effet {
 	public void activer(Cible c) {
 		//Cet effet ne s'active jamais
 	}
-
 	@Override
 	public boolean isActivable(Cible c) {
 		//cet effet ne s'active jamais
+		return false;
+	}
+	@Override
+	public boolean isCiblable(){
 		return false;
 	}
 }

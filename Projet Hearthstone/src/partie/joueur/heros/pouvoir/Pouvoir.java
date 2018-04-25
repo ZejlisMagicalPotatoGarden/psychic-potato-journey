@@ -3,22 +3,32 @@ package partie.joueur.heros.pouvoir;
 import cartes.effet.effet.Effet;
 import partie.autres.cible.Cible;
 
-public abstract class Pouvoir extends Effet {
+public class Pouvoir extends Effet {
 
 	private int nbUtilisations;
-	private String description;
-	private String nom;
-	private String type;
+	private Effet effet;
 	
 	public Pouvoir(Effet effet) {
 		super(effet.getDescription(), effet.getNom(), effet.getType());
 		this.nbUtilisations = 1;
-		this.description = effet.getDescription();
-		this.type = effet.getType();
-		this.nom = effet.getNom();
+		this.effet = effet;
 	}
 
 	
+	public int getNbUtilisations() {
+		return nbUtilisations;
+	}
+	public void setNbUtilisations(int nbUtilisations) {
+		this.nbUtilisations = nbUtilisations;
+	}
+	public Effet getEffet() {
+		return effet;
+	}
+	public void setEffet(Effet effet) {
+		this.effet = effet;
+	}
+	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -28,36 +38,35 @@ public abstract class Pouvoir extends Effet {
 		if (getClass() != obj.getClass())
 			return false;
 		Pouvoir other = (Pouvoir) obj;
-		if (description == null) {
-			if (other.description != null)
+		if (effet == null) {
+			if (other.effet != null)
 				return false;
-		} else if (!description.equals(other.description))
+		} else if (!effet.equals(other.effet))
 			return false;
 		if (nbUtilisations != other.nbUtilisations)
-			return false;
-		if (nom == null) {
-			if (other.nom != null)
-				return false;
-		} else if (!nom.equals(other.nom))
-			return false;
-		if (type == null) {
-			if (other.type != null)
-				return false;
-		} else if (!type.equals(other.type))
 			return false;
 		return true;
 	}
 	@Override
 	public String toString() {
-		return "Pouvoir [nbUtilisations=" + nbUtilisations + ", description=" + description + ", nom=" + nom + ", type="
-				+ type + "]";
+		return "Pouvoir [nbUtilisations=" + nbUtilisations + ", effet=" + effet + "]";
 	}
 
-	@Override
-	public abstract void activer(Cible c);
 
 	@Override
-	public boolean isActivable(Cible c){
-		return(this.nbUtilisations > 0);
+	public void activer(Cible c) {
+		this.effet.activer(c);
+		this.nbUtilisations = this.nbUtilisations - 1;
 	}
+	@Override
+	public boolean isActivable(Cible c) {
+		return (this.nbUtilisations > 0 && this.effet.isActivable(c));
+	}
+	@Override
+	public boolean isCiblable() {
+		return this.effet.isCiblable();
+	}
+
+
+	
 }

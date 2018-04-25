@@ -8,7 +8,6 @@ public class Effet_combine extends Effet {
 	private String nom;
 	private String description;
 	private String type;
-	private boolean ciblable;
 	private Effet effet1;
 	private Effet effet2;
 	
@@ -19,7 +18,6 @@ public class Effet_combine extends Effet {
 		this.description = description;
 		this.nom = nom;
 		this.type = type;
-		this.effet1.isCiblable() //---PAS FINI----------
 	}
 	
 	public String getNom() {
@@ -102,10 +100,13 @@ public class Effet_combine extends Effet {
 		effet1.activer(c);
 		effet2.activer(c);
 	}
-
 	@Override
 	public boolean isActivable(Cible c) {
 		return effet1.isActivable(c) && effet2.isActivable(c);
+	}
+	@Override
+	public boolean isCiblable(){
+		return effet1.isCiblable() || effet2.isCiblable();
 	}
 
 }

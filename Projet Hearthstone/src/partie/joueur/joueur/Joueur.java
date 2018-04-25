@@ -108,7 +108,8 @@ public class Joueur {
 		do{
 			System.out.println("Que voulez-vous faire ?");
 			//choix = readLine() ???
-		}while(choix == null || !(choix.trim().equals("Attaquer") || choix.trim().equals("Jouer") || choix.trim().equals("Passer")) );
+		}while(choix == null || !(choix.trim().equals("Attaquer") ||
+				choix.trim().equals("Jouer") || choix.trim().equals("Passer")) );
 		
 		return choix;
 	}

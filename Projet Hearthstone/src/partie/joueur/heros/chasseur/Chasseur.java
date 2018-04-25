@@ -1,14 +1,19 @@
 package partie.joueur.heros.chasseur;
 
 import partie.joueur.heros.heros.Heros;
+import partie.joueur.heros.pouvoir.Pouvoir;
 
 public class Chasseur extends Heros {
 
-	private int vie = 15;
-	private String nom = "Jaina Portvaillant";
+	private int vie;
+	private String nom;
+	private Pouvoir pouvoir;
 	
 	public Chasseur(){
-		super("Rexxar",15);
+		super("Rexxar",15,new Pouvoir_chasseur());
+		this.nom = "Rexxar";
+		this.vie = 15;
+		this.pouvoir = new Pouvoir_chasseur();
 	}
 
 	public int getVie() {
@@ -23,7 +28,14 @@ public class Chasseur extends Heros {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
+	public Pouvoir getPouvoir() {
+		return pouvoir;
+	}
+	public void setPouvoir(Pouvoir pouvoir) {
+		this.pouvoir = pouvoir;
+	}
 
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -38,13 +50,18 @@ public class Chasseur extends Heros {
 				return false;
 		} else if (!nom.equals(other.nom))
 			return false;
+		if (pouvoir == null) {
+			if (other.pouvoir != null)
+				return false;
+		} else if (!pouvoir.equals(other.pouvoir))
+			return false;
 		if (vie != other.vie)
 			return false;
 		return true;
 	}
 	@Override
 	public String toString() {
-		return "Chasseur [vie=" + vie + ", nom=" + nom + "]";
+		return "Chasseur [vie=" + vie + ", nom=" + nom + ", pouvoir=" + pouvoir + "]";
 	}
 	
 }
