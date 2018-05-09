@@ -13,7 +13,7 @@ public class Effet_modele extends Effet {
 		super("Ne fait rien parce que c'est un modèle", "Effet modèle", "Entrée/Mort/Aura/...");
 		this.description = "Ne fait rien parce que c'est un modèle";
 		this.nom = "Effet modèle";
-		this.type = "Entrée/Mort/Aura/...";
+		this.type = "Entrée/Mort/Aura/Immédiat";
 	}
 	
 	

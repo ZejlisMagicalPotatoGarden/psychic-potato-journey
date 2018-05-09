@@ -66,8 +66,10 @@ public class Main {
 			System.out.printf("%s n'est pas dans cette main\n",nom);
 			//Erreur, faire une exception
 		}
-		if(carte.isJouable(p))
+		if(carte.isJouable(p)){
 			carte.jouerCarte(p);
+			removeCarte(carte);
+		}
 		else
 			System.out.printf("%s n'est pas jouable",carte);
 	}

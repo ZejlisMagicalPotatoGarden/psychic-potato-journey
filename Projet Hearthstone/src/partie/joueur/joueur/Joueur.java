@@ -1,5 +1,6 @@
 package partie.joueur.joueur;
 
+import console.Console;
 import partie.joueur.deck.Deck;
 import partie.joueur.heros.heros.Heros;
 import partie.joueur.main.Main;
@@ -105,9 +106,10 @@ public class Joueur {
 	
 	public String action(){
 		String choix = "";
+		Console es = new Console();
 		do{
-			System.out.println("Que voulez-vous faire ?");
-			//choix = readLine() ???
+			es.println("Que voulez-vous faire ?");
+			choix = es.readLine();
 		}while(choix == null || !(choix.trim().equals("Attaquer") ||
 				choix.trim().equals("Jouer") || choix.trim().equals("Passer")) );
 		

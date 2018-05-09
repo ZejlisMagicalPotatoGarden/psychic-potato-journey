@@ -7,11 +7,13 @@ public class Pouvoir extends Effet {
 
 	private int nbUtilisations;
 	private Effet effet;
+	private int cout;
 	
-	public Pouvoir(Effet effet) {
+	public Pouvoir(Effet effet, int cout) {
 		super(effet.getDescription(), effet.getNom(), effet.getType());
 		this.nbUtilisations = 1;
 		this.effet = effet;
+		this.cout = cout;
 	}
 
 	
@@ -27,29 +29,11 @@ public class Pouvoir extends Effet {
 	public void setEffet(Effet effet) {
 		this.effet = effet;
 	}
-	
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (!super.equals(obj))
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Pouvoir other = (Pouvoir) obj;
-		if (effet == null) {
-			if (other.effet != null)
-				return false;
-		} else if (!effet.equals(other.effet))
-			return false;
-		if (nbUtilisations != other.nbUtilisations)
-			return false;
-		return true;
+	public int getCout() {
+		return cout;
 	}
-	@Override
-	public String toString() {
-		return "Pouvoir [nbUtilisations=" + nbUtilisations + ", effet=" + effet + "]";
+	public void setCout(int cout) {
+		this.cout = cout;
 	}
 
 
@@ -67,6 +51,31 @@ public class Pouvoir extends Effet {
 		return this.effet.isCiblable();
 	}
 
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Pouvoir other = (Pouvoir) obj;
+		if (cout != other.cout)
+			return false;
+		if (effet == null) {
+			if (other.effet != null)
+				return false;
+		} else if (!effet.equals(other.effet))
+			return false;
+		if (nbUtilisations != other.nbUtilisations)
+			return false;
+		return true;
+	}
 
+	@Override
+	public String toString() {
+		return "Pouvoir [nbUtilisations=" + nbUtilisations + ", effet=" + effet + ", cout=" + cout + "]";
+	}
 	
 }
