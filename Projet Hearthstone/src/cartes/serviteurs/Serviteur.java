@@ -18,10 +18,10 @@ public class Serviteur extends Carte implements Personnage {
 	public Serviteur(String nom, int cout, String classe, int vieMax, int attaque,
 			Effet effet) {
 		super(nom, cout, classe);
-		this.vieMax = vieMax;
-		this.vie = vieMax;
-		this.attaque = attaque;
-		this.effet = effet;
+		setVieMax(vieMax);
+		setVie(vieMax);
+		setAttaque(attaque);
+		setEffet(effet);
 	}
 
 	

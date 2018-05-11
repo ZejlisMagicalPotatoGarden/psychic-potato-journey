@@ -2,9 +2,9 @@ package cartes.effets;
 
 import partie.autres.cible.Cible;
 
-public class Effet_modele extends Effet {
+public class Modele extends Effet {
 
-	public Effet_modele() {
+	public Modele() {
 		super("Ne fait rien parce que c'est un modèle", "Effet modèle", "Entrée/Mort/Aura/Immédiat...");
 	}
 

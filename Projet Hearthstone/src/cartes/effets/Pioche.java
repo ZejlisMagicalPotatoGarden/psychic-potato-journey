@@ -3,16 +3,16 @@ package cartes.effets;
 import partie.autres.cible.Cible;
 import partie.joueur.joueur.Joueur;
 
-public class Effet_pioche extends Effet {
+public class Pioche extends Effet {
 
 	private Joueur joueur;
 	private int nbPioche;
 	
-	public Effet_pioche(String description, String nom, String type, Joueur joueur,
+	public Pioche(String description, String nom, String type, Joueur joueur,
 			int nbPioche) {
 		super(description, nom, type);
-		this.nbPioche = nbPioche;
-		this.joueur = joueur;
+		setNbPioche(nbPioche);
+		setJoueur(joueur);
 	}
 	
 	public Joueur getJoueur() {
@@ -37,7 +37,7 @@ public class Effet_pioche extends Effet {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Effet_pioche other = (Effet_pioche) obj;
+		Pioche other = (Pioche) obj;
 		if (joueur == null) {
 			if (other.joueur != null)
 				return false;

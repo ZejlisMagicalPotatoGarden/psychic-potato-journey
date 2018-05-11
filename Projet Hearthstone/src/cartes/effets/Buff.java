@@ -9,12 +9,10 @@ public class Buff extends Effet {
 	
 	public Buff(String description, String nom, String type, int bonusAttaque, int bonusVie) {
 		super(description, nom, type);
-		this.bonusAttaque = bonusAttaque;
-		this.bonusVie = bonusVie;
+		setBonusAttaque(bonusAttaque);
+		setBonusVie(bonusVie);
 	}
 
-	
-	
 	public int getBonusAttaque() {
 		return bonusAttaque;
 	}

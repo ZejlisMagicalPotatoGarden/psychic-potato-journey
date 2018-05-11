@@ -12,10 +12,9 @@ public class Heros implements Personnage {
 	private Pouvoir pouvoir;
 
 	public Heros(String nom, int vie, Pouvoir pouvoir) {
-		super();
-		this.nom = nom;
-		this.vie = vie;
-		this.pouvoir = pouvoir;
+		setNom(nom);
+		setVie(vie);
+		setPouvoir(pouvoir);
 	}
 	
 	public String getNom() {

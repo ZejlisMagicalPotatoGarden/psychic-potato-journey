@@ -10,7 +10,7 @@ public class Degats extends Effet {
 	
 	public Degats(String description, String nom, String type, int nbDegats) {
 		super(description, nom, type);
-		this.nbDegats = nbDegats;
+		setNbDegats(nbDegats);
 	}
 	
 	public int getNbDegats() {
