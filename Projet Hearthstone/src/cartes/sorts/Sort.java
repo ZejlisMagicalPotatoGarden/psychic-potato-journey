@@ -1,4 +1,4 @@
-package cartes.sort;
+package cartes.sorts;
 
 import cartes.carte.Carte;
 import cartes.effets.Effet;

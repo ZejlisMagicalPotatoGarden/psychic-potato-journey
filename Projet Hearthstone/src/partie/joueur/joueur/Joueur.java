@@ -16,7 +16,6 @@ public class Joueur {
 	private int manaDispo;
 	
 	public Joueur(Main main, Deck deck, Plateau plateau, Heros heros) {
-		super();
 		this.main = main;
 		this.deck = deck;
 		this.plateau = plateau;

@@ -1,6 +1,6 @@
 package cartes.effets;
 
-import cartes.serviteur.Serviteur;
+import cartes.serviteurs.Serviteur;
 import partie.autres.cible.Cible;
 import partie.partie.Partie;
 

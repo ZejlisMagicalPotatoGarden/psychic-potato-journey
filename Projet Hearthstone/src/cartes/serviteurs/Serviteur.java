@@ -1,4 +1,4 @@
-package cartes.serviteur;
+package cartes.serviteurs;
 
 import cartes.carte.Carte;
 import cartes.effets.Effet;

@@ -3,7 +3,7 @@ package application;
 import java.util.ArrayList;
 
 import cartes.carte.Carte;
-import cartes.serviteur.Serviteur;
+import cartes.serviteurs.Serviteur;
 import cartes.serviteurs.Serviteur_modele;
 import cartes.sorts.Sort_modele;
 import console.Console;
@@ -208,6 +208,8 @@ public class App {
 			jAllie.setManaDispo(jAllie.getManaMax());
 			
 			while (!finDeTour) {
+				afficherTout(partie);
+				
 				choix = menu(ihm);
 				try {
 					ihm.interagir(choix, partie, finDeTour);

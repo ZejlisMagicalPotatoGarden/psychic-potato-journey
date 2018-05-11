@@ -2,7 +2,7 @@ package partie.joueur.plateau;
 
 import java.util.ArrayList;
 
-import cartes.serviteur.Serviteur;
+import cartes.serviteurs.Serviteur;
 
 public class Plateau {
 

@@ -1,6 +1,6 @@
 package interfaceConsole;
 
-import cartes.serviteur.Serviteur;
+import cartes.serviteurs.Serviteur;
 import partie.joueur.joueur.Joueur;
 import partie.partie.Partie;
 
@@ -15,12 +15,7 @@ public class InterfaceAttaquer extends Interface {
 	public String getDescription() {
 		return "Attaquer un adversaire avec un de vos serviteurs";
 	}
-
-	@Override
-	public boolean saisInteragir(String actionDemandee) {
-		return actionDemandee.equals("Attaquer un adversaire avec un de vos serviteurs");
-	}
-
+	
 	@Override
 	public void executerInteraction(Partie p, boolean finDeTour) throws Exception {
 		Joueur jQuiJoue = p.getJoueurQuiJoue();

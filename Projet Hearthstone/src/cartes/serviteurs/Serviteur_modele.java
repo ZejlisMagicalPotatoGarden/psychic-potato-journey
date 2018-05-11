@@ -1,7 +1,6 @@
 package cartes.serviteurs;
 
 import cartes.effets.Effet_modele;
-import cartes.serviteur.Serviteur;
 
 public class Serviteur_modele extends Serviteur {
 

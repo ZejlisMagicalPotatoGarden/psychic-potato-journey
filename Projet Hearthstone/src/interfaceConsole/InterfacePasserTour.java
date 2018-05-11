@@ -15,11 +15,6 @@ public class InterfacePasserTour extends Interface {
 	}
 
 	@Override
-	public boolean saisInteragir(String actionDemandee) {
-		return actionDemandee.equals("Mettre fin à votre tour");
-	}
-
-	@Override
 	public void executerInteraction(Partie p, boolean finDeTour) throws Exception {
 		finDeTour = true;
 	}

@@ -71,6 +71,7 @@ public class Main {
 			removeCarte(carte);
 		}
 		else
+			//La aussi mettre une exception
 			System.out.printf("%s n'est pas jouable",carte);
 	}
 
