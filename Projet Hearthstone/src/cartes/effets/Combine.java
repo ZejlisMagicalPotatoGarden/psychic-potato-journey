@@ -1,9 +1,8 @@
-package cartes.effet.combine;
+package cartes.effets;
 
-import cartes.effet.effet.Effet;
 import partie.autres.cible.Cible;
 
-public class Effet_combine extends Effet {
+public class Combine extends Effet {
 
 	private String nom;
 	private String description;
@@ -11,7 +10,7 @@ public class Effet_combine extends Effet {
 	private Effet effet1;
 	private Effet effet2;
 	
-	public Effet_combine(String description, String nom, String type, Effet effet1, Effet effet2) {
+	public Combine(String description, String nom, String type, Effet effet1, Effet effet2) {
 		super(description, nom, type);
 		this.effet1 = effet1;
 		this.effet2 = effet2;
@@ -60,7 +59,7 @@ public class Effet_combine extends Effet {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Effet_combine other = (Effet_combine) obj;
+		Combine other = (Combine) obj;
 		if (description == null) {
 			if (other.description != null)
 				return false;

@@ -1,6 +1,5 @@
-package cartes.effet.provocation;
+package cartes.effets;
 
-import cartes.effet.effet.Effet;
 import partie.autres.cible.Cible;
 
 public class Provocation extends Effet {

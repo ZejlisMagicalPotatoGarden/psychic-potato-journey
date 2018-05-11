@@ -1,15 +1,14 @@
-package cartes.effet.degats;
+package cartes.effets;
 
-import cartes.effet.effet.Effet;
 import partie.autres.cible.Cible;
 import partie.autres.personnage.Personnage;
 
-public class Effet_degats extends Effet {
+public class Degats extends Effet {
 
 	private int nbDegats;
 	
 	
-	public Effet_degats(String description, String nom, String type, int nbDegats) {
+	public Degats(String description, String nom, String type, int nbDegats) {
 		super(description, nom, type);
 		this.nbDegats = nbDegats;
 	}
@@ -29,7 +28,7 @@ public class Effet_degats extends Effet {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Effet_degats other = (Effet_degats) obj;
+		Degats other = (Degats) obj;
 		if (nbDegats != other.nbDegats)
 			return false;
 		return true;

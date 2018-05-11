@@ -1,6 +1,6 @@
 package partie.joueur.heros.pouvoir;
 
-import cartes.effet.effet.Effet;
+import cartes.effets.Effet;
 import partie.autres.cible.Cible;
 
 public class Pouvoir extends Effet {

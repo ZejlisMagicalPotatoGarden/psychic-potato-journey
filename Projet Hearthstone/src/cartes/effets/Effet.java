@@ -1,4 +1,4 @@
-package cartes.effet.effet;
+package cartes.effets;
 
 import partie.autres.cible.Cible;
 

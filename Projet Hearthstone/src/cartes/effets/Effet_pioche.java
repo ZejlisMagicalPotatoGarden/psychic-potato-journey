@@ -1,6 +1,5 @@
-package cartes.effet.pioche;
+package cartes.effets;
 
-import cartes.effet.effet.Effet;
 import partie.autres.cible.Cible;
 import partie.joueur.joueur.Joueur;
 

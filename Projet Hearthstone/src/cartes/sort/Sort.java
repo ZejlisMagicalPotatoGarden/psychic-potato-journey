@@ -1,7 +1,7 @@
 package cartes.sort;
 
 import cartes.carte.Carte;
-import cartes.effet.effet.Effet;
+import cartes.effets.Effet;
 import partie.autres.cible.Cible;
 import partie.joueur.plateau.Plateau;
 

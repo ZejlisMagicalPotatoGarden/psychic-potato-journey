@@ -1,6 +1,5 @@
-package cartes.effet.invocation;
+package cartes.effets;
 
-import cartes.effet.effet.Effet;
 import cartes.serviteur.Serviteur;
 import partie.autres.cible.Cible;
 import partie.partie.Partie;

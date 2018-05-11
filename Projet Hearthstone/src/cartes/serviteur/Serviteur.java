@@ -1,17 +1,13 @@
 package cartes.serviteur;
 
 import cartes.carte.Carte;
-import cartes.effet.effet.Effet;
+import cartes.effets.Effet;
 import partie.autres.cible.Cible;
 import partie.autres.personnage.Personnage;
 import partie.joueur.joueur.Joueur;
 import partie.joueur.plateau.Plateau;
 
 public class Serviteur extends Carte implements Personnage {
-
-	private String nom;
-	private int cout;
-	private String classe;
 	
 	private int vieMax;
 	private int vie;
@@ -22,9 +18,6 @@ public class Serviteur extends Carte implements Personnage {
 	public Serviteur(String nom, int cout, String classe, int vieMax, int attaque,
 			Effet effet) {
 		super(nom, cout, classe);
-		this.nom = nom;
-		this.cout = cout;
-		this.classe = classe;
 		this.vieMax = vieMax;
 		this.vie = vieMax;
 		this.attaque = attaque;
@@ -32,24 +25,6 @@ public class Serviteur extends Carte implements Personnage {
 	}
 
 	
-	public String getNom() {
-		return nom;
-	}
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
-	public int getCout() {
-		return cout;
-	}
-	public void setCout(int cout) {
-		this.cout = cout;
-	}
-	public String getClasse() {
-		return classe;
-	}
-	public void setClasse(String classe) {
-		this.classe = classe;
-	}
 	public int getVieMax() {
 		return vieMax;
 	}
@@ -74,7 +49,7 @@ public class Serviteur extends Carte implements Personnage {
 	public void setEffet(Effet effet) {
 		this.effet = effet;
 	}
-
+	
 
 	@Override
 	public boolean equals(Object obj) {
@@ -87,22 +62,10 @@ public class Serviteur extends Carte implements Personnage {
 		Serviteur other = (Serviteur) obj;
 		if (attaque != other.attaque)
 			return false;
-		if (classe == null) {
-			if (other.classe != null)
-				return false;
-		} else if (!classe.equals(other.classe))
-			return false;
-		if (cout != other.cout)
-			return false;
 		if (effet == null) {
 			if (other.effet != null)
 				return false;
 		} else if (!effet.equals(other.effet))
-			return false;
-		if (nom == null) {
-			if (other.nom != null)
-				return false;
-		} else if (!nom.equals(other.nom))
 			return false;
 		if (vie != other.vie)
 			return false;
@@ -110,22 +73,22 @@ public class Serviteur extends Carte implements Personnage {
 			return false;
 		return true;
 	}
+	
 	@Override
 	public String toString() {
-		return "Serviteur [nom=" + nom + ", cout=" + cout + ", classe=" + classe + ", vieMax=" + vieMax + ", vie=" + vie
-				+ ", attaque=" + attaque + ", effet=" + effet + "]";
+		return "Serviteur [vieMax=" + vieMax + ", vie=" + vie + ", attaque=" + attaque + ", effet=" + effet + "]";
 	}
 
 
 	@Override
 	public void prendreDegats(int x) {
 		this.vie = this.vie - x;
-		System.out.printf("%s prend %d point(s) de dégats\n",this.nom,x);
+		System.out.printf("%s prend %d point(s) de dégats\n",super.getNom(),x);
 	}
 
 	@Override
 	public void mourir(Joueur j) {
-		System.out.printf("%s est mort",this.nom);
+		System.out.printf("%s est mort",super.getNom());
 		if(checkEffet("Mort") && this.effet.isActivable(null)){
 			//Un effet de mort ne demande jamais a l'utilisateur une cible
 			this.effet.activer(null);

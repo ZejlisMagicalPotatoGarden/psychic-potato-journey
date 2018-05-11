@@ -1,12 +1,13 @@
 package interfaceConsole;
 
+import cartes.serviteur.Serviteur;
+import partie.joueur.joueur.Joueur;
 import partie.partie.Partie;
 
 public class InterfaceAttaquer extends Interface {
 
 	public InterfaceAttaquer(Interface ihm) {
 		super(ihm);
-		// TODO Auto-generated constructor stub
 	}
 
 	
@@ -22,7 +23,19 @@ public class InterfaceAttaquer extends Interface {
 
 	@Override
 	public void executerInteraction(Partie p, boolean finDeTour) throws Exception {
-		// TODO Auto-generated method stub
+		Joueur jQuiJoue = p.getJoueurQuiJoue();
+		if(jQuiJoue.getPlateau().getServiteurs().isEmpty())
+			System.out.println("Vous n'avez pas de serviteurs capables d'attaquer");
+		else
+		{
+			int i = 1;
+			System.out.println("Avec quel serviteur ?");
+			for(Serviteur s : jQuiJoue.getPlateau().getServiteurs())
+			{
+				System.out.printf("%d. %s : %d attaque, %d point(s) de vie\n",i,s.getNom(),s.getAttaque(),s.getVie());
+				i++;
+			}
+		}
 
 	}
 

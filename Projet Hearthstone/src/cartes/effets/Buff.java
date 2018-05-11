@@ -1,14 +1,13 @@
-package cartes.effet.buff;
+package cartes.effets;
 
-import cartes.effet.effet.Effet;
 import partie.autres.cible.Cible;;
 
-public class Effet_buff extends Effet {
+public class Buff extends Effet {
 
 	private int bonusAttaque;
 	private int bonusVie;
 	
-	public Effet_buff(String description, String nom, String type, int bonusAttaque, int bonusVie) {
+	public Buff(String description, String nom, String type, int bonusAttaque, int bonusVie) {
 		super(description, nom, type);
 		this.bonusAttaque = bonusAttaque;
 		this.bonusVie = bonusVie;
@@ -38,7 +37,7 @@ public class Effet_buff extends Effet {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Effet_buff other = (Effet_buff) obj;
+		Buff other = (Buff) obj;
 		if (bonusAttaque != other.bonusAttaque)
 			return false;
 		if (bonusVie != other.bonusVie)

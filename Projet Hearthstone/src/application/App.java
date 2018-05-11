@@ -211,7 +211,8 @@ public class App {
 				choix = menu(ihm);
 				try {
 					ihm.interagir(choix, partie, finDeTour);
-				} catch (Exception e) {
+				} 
+				catch (Exception e) {
 					e.printStackTrace();
 				}
 			}

@@ -1,12 +1,12 @@
 package partie.joueur.heros.chasseur;
 
-import cartes.effets.Effet_chasseur;
+import cartes.effets.Degats;
 import partie.joueur.heros.pouvoir.Pouvoir;
 
 public class Pouvoir_chasseur extends Pouvoir {
 
 	public Pouvoir_chasseur() {
-		super(new Effet_chasseur(),2);
+		super(new Degats("Fait 2 poinrts de dégats au héros adverse", "Tir précis", "Immédiat", 2), 2);
 	}
 
 }
