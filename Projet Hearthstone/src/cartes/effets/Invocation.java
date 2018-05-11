@@ -1,10 +1,10 @@
 package cartes.effets;
 
-import cartes.serviteur.Serviteur;
+import cartes.serviteurs.Serviteur;
 import partie.autres.cible.Cible;
 import partie.partie.Partie;
 
-public class Effet_invocation extends Effet {
+public class Invocation extends Effet {
 
 	private Partie partie;
 	private Serviteur serviteur;
@@ -13,14 +13,14 @@ public class Effet_invocation extends Effet {
 	private String type;
 	
 	
-	public Effet_invocation(String description, String nom, String type, Serviteur serviteur, 
+	public Invocation(String description, String nom, String type, Serviteur serviteur, 
 			Partie partie) {
 		super(description, nom, type);
-		this.serviteur = serviteur;
-		this.description = description;
-		this.nom = nom;
-		this.type = type;
-		this.partie = partie;
+		setServiteur(serviteur);
+		setDescription(description);
+		setNom(nom);
+		setType(type);
+		setPartie(partie);
 	}
 	
 	
@@ -64,7 +64,7 @@ public class Effet_invocation extends Effet {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Effet_invocation other = (Effet_invocation) obj;
+		Invocation other = (Invocation) obj;
 		if (description == null) {
 			if (other.description != null)
 				return false;

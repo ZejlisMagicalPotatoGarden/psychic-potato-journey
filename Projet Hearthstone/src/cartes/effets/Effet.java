@@ -25,10 +25,9 @@ public abstract class Effet {
 
 	
 	public Effet(String description, String nom, String type) {
-		super();
-		this.description = description;
-		this.nom = nom;
-		this.type = type;
+		setDescription(description);
+		setNom(nom);
+		setType(type);
 	}
 	
 	

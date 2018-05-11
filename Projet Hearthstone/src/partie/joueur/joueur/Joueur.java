@@ -17,12 +17,12 @@ public class Joueur {
 	
 	public Joueur(Main main, Deck deck, Plateau plateau, Heros heros) {
 		super();
-		this.main = main;
-		this.deck = deck;
-		this.plateau = plateau;
-		this.heros = heros;
-		this.manaMax = 0;
-		this.manaDispo = 0;
+		setMain(main);
+		setDeck(deck);
+		setPlateau(plateau);
+		setHeros(heros);
+		setManaMax(0);
+		setManaDispo(0);
 	}
 
 	public Main getMain() {

@@ -1,7 +1,7 @@
 package interfaceConsole;
 
 import cartes.carte.Carte;
-import cartes.serviteur.Serviteur;
+import cartes.serviteurs.Serviteur;
 import partie.joueur.joueur.Joueur;
 import partie.partie.Partie;
 

@@ -2,7 +2,7 @@ package partie.autres.cible;
 
 import java.util.ArrayList;
 
-import cartes.serviteur.Serviteur;
+import cartes.serviteurs.Serviteur;
 import partie.autres.personnage.Personnage;
 import partie.joueur.joueur.Joueur;
 import partie.joueur.plateau.Plateau;

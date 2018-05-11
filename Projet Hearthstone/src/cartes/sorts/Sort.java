@@ -1,4 +1,4 @@
-package cartes.sort;
+package cartes.sorts;
 
 import cartes.carte.Carte;
 import cartes.effets.Effet;
@@ -14,10 +14,10 @@ public class Sort extends Carte {
 	
 	public Sort(String nom, int cout, Effet effet, String classe) {
 		super(nom, cout, classe);
-		this.nom = nom;
-		this.cout = cout;
-		this.classe = classe;
-		this.effet = effet;
+		setNom(nom);
+		setCout(cout);
+		setClasse(classe);
+		setEffet(effet);
 	}
 
 	

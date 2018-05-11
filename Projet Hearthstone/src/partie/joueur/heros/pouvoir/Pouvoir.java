@@ -12,8 +12,9 @@ public class Pouvoir extends Effet {
 	public Pouvoir(Effet effet, int cout) {
 		super(effet.getDescription(), effet.getNom(), effet.getType());
 		this.nbUtilisations = 1;
-		this.effet = effet;
-		this.cout = cout;
+		setNbUtilisations(1);
+		setEffet(effet);
+		setCout(cout);
 	}
 
 	

@@ -12,11 +12,11 @@ public class Combine extends Effet {
 	
 	public Combine(String description, String nom, String type, Effet effet1, Effet effet2) {
 		super(description, nom, type);
-		this.effet1 = effet1;
-		this.effet2 = effet2;
-		this.description = description;
-		this.nom = nom;
-		this.type = type;
+		setEffet1(effet1);
+		setEffet2(effet2);
+		setDescription(description);
+		setNom(nom);
+		setType(type);
 	}
 	
 	public String getNom() {

@@ -23,10 +23,9 @@ public abstract class Carte {
 	
 
 	public Carte(String nom, int cout, String classe) {
-		super();
-		this.nom = nom;
-		this.cout = cout;
-		this.classe = classe;
+		setNom(nom);
+		setCout(cout);
+		setClasse(classe);
 	}
 	
 	

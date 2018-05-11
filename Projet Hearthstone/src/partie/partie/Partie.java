@@ -9,9 +9,9 @@ public class Partie {
 	private boolean tourJ1; 
 	
 	public Partie(Joueur joueur1, Joueur joueur2) {
-		this.joueur1 = joueur1;
-		this.joueur2 = joueur2;
-		this.tourJ1 = true;
+		setJoueur1(joueur1);
+		setJoueur2(joueur2);
+		setTourJ1(true);
 	}
 	
 	public Joueur getJoueur1() {
