@@ -8,39 +8,14 @@ public class Effet_pioche extends Effet {
 
 	private Joueur joueur;
 	private int nbPioche;
-	private String description;
-	private String nom;
-	private String type;
-	
 	
 	public Effet_pioche(String description, String nom, String type, Joueur joueur,
 			int nbPioche) {
 		super(description, nom, type);
 		this.nbPioche = nbPioche;
 		this.joueur = joueur;
-		this.description = description;
-		this.nom = nom;
-		this.type = type;
 	}
 	
-	public String getDescription() {
-		return description;
-	}
-	public void setDescription(String description) {
-		this.description = description;
-	}
-	public String getNom() {
-		return nom;
-	}
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
-	public String getType() {
-		return type;
-	}
-	public void setType(String type) {
-		this.type = type;
-	}
 	public Joueur getJoueur() {
 		return joueur;
 	}
@@ -53,8 +28,8 @@ public class Effet_pioche extends Effet {
 	public void setNbPioche(int nbPioche) {
 		this.nbPioche = nbPioche;
 	}
-
 	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -64,11 +39,6 @@ public class Effet_pioche extends Effet {
 		if (getClass() != obj.getClass())
 			return false;
 		Effet_pioche other = (Effet_pioche) obj;
-		if (description == null) {
-			if (other.description != null)
-				return false;
-		} else if (!description.equals(other.description))
-			return false;
 		if (joueur == null) {
 			if (other.joueur != null)
 				return false;
@@ -76,22 +46,12 @@ public class Effet_pioche extends Effet {
 			return false;
 		if (nbPioche != other.nbPioche)
 			return false;
-		if (nom == null) {
-			if (other.nom != null)
-				return false;
-		} else if (!nom.equals(other.nom))
-			return false;
-		if (type == null) {
-			if (other.type != null)
-				return false;
-		} else if (!type.equals(other.type))
-			return false;
 		return true;
 	}
+	
 	@Override
 	public String toString() {
-		return "Effet_pioche [joueur=" + joueur + ", nbPioche=" + nbPioche + ", description=" + description + ", nom="
-				+ nom + ", type=" + type + "]";
+		return "Effet_pioche [joueur=" + joueur + ", nbPioche=" + nbPioche + "]";
 	}
 
 	
@@ -99,10 +59,12 @@ public class Effet_pioche extends Effet {
 	public void activer(Cible c) {
 		this.joueur.piocher(this.nbPioche);
 	}
+	
 	@Override
 	public boolean isActivable(Cible c) {
 		return true;
 	}
+	
 	@Override
 	public boolean isCiblable(){
 		return false;

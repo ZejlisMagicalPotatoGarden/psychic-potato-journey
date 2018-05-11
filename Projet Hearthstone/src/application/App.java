@@ -1,10 +1,16 @@
 package application;
 
+import java.util.ArrayList;
+
 import cartes.carte.Carte;
 import cartes.serviteur.Serviteur;
 import cartes.serviteurs.Serviteur_modele;
 import cartes.sorts.Sort_modele;
 import console.Console;
+import interfaceConsole.Interface;
+import interfaceConsole.InterfaceAttaquer;
+import interfaceConsole.InterfaceJouerCarte;
+import interfaceConsole.InterfacePasserTour;
 import partie.joueur.deck.Deck;
 import partie.joueur.heros.chasseur.Chasseur;
 import partie.joueur.heros.heros.Heros;
@@ -15,6 +21,8 @@ import partie.joueur.plateau.Plateau;
 import partie.partie.Partie;
 
 public class App {
+	
+	public final static Console es = new Console();
 
 	//------------A mettre dans Partie.java ?-----------------
 	public static Partie initPartie(){
@@ -69,15 +77,44 @@ public class App {
 		partie.setTourJ1(true);
 		joueur1.piocher(4);
 		joueur2.piocher(5);
-		//joueur2.getMain().addCarte(new Piece);
+		//joueur2.getMain().addCarte(new Piece());
 		
 		return partie;
 	}
 	
-	public static void afficherTout(Partie p){
-		//----------------A mettre dans les toString----------------
-		Console es = new Console();
+	private static String menu(Interface ihm) {
+		ArrayList<String>	menu = new ArrayList<String>();
+		Interface i = ihm;
+		while (i != null) {
+			menu.add(i.getDescription());
+			i = i.getSuivant();
+		}
 		
+		int n = 1;
+		for (String s : menu) {
+			es.println(""+n+". "+s);
+			n++;
+		}
+		
+		es.println("");
+		es.println("Votre choix : ");
+		int choix = es.readInt();
+		
+		return menu.get(choix-1);
+	}
+
+	private static Interface initialiserInterfaces() {
+		Interface monInterface = null;
+		Interface interfaceJouerCarte = new InterfaceJouerCarte(monInterface);
+		Interface interfacePasserTour = new InterfacePasserTour(interfaceJouerCarte);
+		Interface interfaceAttaquer = new InterfaceAttaquer(interfacePasserTour);
+		
+		return interfaceAttaquer;
+	}
+	
+	public static void afficherTout(Partie p){
+		
+		//----------------A mettre dans les toString---------------
 		Joueur jAllie = p.getJoueurQuiJoue();
 		Joueur jEnnemi;
 		if(jAllie.equals(p.getJoueur1()))
@@ -145,14 +182,31 @@ public class App {
 	}
 	
 	public static void main(String[] args) {
-		Console es = new Console();
 		
 		Joueur jAllie, jEnnemi;
-		boolean finDeTour;
+		boolean finDeTour = false;
 		String choix;
 		
 		Partie partie = initPartie();
 		
+		//
+		Interface ihm = initialiserInterfaces();
+		
+		if (ihm==null) {
+			System.out.println("L'application ne sais rien faire....");
+			System.exit(0);
+		}	
+		
+		while (!finDeTour) {
+			choix = menu(ihm);
+			try {
+				ihm.interagir(choix, partie, finDeTour);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		/*
 		while(true){
 			finDeTour = false;
 			jAllie = partie.getJoueurQuiJoue();
@@ -163,6 +217,7 @@ public class App {
 			jAllie.piocher(1);
 			jAllie.setManaMax(jAllie.getManaMax() + 1);
 			jAllie.setManaDispo(jAllie.getManaMax());
+			
 			
 			//-------------Chaine de responsabilité------------
 			while(!finDeTour)
@@ -204,7 +259,9 @@ public class App {
 				}
 			}
 			partie.setTourJ1(!partie.isTourJ1());
+			
 		}
+		*/
 	}
 
 }
