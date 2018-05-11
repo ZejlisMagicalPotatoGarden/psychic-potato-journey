@@ -184,7 +184,7 @@ public class App {
 	public static void main(String[] args) {
 		
 		Joueur jAllie, jEnnemi;
-		boolean finDeTour = false;
+		boolean finDeTour;
 		String choix;
 		
 		Partie partie = initPartie();
@@ -196,14 +196,27 @@ public class App {
 			System.out.println("L'application ne sais rien faire....");
 			System.exit(0);
 		}	
-		
-		while (!finDeTour) {
-			choix = menu(ihm);
-			try {
-				ihm.interagir(choix, partie, finDeTour);
-			} catch (Exception e) {
-				e.printStackTrace();
+		while(true){
+			finDeTour = false;
+			jAllie = partie.getJoueurQuiJoue();
+			if(jAllie.equals(partie.getJoueur1()))
+				jEnnemi = partie.getJoueur2();
+			else
+				jEnnemi = partie.getJoueur1();
+			jAllie.piocher(1);
+			jAllie.setManaMax(jAllie.getManaMax() + 1);
+			jAllie.setManaDispo(jAllie.getManaMax());
+			
+			while (!finDeTour) {
+				choix = menu(ihm);
+				try {
+					ihm.interagir(choix, partie, finDeTour);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 			}
+			
+			partie.setTourJ1(!partie.isTourJ1());
 		}
 		
 		/*
