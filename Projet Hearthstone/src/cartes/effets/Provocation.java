@@ -2,7 +2,7 @@ package cartes.effets;
 
 import partie.autres.cible.Cible;
 
-public class Provocation extends Effet { 
+public class Provocation extends Effet {
 	
 	public Provocation() {
 		super("Empeche les serviteurs d'attaquer le héros","Provocation","Provocation");
