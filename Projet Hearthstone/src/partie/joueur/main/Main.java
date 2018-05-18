@@ -68,7 +68,7 @@ public class Main {
 		}
 		if(carte.isJouable(p)){
 			carte.jouerCarte(p);
-			removeCarte(carte);
+			this.removeCarte(carte);
 		}
 		else
 			//La aussi mettre une exception

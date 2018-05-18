@@ -53,4 +53,14 @@ public class Plateau {
 	public boolean isPlein(){
 		return(this.serviteurs.size() >= NB_SERVITEURS_MAX);
 	}
+	public ArrayList<Serviteur> getProvocs()
+	{
+		ArrayList<Serviteur> provocs = new ArrayList<Serviteur>();
+		for(Serviteur s : this.serviteurs)
+		{
+			if(s.checkEffet("Provocation"))
+				provocs.add(s);
+		}
+		return provocs;
+	}
 }

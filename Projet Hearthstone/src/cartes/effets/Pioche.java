@@ -2,25 +2,18 @@ package cartes.effets;
 
 import partie.autres.cible.Cible;
 import partie.joueur.joueur.Joueur;
+import partie.partie.Partie;
 
 public class Pioche extends Effet {
 
-	private Joueur joueur;
 	private int nbPioche;
 	
-	public Pioche(String description, String nom, String type, Joueur joueur,
-			int nbPioche) {
+	public Pioche(String description, String nom, String type, int nbPioche) {
 		super(description, nom, type);
 		setNbPioche(nbPioche);
-		setJoueur(joueur);
 	}
 	
-	public Joueur getJoueur() {
-		return joueur;
-	}
-	public void setJoueur(Joueur joueur) {
-		this.joueur = joueur;
-	}
+	
 	public int getNbPioche() {
 		return nbPioche;
 	}
@@ -38,11 +31,6 @@ public class Pioche extends Effet {
 		if (getClass() != obj.getClass())
 			return false;
 		Pioche other = (Pioche) obj;
-		if (joueur == null) {
-			if (other.joueur != null)
-				return false;
-		} else if (!joueur.equals(other.joueur))
-			return false;
 		if (nbPioche != other.nbPioche)
 			return false;
 		return true;
@@ -50,13 +38,13 @@ public class Pioche extends Effet {
 	
 	@Override
 	public String toString() {
-		return "Effet_pioche [joueur=" + joueur + ", nbPioche=" + nbPioche + "]";
+		return "Effet_pioche [nbPioche=" + nbPioche + "]";
 	}
 
 	
 	@Override
 	public void activer(Cible c) {
-		this.joueur.piocher(this.nbPioche);
+		
 	}
 	
 	@Override

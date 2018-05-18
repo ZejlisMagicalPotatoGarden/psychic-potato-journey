@@ -72,4 +72,10 @@ public class Partie {
 		else
 			return this.joueur2;
 	}
+	public Joueur getJoueurQuiJouePas(){
+		if(this.tourJ1)
+			return this.joueur2;
+		else
+			return this.joueur1;
+	}
 }

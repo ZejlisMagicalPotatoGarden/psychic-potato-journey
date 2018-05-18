@@ -184,7 +184,6 @@ public class App {
 	public static void main(String[] args) {
 		
 		Joueur jAllie, jEnnemi;
-		boolean finDeTour;
 		String choix;
 		
 		Partie partie = initPartie();
@@ -197,7 +196,7 @@ public class App {
 			System.exit(0);
 		}	
 		while(true){
-			finDeTour = false;
+			choix = "";
 			jAllie = partie.getJoueurQuiJoue();
 			if(jAllie.equals(partie.getJoueur1()))
 				jEnnemi = partie.getJoueur2();
@@ -207,19 +206,17 @@ public class App {
 			jAllie.setManaMax(jAllie.getManaMax() + 1);
 			jAllie.setManaDispo(jAllie.getManaMax());
 			
-			while (!finDeTour) {
+			while (!choix.equals(new InterfacePasserTour(null).getDescription())) {
 				afficherTout(partie);
 				
 				choix = menu(ihm);
 				try {
-					ihm.interagir(choix, partie, finDeTour);
+					ihm.interagir(choix, partie);
 				} 
 				catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
-			
-			partie.setTourJ1(!partie.isTourJ1());
 		}
 		
 		/*

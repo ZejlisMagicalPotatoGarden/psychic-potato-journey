@@ -15,8 +15,8 @@ public class InterfacePasserTour extends Interface {
 	}
 
 	@Override
-	public void executerInteraction(Partie p, boolean finDeTour) throws Exception {
-		finDeTour = true;
+	public void executerInteraction(Partie p) throws Exception {
+		p.setTourJ1(!p.isTourJ1());
 	}
 
 }

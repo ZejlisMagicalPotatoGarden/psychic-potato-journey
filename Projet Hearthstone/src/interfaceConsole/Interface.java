@@ -19,14 +19,14 @@ public abstract class Interface {
 	}
 
 	public abstract String getDescription();
-	public abstract void	executerInteraction(Partie p, boolean finDeTour) throws Exception;	
+	public abstract void	executerInteraction(Partie p) throws Exception;	
 	
 	
-	public void interagir(String actionDemandees, Partie p, boolean finDeTour) throws Exception {
+	public void interagir(String actionDemandees, Partie p) throws Exception {
 		if (saisInteragir(actionDemandees))
-			executerInteraction(p, finDeTour);
+			executerInteraction(p);
 		else if (suivant != null)
-			suivant.interagir(actionDemandees, p, finDeTour);
+			suivant.interagir(actionDemandees, p);
 		else
 			throw new InteractionException("Il n'existe aucune interaction pour "+actionDemandees);
 	}
