@@ -1,5 +1,12 @@
 package cartes.serviteurs;
 
+import cartes.effets.Buff;
+import cartes.effets.Effet;
+
 public class Champion_de_Hurlevent extends Serviteur {
+
+	public Champion_de_Hurlevent(String nom, int cout, String classe, int vieMax, int attaque, Effet effet) {
+		super("Champion de hurlevent", 7, "Neutre", 6, 6, new Buff("Effet permanent sur les autres serviteurs alliés donnant un bonus +1/+1", "Bonus du hurlevent", "Aura", 1, 1));
+	}
 
 }
