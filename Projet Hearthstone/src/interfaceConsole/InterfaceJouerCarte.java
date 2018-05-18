@@ -20,7 +20,7 @@ public class InterfaceJouerCarte extends Interface {
 
 
 	@Override
-	public void executerInteraction(Partie p, boolean finDeTour) throws Exception {
+	public void executerInteraction(Partie p) throws Exception {
 		Console es = new Console();
 		
 		Joueur jQuiJoue = p.getJoueurQuiJoue();
@@ -55,7 +55,7 @@ public class InterfaceJouerCarte extends Interface {
 		String choixEnChaine = menu.get(choix-1);
 		
 		try {
-			ihm.interagir(choixEnChaine, p, finDeTour);
+			ihm.interagir(choixEnChaine, p);
 		} 
 		catch (Exception e) {
 			e.printStackTrace();

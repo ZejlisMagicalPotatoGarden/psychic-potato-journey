@@ -1,7 +1,6 @@
 package cartes.sorts;
 
 import cartes.effets.Degats;
-import cartes.effets.Effet;
 
 public class Eclair_de_givre extends Sort {
 

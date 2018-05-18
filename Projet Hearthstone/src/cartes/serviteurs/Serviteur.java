@@ -115,9 +115,8 @@ public class Serviteur extends Carte implements Personnage {
 		p.addServiteur(this);
 	}
 	
-	public void attaquer(Cible cible) {
-		cible.prendreDegats(this.attaque);
-		prendreDegats(cible.getAttaque());
+	public void attaquer(Personnage cible) {
+		
 	}
 
 	@Override
@@ -132,7 +131,10 @@ public class Serviteur extends Carte implements Personnage {
 	}
 	
 	public boolean checkEffet(String type){
-		return this.effet.getType().contains(type);
+		if(this.effet != null)
+			return this.effet.getType().equals(type);
+		else
+			return false;
 	}
 
 

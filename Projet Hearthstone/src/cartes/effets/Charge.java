@@ -2,9 +2,9 @@ package cartes.effets;
 
 import partie.autres.cible.Cible;
 
-public class E_Charge extends Effet {
+public class Charge extends Effet {
 	
-	public E_Charge() {
+	public Charge() {
 		super("Permet au serviteur d'attaquer le premier tour","Charge","Charge");
 	}
 	

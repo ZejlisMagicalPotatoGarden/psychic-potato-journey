@@ -28,7 +28,7 @@ public class interfaceChoixCarteAJouer extends Interface {
 	}
 
 	@Override
-	public void executerInteraction(Partie p, boolean finDeTour) throws Exception {
+	public void executerInteraction(Partie p) throws Exception {
 		Joueur jQuiJoue = p.getJoueurQuiJoue();
 		
 		jQuiJoue.getMain().jouerCarte(carte.getNom(), jQuiJoue.getPlateau());
