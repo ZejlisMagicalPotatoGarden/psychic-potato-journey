@@ -10,7 +10,7 @@ public class Invocation extends Effet {
 	private Serviteur serviteur;
 	private String description;
 	private String nom;
-	private String type; 
+	private String type;  
 	
 	
 	public Invocation(String description, String nom, String type, Serviteur serviteur, 
