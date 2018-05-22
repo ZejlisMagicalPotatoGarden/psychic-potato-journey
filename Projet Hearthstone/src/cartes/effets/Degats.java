@@ -3,6 +3,16 @@ package cartes.effets;
 import partie.autres.personnage.Personnage;
 
 public class Degats extends Effet {
+	/**
+	 * Classe représentant l'effet dégâts qui consiste à connaître le nombre de dégât que la cible va subir,
+	 * elle possède un nombre de dégâts.
+	 * Hérite d'effet.
+	 * 
+	 * @author GRESSET Nathan
+	 * @author GRINWALD Louis
+	 * 
+	 * @see effets
+	 */
 
 	private int nbDegats;
 	

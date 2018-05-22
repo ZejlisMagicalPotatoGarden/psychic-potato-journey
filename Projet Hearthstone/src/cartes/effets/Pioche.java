@@ -4,6 +4,17 @@ import partie.autres.personnage.Personnage;
 import partie.partie.Partie;
 
 public class Pioche extends Effet {
+	/**
+	 * Représente le tirage d'une carte, elle possède un nombre de cartes à piocher,
+	 * les joueurs l'utilise pour enrichir leur deck
+	 * 
+	 * @author GRESSET Nathan
+	 * @author GRINWALD Louis
+	 * 
+	 * @see effets
+	 * @see joueurs
+	 * @see decks
+	 */
 
 	private int nbPioche;
 	private Partie partie;

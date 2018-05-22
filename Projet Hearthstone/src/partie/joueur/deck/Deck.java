@@ -6,6 +6,15 @@ import cartes.carte.Carte;
 import partie.joueur.main.Main;
 
 public class Deck {
+	/**
+	 * Classe représentant un deck, un deck est un tableau de Carte.
+	 * 
+	 * @author GRESSET Nathan
+	 * @author GRINWALD Louis
+	 * 
+	 * @see carte
+	 * @see decks
+	 */
 
 	private ArrayList<Carte> cartes;
 

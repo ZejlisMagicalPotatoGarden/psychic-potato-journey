@@ -6,6 +6,17 @@ import partie.joueur.joueur.Joueur;
 import partie.partie.Partie;
 
 public class Heros implements Personnage {
+	/**
+	 * Classe représentant un héros, elle implémente l'interface Personnage
+	 * un héros peut être un mage ou un chasseur. Il possède un nom, de la vie et un pouvoir.
+	 * 
+	 * @author GRESSET Nathan
+	 * @author GRINWALD Louis
+	 * 
+	 * @see heros
+	 * @see chasseur
+	 * @see mage
+	 */
 
 	//VIE MAX ?------------------------------------
 	private String nom;
