@@ -5,6 +5,19 @@ import partie.autres.cible.Cible;
 import partie.partie.Partie;
 
 public class Invocation extends Effet {
+	/**
+	 * Classe représentant l'effet invocation qui sert à invoquer un ou plusieurs serviteurs,
+	 * elle a besoin de la partie en cours, du serviteur à invoquer, d'une description, d'un nom
+	 * et d'un type.
+	 * Les héros utilisent ce genre d'effet par l'intermédiaire d'un sort.
+	 * 
+	 * @author GRESSET Nathan
+	 * @author GRINWALD Louis
+	 * 
+	 * @see effets
+	 * @see sort
+	 * @see serviteurs
+	 */
 
 	private Partie partie;
 	private Serviteur serviteur;

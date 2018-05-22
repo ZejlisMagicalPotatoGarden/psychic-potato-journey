@@ -3,6 +3,15 @@ package cartes.effets;
 import partie.autres.cible.Cible;
 
 public class Charge extends Effet {
+	/**
+	 * Classe représentant l'effet charge qui permet au serviteur d'attaquer au premier tour,
+	 * elle ne possède aucun champ
+	 * 
+	 * @author GRESSET Nathan
+	 * @author GRINWALD Louis
+	 * 
+	 * @see effets
+	 */
 	
 	public Charge() {
 		super("Permet au serviteur d'attaquer le premier tour","Charge","Charge");

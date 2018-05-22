@@ -8,6 +8,19 @@ import partie.joueur.joueur.Joueur;
 import partie.joueur.plateau.Plateau;
 
 public class Serviteur extends Carte implements Personnage {
+	/**
+	 * Classe représentant un serviteur, un serviteur hérite de la classe Carte et possède un effet,
+	 * il est utilisé par le joueur et peut être pioché. Il possède une vie max et une vie courante
+	 * ainsi qu'une attaque.
+	 * 
+	 * @author GRESSET Nathan
+	 * @author GRINWALD Louis
+	 * 
+	 * @see serviteurs
+	 * @see effets
+	 * @see joueur
+	 * @see carte
+	 */
 	
 	private int vieMax;
 	private int vie;

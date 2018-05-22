@@ -6,6 +6,19 @@ import partie.autres.cible.Cible;
 import partie.joueur.plateau.Plateau;
 
 public class Sort extends Carte {
+	/**
+	 * Classe représente un sort, un sort hérite de la classe carte et possède un effet, un nom
+	 * une classe et un cout en mana. Il est utilisé par le joueur et peut être pioché, certains
+	 * sorts sont propres à un héros.
+	 * 
+	 * @author GRESSET Nathan
+	 * @author GRINWALD Louis
+	 * 
+	 * @see carte
+	 * @see joueur
+	 * @see effets
+	 * @see sorts
+	 */
 
 	private String nom;
 	private int cout;

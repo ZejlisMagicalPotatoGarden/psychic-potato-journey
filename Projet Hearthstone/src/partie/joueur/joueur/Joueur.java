@@ -7,6 +7,14 @@ import partie.joueur.main.Main;
 import partie.joueur.plateau.Plateau;
 
 public class Joueur {
+	/** 
+	 * Classe représentant un joueur de HeartStone, il possède un deck, un plateau, un héros, une mana max et courante.
+	 * 
+	 * @author GRESSET Nathan
+	 * @author GRINWALD Louis
+	 * 
+	 * @see joueur
+	 */
 
 	private Main main;
 	private Deck deck;

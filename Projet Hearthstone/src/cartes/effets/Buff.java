@@ -3,6 +3,15 @@ package cartes.effets;
 import partie.autres.cible.Cible;;
 
 public class Buff extends Effet {
+	/**
+	 * Classe représentant l'effet Buff qui consiste à augmenter à la fois la vie et l'attaque, il possède un bonus d'attaque,
+	 * et un bonus de vie.
+	 * 
+	 * @author GRESSET Nathan
+	 * @author GRINWALD Louis
+	 * 
+	 * @see effets
+	 */
 
 	private int bonusAttaque;
 	private int bonusVie;
