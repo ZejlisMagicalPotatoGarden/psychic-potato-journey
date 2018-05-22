@@ -1,19 +1,19 @@
 package cartes.effets;
 
-import partie.autres.cible.Cible;
+import partie.autres.personnage.Personnage;
 
-public class Charge extends Effet {
+public class E_Charge extends Effet {
 	
-	public Charge() {
+	public E_Charge() {
 		super("Permet au serviteur d'attaquer le premier tour","Charge","Charge");
 	}
 	
 	@Override
-	public void activer(Cible c) {
+	public void activer(Personnage p) {
 		//Cet effet ne s'active jamais
 	}
 	@Override
-	public boolean isActivable(Cible c) {
+	public boolean isActivable() {
 		//cet effet ne s'active jamais
 		return false;
 	}

@@ -1,6 +1,6 @@
 package cartes.effets;
 
-import partie.autres.cible.Cible;;
+import partie.autres.personnage.Personnage;;
 
 public class Buff extends Effet {
 
@@ -51,13 +51,13 @@ public class Buff extends Effet {
 
 
 	@Override
-	public void activer(Cible c) {
-		c.augmenterVie(bonusVie);
-		c.augmenterAttaque(bonusAttaque);
+	public void activer(Personnage p) {
+		p.augmenterVie(bonusVie);
+		p.augmenterAttaque(bonusAttaque);
 	}
 	@Override
-	public boolean isActivable(Cible c) {
-		return !(c == null);
+	public boolean isActivable() {
+		return true;
 	}
 	@Override
 	public boolean isCiblable(){

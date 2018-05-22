@@ -3,6 +3,7 @@ package partie.joueur.heros.heros;
 import partie.autres.personnage.Personnage;
 import partie.joueur.heros.pouvoir.Pouvoir;
 import partie.joueur.joueur.Joueur;
+import partie.partie.Partie;
 
 public class Heros implements Personnage {
 
@@ -73,7 +74,7 @@ public class Heros implements Personnage {
 
 	@Override
 	public void mourir(Joueur j) {
-		//Terminer la partie
+		Partie.Gagner(j);
 	}
 
 	
@@ -84,6 +85,12 @@ public class Heros implements Personnage {
 	@Override
 	public void augmenterVie(int bonusVie) {
 		//Un héros ne gagne pas de vie max pour l'instant
+	}
+
+	@Override
+	public int getAttaque() {
+		//Un héros n'a pas d'attaque
+		return 0;
 	}
 
 }

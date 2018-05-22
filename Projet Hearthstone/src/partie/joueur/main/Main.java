@@ -67,7 +67,11 @@ public class Main {
 			//Erreur, faire une exception
 		}
 		if(carte.isJouable(p)){
-			carte.jouerCarte(p);
+			try {
+				carte.jouerCarte(p);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			this.removeCarte(carte);
 		}
 		else

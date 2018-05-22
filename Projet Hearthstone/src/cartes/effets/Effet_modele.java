@@ -1,6 +1,6 @@
 package cartes.effets;
 
-import partie.autres.cible.Cible;
+import partie.autres.personnage.Personnage;
 
 public class Effet_modele extends Effet {
 
@@ -9,11 +9,11 @@ public class Effet_modele extends Effet {
 	}
 
 	@Override
-	public void activer(Cible c) {
+	public void activer(Personnage p) {
 		//Fait un truc normalement
 	}
 	@Override
-	public boolean isActivable(Cible c) {
+	public boolean isActivable() {
 		return false;
 	}
 	@Override

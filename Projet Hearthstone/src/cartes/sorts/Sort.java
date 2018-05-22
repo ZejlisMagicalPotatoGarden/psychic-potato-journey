@@ -2,7 +2,6 @@ package cartes.sorts;
 
 import cartes.carte.Carte;
 import cartes.effets.Effet;
-import partie.autres.cible.Cible;
 import partie.joueur.plateau.Plateau;
 
 public class Sort extends Carte {
@@ -83,32 +82,20 @@ public class Sort extends Carte {
 
 	@Override
 	public void jouerCarte(Plateau p) {
-		if(this.effet.isCiblable()){
-			//demander une cible
-			Cible c = null;
-			if(this.effet.isActivable(c))
-				System.out.printf("Cible invalide pour le sort %s\n",this.nom);
-			else
-				this.effet.activer(c);
-		}
 		
+		this.effet.activer(null);
 	}
 	@Override
 	public boolean isJouable(Plateau p) {
-		if(this.effet.isCiblable()){
-			//demander une cible
-			Cible c = null;
-			if(this.effet.isActivable(c))
-				return true;
-			else
-				return false;
-		}
-		else{
-			if(this.effet.isActivable(null))
-				return true;
-			else
-				return false;
-		}
+		return this.effet.isActivable();
+	}
+
+	@Override
+	public boolean checkEffet(String type) {
+		if(this.effet != null)
+			return this.effet.getType().equals(type);
+		else
+			return false;
 	}
 
 

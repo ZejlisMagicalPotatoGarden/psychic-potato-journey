@@ -6,8 +6,5 @@ public class InteractionException extends Exception {
 		super(msg);
 	}
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 3739631341220621612L;
 }

@@ -1,6 +1,5 @@
 package cartes.effets;
 
-import partie.autres.cible.Cible;
 import partie.autres.personnage.Personnage;
 
 public class Degats extends Effet {
@@ -41,14 +40,12 @@ public class Degats extends Effet {
 
 	
 	@Override
-	public void activer(Cible c) {
-		for(Personnage s : c.getCibles()){
-			s.prendreDegats(nbDegats);
-		}
+	public void activer(Personnage p) {
+		p.prendreDegats(nbDegats);
 	}
 	@Override
-	public boolean isActivable(Cible c) {
-		return !(c == null);
+	public boolean isActivable() {
+		return true;
 	}
 	@Override
 	public boolean isCiblable(){

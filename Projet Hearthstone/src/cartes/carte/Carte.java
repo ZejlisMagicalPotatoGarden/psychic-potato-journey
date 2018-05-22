@@ -1,12 +1,13 @@
 package cartes.carte;
 
+import cartes.effets.Effet;
 import partie.joueur.plateau.Plateau;
 
 public abstract class Carte {
 /**
  * Classe abstraite représentant une carte dans le jeu Hearthstone, elle possède un nom,
  * un coût et une classe à laquelle elle appartient(mage, chasseur, neutre)
- * On peut jouer une carte
+ * On peut jouer une carte et vérifier qu'elle est jouable
  * 
  * @author GRESSET Nathan
  * @author GRINWALD Louis
@@ -77,7 +78,9 @@ public abstract class Carte {
 	}
 
 	
-	public abstract void jouerCarte(Plateau p);
+	public abstract void jouerCarte(Plateau p) throws Exception;
 	public abstract boolean isJouable(Plateau p);
+	public abstract boolean checkEffet(String type);
+	public abstract Effet getEffet();
 }
 

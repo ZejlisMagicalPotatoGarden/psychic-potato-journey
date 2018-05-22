@@ -2,7 +2,8 @@ package cartes.serviteurs;
 
 import cartes.carte.Carte;
 import cartes.effets.Effet;
-import partie.autres.cible.Cible;
+import interfaceConsole.Interface;
+import interfaceConsole.InterfaceCiblage;
 import partie.autres.personnage.Personnage;
 import partie.joueur.joueur.Joueur;
 import partie.joueur.plateau.Plateau;
@@ -84,12 +85,13 @@ public class Serviteur extends Carte implements Personnage {
 	public void prendreDegats(int x) {
 		this.vie = this.vie - x;
 		System.out.printf("%s prend %d point(s) de dégats\n",super.getNom(),x);
+		
 	}
 
 	@Override
 	public void mourir(Joueur j) {
 		System.out.printf("%s est mort",super.getNom());
-		if(checkEffet("Mort") && this.effet.isActivable(null)){
+		if(checkEffet("Mort") && this.effet.isActivable()){
 			//Un effet de mort ne demande jamais a l'utilisateur une cible
 			this.effet.activer(null);
 		}
@@ -97,13 +99,14 @@ public class Serviteur extends Carte implements Personnage {
 	}
 
 	@Override
-	public void jouerCarte(Plateau p) {
+	public void jouerCarte(Plateau p) throws Exception {
 		if(checkEffet("Entrée")){
 			if(this.effet.isCiblable()){
-				//Demander une cible
-				Cible c = null;
-				if(this.effet.isActivable(c))
-					this.effet.activer(c);
+				if(this.effet.isActivable())
+				{
+					Interface ihm = new InterfaceCiblage(null,this.getEffet());
+					ihm.interagir("Choisir un personnage à cibler pour "+effet, null);
+				}
 			}
 			else
 				this.effet.activer(null);
@@ -116,7 +119,8 @@ public class Serviteur extends Carte implements Personnage {
 	}
 	
 	public void attaquer(Personnage cible) {
-		
+		cible.prendreDegats(this.attaque);
+		this.prendreDegats(cible.getAttaque());
 	}
 
 	@Override
@@ -143,7 +147,7 @@ public class Serviteur extends Carte implements Personnage {
 		if (p.isPlein())
 			return false;
 		if(checkEffet("Entrée")){
-			return(this.effet.isActivable(null));
+			return(this.effet.isActivable());
 		}
 		return true;
 	}

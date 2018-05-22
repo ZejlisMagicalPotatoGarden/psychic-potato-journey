@@ -100,8 +100,8 @@ public class Combine extends Effet {
 		effet2.activer(c);
 	}
 	@Override
-	public boolean isActivable(Cible c) {
-		return effet1.isActivable(c) && effet2.isActivable(c);
+	public boolean isActivable() {
+		return effet1.isActivable() && effet2.isActivable();
 	}
 	@Override
 	public boolean isCiblable(){

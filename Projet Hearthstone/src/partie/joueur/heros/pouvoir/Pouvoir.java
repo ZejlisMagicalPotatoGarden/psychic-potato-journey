@@ -1,7 +1,7 @@
 package partie.joueur.heros.pouvoir;
 
 import cartes.effets.Effet;
-import partie.autres.cible.Cible;
+import partie.autres.personnage.Personnage;
 
 public class Pouvoir extends Effet {
 
@@ -39,13 +39,13 @@ public class Pouvoir extends Effet {
 
 
 	@Override
-	public void activer(Cible c) {
-		this.effet.activer(c);
+	public void activer(Personnage p) {
+		this.effet.activer(p);
 		this.nbUtilisations = this.nbUtilisations - 1;
 	}
 	@Override
-	public boolean isActivable(Cible c) {
-		return (this.nbUtilisations > 0 && this.effet.isActivable(c));
+	public boolean isActivable() {
+		return (this.nbUtilisations > 0 && this.effet.isActivable());
 	}
 	@Override
 	public boolean isCiblable() {

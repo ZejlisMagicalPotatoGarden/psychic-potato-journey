@@ -1,12 +1,11 @@
 package cartes.serviteurs;
 
-import cartes.effets.Effet;
 import cartes.effets.Pioche;
 
 public class Busard_affame extends Serviteur {
 
-	public Busard_affame(String nom, int cout, String classe, int vieMax, int attaque, Effet effet) {
-		super("Busard affamé", 5, "Mage", 3, new Pioche());
+	public Busard_affame() {
+		super("Busard affamé", 5, "Chasseur", 3, 2, new Pioche("Pioche une carte","Pioche","Entrée",1));
 	}
 	
 

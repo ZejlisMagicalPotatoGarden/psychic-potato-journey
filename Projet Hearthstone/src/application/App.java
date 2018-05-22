@@ -3,14 +3,25 @@ package application;
 import java.util.ArrayList;
 
 import cartes.carte.Carte;
+import cartes.serviteurs.Archimage;
+import cartes.serviteurs.Busard_affame;
+import cartes.serviteurs.Chasse_maree_murloc;
+import cartes.serviteurs.Chef_de_raid;
+import cartes.serviteurs.Gnome_lepreux;
+import cartes.serviteurs.L_ogre_magi;
+import cartes.serviteurs.La_missiliere_temeraire;
 import cartes.serviteurs.Serviteur;
 import cartes.serviteurs.Serviteur_modele;
+import cartes.sorts.Charge;
+import cartes.sorts.Intelligence_des_arcanes;
+import cartes.sorts.Ordre_de_tuer;
 import cartes.sorts.Sort_modele;
 import console.Console;
 import interfaceConsole.Interface;
 import interfaceConsole.InterfaceAttaquer;
 import interfaceConsole.InterfaceJouerCarte;
 import interfaceConsole.InterfacePasserTour;
+import interfaceConsole.InterfacePouvoirHeroique;
 import partie.joueur.deck.Deck;
 import partie.joueur.heros.chasseur.Chasseur;
 import partie.joueur.heros.heros.Heros;
@@ -27,17 +38,17 @@ public class App {
 	//------------A mettre dans Partie.java ?-----------------
 	public static Partie initPartie(){
 		
-		Carte carte1 = new Serviteur_modele();
-		Carte carte2 = new Serviteur_modele();
-		Carte carte3 = new Serviteur_modele();
-		Carte carte4 = new Serviteur_modele();
-		Carte carte5 = new Sort_modele();
+		Carte carte1 = new Archimage();
+		Carte carte2 = new Chasse_maree_murloc();
+		Carte carte3 = new Chef_de_raid();
+		Carte carte4 = new Gnome_lepreux();
+		Carte carte5 = new Intelligence_des_arcanes();
 		
-		Carte carte6 = new Serviteur_modele();
-		Carte carte7 = new Serviteur_modele();
-		Carte carte8 = new Serviteur_modele();
-		Carte carte9 = new Serviteur_modele();
-		Carte carte10 = new Sort_modele();
+		Carte carte6 = new Busard_affame();
+		Carte carte7 = new L_ogre_magi();
+		Carte carte8 = new La_missiliere_temeraire();
+		Carte carte9 = new Charge();
+		Carte carte10 = new Ordre_de_tuer();
 		
 		Deck deck1 = new Deck();
 		Deck deck2 = new Deck();
@@ -105,11 +116,13 @@ public class App {
 
 	private static Interface initialiserInterfaces() {
 		Interface monInterface = null;
-		Interface interfaceJouerCarte = new InterfaceJouerCarte(monInterface);
-		Interface interfacePasserTour = new InterfacePasserTour(interfaceJouerCarte);
-		Interface interfaceAttaquer = new InterfaceAttaquer(interfacePasserTour);
+		Interface interfacePasserTour = new InterfacePasserTour(monInterface);
+		Interface interfacePouvoirHeroique = new InterfacePouvoirHeroique(interfacePasserTour);
+		Interface interfaceAttaquer = new InterfaceAttaquer(interfacePouvoirHeroique);
+		Interface interfaceJouerCarte = new InterfaceJouerCarte(interfaceAttaquer);
 		
-		return interfaceAttaquer;
+		
+		return interfaceJouerCarte;
 	}
 	
 	public static void afficherTout(Partie p){
@@ -137,6 +150,7 @@ public class App {
 				jAllie.getDeck().getCartes().size());
 		es.println("-------------------------------------------------------------------------------");
 		System.out.printf("Vous avez %d carte(s) en main\n",
+		
 				jAllie.getMain().getCartes().size());
 		for (Carte c : jAllie.getMain().getCartes()) {
 			System.out.printf("%s, cout : %d mana\n",
@@ -218,63 +232,5 @@ public class App {
 				}
 			}
 		}
-		
-		/*
-		while(true){
-			finDeTour = false;
-			jAllie = partie.getJoueurQuiJoue();
-			if(jAllie.equals(partie.getJoueur1()))
-				jEnnemi = partie.getJoueur2();
-			else
-				jEnnemi = partie.getJoueur1();
-			jAllie.piocher(1);
-			jAllie.setManaMax(jAllie.getManaMax() + 1);
-			jAllie.setManaDispo(jAllie.getManaMax());
-			
-			
-			//-------------Chaine de responsabilité------------
-			while(!finDeTour)
-			{
-				afficherTout(partie);
-				switch(jAllie.action()){
-					case "Attaquer":
-						es.println("Avec quel serviteur ?");
-						for (Serviteur s : jAllie.getPlateau().getServiteurs()) {
-							System.out.printf("%s, %d d'attaque, %d point(s) de vie\n",
-									s.getNom(),s.getAttaque(),s.getVie());
-						}
-						choix = es.readLine();//récupérer attaquant
-						es.println("Quel adversaire voulez vous attaquer ?");
-						System.out.printf("%s, %d points de vie \n",
-								jEnnemi.getHeros().getNom(),jEnnemi.getHeros().getVie());
-						for (Serviteur s : jEnnemi.getPlateau().getServiteurs()) {
-							System.out.printf("%s, %d d'attaque, %d point(s) de vie\n",
-									s.getNom(),s.getAttaque(),s.getVie());
-						}
-						choix = es.readLine();//récupérer cible de l'attaque
-						//Attaquer
-					case "Passer":
-						finDeTour = true;
-					case "Jouer":
-						es.println("Quelle carte ?");
-						for (Carte c : jAllie.getMain().getCartes()) {
-							if(c.isJouable(jAllie.getPlateau())){
-								System.out.printf("%s, cout : %d mana\n",
-										c.getNom(),c.getCout());
-							}
-						}
-						System.out.printf("Vous avez %d mana sur %d\n",
-								jAllie.getManaDispo(),jAllie.getManaMax());
-						choix = es.readLine();
-						
-						jAllie.getMain().jouerCarte(choix, jAllie.getPlateau());
-						jAllie.setManaDispo(jAllie.getManaDispo() - jAllie.getMain().getCarte(choix).getCout());
-				}
-			}
-			partie.setTourJ1(!partie.isTourJ1());
-			
-		}
-		*/
 	}
-
 }

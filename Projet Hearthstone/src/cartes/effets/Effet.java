@@ -1,12 +1,12 @@
 package cartes.effets;
 
-import partie.autres.cible.Cible;
+import partie.autres.personnage.Personnage;
 
 public abstract class Effet {
 /**
  * Classe abstraite représentant un effet quelconque, il possède un nom, une description et
  * un type(entrée, mort, attaque, immédiat ...)
- * Il peut etre activé sur une cible
+ * Il peut etre activé sur un personnage
  * Les sorts, les pouvoirs et parfois les erviteurs possèdent des effets
  * 
  * @author GRESSET Nathan
@@ -16,7 +16,6 @@ public abstract class Effet {
  * @see Sort
  * @see Pouvoir
  * @see Personnage
- * @see Cible
  */
 	
 	private String description;
@@ -83,8 +82,8 @@ public abstract class Effet {
 	}
 
 
-	public abstract void activer(Cible c);
-	public abstract boolean isActivable(Cible c);
+	public abstract void activer(Personnage p);
+	public abstract boolean isActivable();
 	public abstract boolean isCiblable();
 
 }

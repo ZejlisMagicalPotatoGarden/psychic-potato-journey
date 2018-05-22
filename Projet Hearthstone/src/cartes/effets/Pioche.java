@@ -1,19 +1,25 @@
 package cartes.effets;
 
-import partie.autres.cible.Cible;
-import partie.joueur.joueur.Joueur;
+import partie.autres.personnage.Personnage;
 import partie.partie.Partie;
 
 public class Pioche extends Effet {
 
 	private int nbPioche;
+	private Partie partie;
 	
 	public Pioche(String description, String nom, String type, int nbPioche) {
 		super(description, nom, type);
 		setNbPioche(nbPioche);
+		setPartie(null);
 	}
 	
-	
+	public Partie getPartie() {
+		return partie;
+	}
+	public void setPartie(Partie partie) {
+		this.partie = partie;
+	}
 	public int getNbPioche() {
 		return nbPioche;
 	}
@@ -43,12 +49,12 @@ public class Pioche extends Effet {
 
 	
 	@Override
-	public void activer(Cible c) {
-		
+	public void activer(Personnage p) {
+		partie.getJoueurQuiJoue().piocher(getNbPioche());
 	}
 	
 	@Override
-	public boolean isActivable(Cible c) {
+	public boolean isActivable() {
 		return true;
 	}
 	
@@ -56,5 +62,4 @@ public class Pioche extends Effet {
 	public boolean isCiblable(){
 		return false;
 	}
-
 }

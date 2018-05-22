@@ -1,7 +1,7 @@
 package cartes.effets;
 
 import cartes.serviteurs.Serviteur;
-import partie.autres.cible.Cible;
+import partie.autres.personnage.Personnage;
 import partie.partie.Partie;
 
 public class Invocation extends Effet {
@@ -10,17 +10,18 @@ public class Invocation extends Effet {
 	private Serviteur serviteur;
 	private String description;
 	private String nom;
-	private String type;  
+	private String type;
+	private int nbInvocs;
 	
 	
-	public Invocation(String description, String nom, String type, Serviteur serviteur, 
-			Partie partie) {
+	public Invocation(String description, String nom, String type, Serviteur serviteur, int nbInvocs) {
 		super(description, nom, type);
 		setServiteur(serviteur);
 		setDescription(description);
 		setNom(nom);
 		setType(type);
-		setPartie(partie);
+		setPartie(null);
+		setNbInvocs(nbInvocs);
 	}
 	
 	
@@ -54,8 +55,14 @@ public class Invocation extends Effet {
 	public void setPartie(Partie partie) {
 		this.partie = partie;
 	}
+	public int getNbInvocs() {
+		return nbInvocs;
+	}
+	public void setNbInvocs(int nbInvocs) {
+		this.nbInvocs = nbInvocs;
+	}
 
-
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -69,6 +76,8 @@ public class Invocation extends Effet {
 			if (other.description != null)
 				return false;
 		} else if (!description.equals(other.description))
+			return false;
+		if (nbInvocs != other.nbInvocs)
 			return false;
 		if (nom == null) {
 			if (other.nom != null)
@@ -92,19 +101,26 @@ public class Invocation extends Effet {
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
-		return "Effet_invocation [partie=" + partie + ", serviteur=" + serviteur + ", description=" + description
-				+ ", nom=" + nom + ", type=" + type + "]";
+		return "Invocation [serviteur=" + serviteur + ", description=" + description + ", nom=" + nom + ", type=" + type
+				+ ", nbInvocs=" + nbInvocs + "]";
 	}
 
 
 	@Override
-	public void activer(Cible c) {
-		this.serviteur.invoquer(this.partie.getJoueurQuiJoue().getPlateau());
+	public void activer(Personnage p) {
+		int i = 0;
+		
+		while(!this.partie.getJoueurQuiJoue().getPlateau().isPlein() && i < nbInvocs)
+		{
+			this.serviteur.invoquer(this.partie.getJoueurQuiJoue().getPlateau());
+			i++;
+		}
 	}
 	@Override
-	public boolean isActivable(Cible c) {
+	public boolean isActivable() {
 		return !(this.partie.getJoueurQuiJoue().getPlateau().isPlein());
 	}
 	@Override
