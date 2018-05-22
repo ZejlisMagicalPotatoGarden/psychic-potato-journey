@@ -12,6 +12,7 @@ public class Chef_de_raid extends Serviteur {
 	 * 
 	 * @see serviteurs
 	 * @see effets
+	 * @see carte
 	 * 
 	 * @param nom
 	 * @param cout

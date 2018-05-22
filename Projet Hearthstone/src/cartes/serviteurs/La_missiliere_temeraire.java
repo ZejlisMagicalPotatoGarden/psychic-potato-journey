@@ -12,6 +12,7 @@ public class La_missiliere_temeraire extends Serviteur {
 	 * 
 	 * @see serviteurs
 	 * @see effets
+	 * @see carte
 	 * 
 	 * @param nom
 	 * @param cout

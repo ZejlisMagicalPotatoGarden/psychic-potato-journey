@@ -11,6 +11,7 @@ public class Serviteur_modele extends Serviteur {
 	 * 
 	 * @see serviteurs
 	 * @see effets
+	 * @see carte
 	 */
 
 	public Serviteur_modele() {

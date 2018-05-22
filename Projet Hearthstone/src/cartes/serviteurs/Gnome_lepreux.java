@@ -13,6 +13,7 @@ public class Gnome_lepreux extends Serviteur {
  * 
  * @see serviteurs
  * @see effets
+ * @see carte
  * 
  * @param nom
  * @param cout

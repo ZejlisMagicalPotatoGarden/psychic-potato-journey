@@ -3,6 +3,9 @@ package cartes.effets;
 import partie.autres.cible.Cible;
 
 public class Combine extends Effet {
+	/**
+	 * 
+	 */
 
 	private String nom;
 	private String description;

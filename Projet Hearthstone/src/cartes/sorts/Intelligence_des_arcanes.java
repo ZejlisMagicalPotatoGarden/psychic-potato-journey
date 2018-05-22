@@ -6,6 +6,7 @@ import cartes.effets.Pioche;
 public class Intelligence_des_arcanes extends Sort {
 	/**
 	 * Classe représentant le sort intelligence des arcanes, permet de piocher 2 cartes, c'est un effet Pioche.
+	 * Spécifique au mage.
 	 * 
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis

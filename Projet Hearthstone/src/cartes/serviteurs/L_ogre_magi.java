@@ -12,6 +12,7 @@ public class L_ogre_magi extends Serviteur {
 	 * 
 	 * @see serviteurs
 	 * @see effets
+	 * @see carte
 	 * 
 	 * @param nom
 	 * @param cout

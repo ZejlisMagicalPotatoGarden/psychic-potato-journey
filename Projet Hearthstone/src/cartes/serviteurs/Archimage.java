@@ -12,6 +12,7 @@ public class Archimage extends Serviteur {
 	 * 
 	 * @see serviteurs
 	 * @see effets
+	 * @see carte
 	 */
 
 	public Archimage(String nom, int cout, String classe, int vieMax, int attaque, Effet effet) {
