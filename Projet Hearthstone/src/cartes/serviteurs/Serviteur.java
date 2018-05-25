@@ -17,10 +17,10 @@ public class Serviteur extends Carte implements Personnage {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see serviteurs
-	 * @see effets
-	 * @see joueur
-	 * @see carte
+	 * @see Effet
+	 * @see Joueur
+	 * @see Carte
+	 * @see Personnage
 	 */
 	
 	private int vieMax;

@@ -2,6 +2,7 @@ package cartes.sorts;
 
 import cartes.carte.Carte;
 import cartes.effets.Effet;
+import cartes.serviteurs.Serviteur;
 import partie.joueur.plateau.Plateau;
 
 public class Sort extends Carte {
@@ -13,10 +14,10 @@ public class Sort extends Carte {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see carte
-	 * @see joueur
-	 * @see effets
-	 * @see sorts
+	 * @see Carte
+	 * @see Effet
+	 * @see Serviteur
+	 * @see Joueur
 	 */
 
 	private String nom;

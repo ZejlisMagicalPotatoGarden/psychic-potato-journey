@@ -9,9 +9,8 @@ public class Serviteur_modele extends Serviteur {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see serviteurs
-	 * @see effets
-	 * @see carte
+	 * @see Effet
+	 * @see Carte
 	 */
 
 	public Serviteur_modele() {

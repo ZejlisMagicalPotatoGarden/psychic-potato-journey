@@ -5,6 +5,15 @@ import java.util.ArrayList;
 import cartes.serviteurs.Serviteur;
 
 public class Plateau {
+	/**
+	 * Classe représentant un plateau de jeu, c'est là que la partie se déroule, un plateau est un tableau de serviteurs
+	 * 
+	 * @author GRESSET Nathan
+	 * @author GRINWALD Louis
+	 * 
+	 * @see Plateau
+	 * @see Serviteur
+	 */
 
 	public final static int NB_SERVITEURS_MAX = 7;
 	

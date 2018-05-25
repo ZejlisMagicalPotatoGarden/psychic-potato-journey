@@ -11,7 +11,7 @@ public class Degats extends Effet {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see effets
+	 * @see Effet
 	 */
 
 	private int nbDegats;

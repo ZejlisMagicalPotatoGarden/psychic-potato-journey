@@ -11,9 +11,9 @@ public class Pioche extends Effet {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see effets
-	 * @see joueurs
-	 * @see decks
+	 * @see Effet
+	 * @see Joueur
+	 * @see Deck
 	 */
 
 	private int nbPioche;

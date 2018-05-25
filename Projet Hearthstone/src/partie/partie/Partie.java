@@ -4,6 +4,16 @@ import cartes.serviteurs.Serviteur;
 import partie.joueur.joueur.Joueur;
 
 public class Partie {
+	/**
+	 * Classe représentant une partie, elle est composée de deux joueurs qui s'affrontent,
+	 * ainsi qu'un booléen permettant de savoir qui à la main.
+	 * 
+	 * @author GRESSET Nathan
+	 * @author GRINWALD Louis
+	 * 
+	 * @see joueur
+	 * @see partie
+	 */
 
 	private Joueur joueur1;
 	private Joueur joueur2;

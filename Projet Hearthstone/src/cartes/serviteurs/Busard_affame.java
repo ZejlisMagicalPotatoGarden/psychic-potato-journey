@@ -11,9 +11,9 @@ public class Busard_affame extends Serviteur {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see serviteurs
-	 * @see effets
-	 * @see carte
+	 * @see Serviteur
+	 * @see Effet
+	 * @see Carte
 	 */
 
 	public Busard_affame(Partie partie) {

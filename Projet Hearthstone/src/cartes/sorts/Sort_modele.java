@@ -1,6 +1,7 @@
 package cartes.sorts;
 
 import cartes.effets.Effet_modele;
+import cartes.serviteurs.Serviteur;
 
 
 public class Sort_modele extends Sort {
@@ -10,8 +11,9 @@ public class Sort_modele extends Sort {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see sorts
-	 * @see carte
+	 * @see Effet
+	 * @see Serviteur
+	 * @see Sort
 	 */
 
 	public Sort_modele() {

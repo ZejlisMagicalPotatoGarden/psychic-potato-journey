@@ -8,6 +8,9 @@ import partie.joueur.joueur.Joueur;
 import partie.partie.Partie;
 
 public class InterfaceChoixServiteurAllie extends Interface {
+	/**
+	 * Classe représentant le choix du serviteur qui va attaquer, elle a besoin d'un serviteur.
+	 */
 
 	private Serviteur serviteur;
 	

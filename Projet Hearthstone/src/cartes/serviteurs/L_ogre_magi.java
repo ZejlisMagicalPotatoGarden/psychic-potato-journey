@@ -9,16 +9,10 @@ public class L_ogre_magi extends Serviteur {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see serviteurs
-	 * @see effets
-	 * @see carte
+	 * @see Serviteur
+	 * @see Effet
+	 * @see Carte
 	 * 
-	 * @param nom
-	 * @param cout
-	 * @param classe
-	 * @param vieMax
-	 * @param attaque
-	 * @param effet
 	 */
 
 	public L_ogre_magi() {

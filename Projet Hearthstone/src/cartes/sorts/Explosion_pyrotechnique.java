@@ -10,9 +10,9 @@ public class Explosion_pyrotechnique extends Sort {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see carte
-	 * @see effets
-	 * @see sorts
+	 * @see Carte
+	 * @see Effet
+	 * @see Sort
 	 */
 
 	public Explosion_pyrotechnique() {

@@ -10,8 +10,7 @@ public class Mage extends Heros {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see mage
-	 * @see heros
+	 * @see Mage
 	 */
 
 	public Mage(){
