@@ -1,6 +1,7 @@
 package cartes.sorts;
 
 import cartes.effets.Pioche;
+import cartes.serviteurs.Serviteur;
 
 public class Intelligence_des_arcanes extends Sort {
 	/**
@@ -10,10 +11,10 @@ public class Intelligence_des_arcanes extends Sort {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see carte
-	 * @see deck
-	 * @see sorts
-	 * @see effets
+	 * @see Carte
+	 * @see Effet
+	 * @see Serviteur
+	 * @see Sort
 	 */
 
 	public Intelligence_des_arcanes() {

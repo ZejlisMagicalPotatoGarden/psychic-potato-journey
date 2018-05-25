@@ -10,14 +10,10 @@ public class Marque_du_chasseur extends Sort {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see effets
-	 * @see carte
-	 * @see sorts
+	 * @see Effet
+	 * @see Carte
+	 * @see Sort
 	 * 
-	 * @param nom
-	 * @param cout
-	 * @param effet
-	 * @param classe
 	 */
 
 	public Marque_du_chasseur() {

@@ -5,6 +5,17 @@ import partie.autres.personnage.Personnage;
 import partie.partie.Partie;
 
 public class InterfaceChoixEnnemiAttaque extends Interface {
+	/**
+	 * Classe représentant le choix d'un ennemi à attaquer, elle est composé du personnage à attaquer et du
+	 * serviteur attaquant.
+	 * 
+	 * @author GRESSET Nathan
+	 * @author GRINWALD Louis
+	 * 
+	 * @see Interface
+	 * @see Personnage
+	 * @see Serviteur
+	 */
 
 	private Personnage personnage;
 	private Serviteur attaquant;

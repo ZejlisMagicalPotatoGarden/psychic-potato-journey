@@ -5,6 +5,15 @@ import partie.autres.personnage.Personnage;
 import partie.partie.Partie;
 
 public class InterfaceChoixCible extends Interface {
+	/**
+	 * Classe représentant le choix d'un personnage à cibler, elle est composée d'un effet
+	 * et d'une cible.
+	 * 
+	 * @author GRESSET Nathan
+	 * @author GRINWALD Louis
+	 * 
+	 * @see Interface
+	 */
 	
 	private Effet effet;
 	private Personnage cible;

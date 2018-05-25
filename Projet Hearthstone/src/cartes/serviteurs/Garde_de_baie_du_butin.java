@@ -9,16 +9,10 @@ public class Garde_de_baie_du_butin extends Serviteur {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see serviteurs
-	 * @see effets
-	 * @see carte
+	 * @see Serviteur
+	 * @see Effet
+	 * @see Carte
 	 * 
-	 * @param nom
-	 * @param cout
-	 * @param classe
-	 * @param vieMax
-	 * @param attaque
-	 * @param effet
 	 */
 
 	public Garde_de_baie_du_butin() {

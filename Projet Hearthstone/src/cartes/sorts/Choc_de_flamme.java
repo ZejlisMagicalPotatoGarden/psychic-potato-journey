@@ -10,9 +10,9 @@ public class Choc_de_flamme extends Sort {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see effets
-	 * @see carte
-	 * @see sorts
+	 * @see Carte
+	 * @see Effet
+	 * @see Sort
 	 */
 
 	public Choc_de_flamme() {

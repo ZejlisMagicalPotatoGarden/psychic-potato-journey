@@ -11,10 +11,9 @@ public class Provocation extends Effet {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see effets
-	 * @see serviteurs
+	 * @see Effet
+	 * @see Serviteur
 	 *
-	 * 
 	 */
 	
 	public Provocation() {

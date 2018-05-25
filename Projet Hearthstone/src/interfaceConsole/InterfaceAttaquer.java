@@ -8,6 +8,15 @@ import partie.joueur.joueur.Joueur;
 import partie.partie.Partie;
 
 public class InterfaceAttaquer extends Interface {
+	/**
+	 * Classe représentant l'interface d'attaque, permet de choisir d'attaquer. 
+	 * @author GRESSET Nathan
+	 * @author GRINWALD Louis
+	 * 
+	 * @see Interface
+	 * 
+	 * @param ihm interface
+	 */
 
 	public InterfaceAttaquer(Interface ihm) {
 		super(ihm);

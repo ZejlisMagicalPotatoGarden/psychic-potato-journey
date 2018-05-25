@@ -12,10 +12,10 @@ public class Image_mirroir extends Sort {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see carte
-	 * @see effets
-	 * @see serviteurs
-	 * @see sorts
+	 * @see Carte
+	 * @see Effet
+	 * @see Serviteur
+	 * @see Sort
 	 */
 
 	public Image_mirroir() {

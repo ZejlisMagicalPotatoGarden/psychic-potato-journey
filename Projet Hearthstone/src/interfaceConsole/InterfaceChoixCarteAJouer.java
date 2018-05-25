@@ -5,6 +5,14 @@ import partie.joueur.joueur.Joueur;
 import partie.partie.Partie;
 
 public class InterfaceChoixCarteAJouer extends Interface {
+	/**
+	 * Classe représentant le choix d'une carte à jouer.
+	 * 
+	 * @author GRESSET Nathan
+	 * @author GRINWALD Louis
+	 * 
+	 * @see Interface
+	 */
 
 	private Carte carte;
 

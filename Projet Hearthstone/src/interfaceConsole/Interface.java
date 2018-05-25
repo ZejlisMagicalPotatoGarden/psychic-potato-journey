@@ -4,6 +4,15 @@ import exceptions.InteractionException;
 import partie.partie.Partie;
 
 public abstract class Interface {
+	/**
+	 * Classe abstraite représentant une interface graphique, dès qu'un choix devra être fait on passera par une interface
+	 * qui héritera de cette classe abstraite.
+	 * 
+	 *  @author GRESSET Nathan
+	 *  @author GRINWALD Louis
+	 *  
+	 *  @see Interface
+	 */
 
 	private	Interface	suivant = null;
 	

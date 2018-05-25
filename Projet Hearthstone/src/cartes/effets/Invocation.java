@@ -14,9 +14,9 @@ public class Invocation extends Effet {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see effets
-	 * @see sort
-	 * @see serviteurs
+	 * @see Effet
+	 * @see Sort
+	 * @see Serviteur
 	 */
 
 	private Partie partie;

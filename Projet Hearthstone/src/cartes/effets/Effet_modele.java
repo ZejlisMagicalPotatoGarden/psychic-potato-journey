@@ -9,7 +9,7 @@ public class Effet_modele extends Effet {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see effets
+	 * @see Effet
 	 */
 
 	public Effet_modele() {

@@ -10,9 +10,9 @@ public class Attaque_mentale extends Sort {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see carte
-	 * @see sorts
-	 * @see effets
+	 * @see Carte
+	 * @see Sort
+	 * @see Effet
 	 */
 
 	public Attaque_mentale() {

@@ -9,9 +9,9 @@ public class Archimage extends Serviteur {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see serviteurs
-	 * @see effets
-	 * @see carte
+	 * @see Serviteur
+	 * @see Effet
+	 * @see Carte
 	 */
 
 	public Archimage() {

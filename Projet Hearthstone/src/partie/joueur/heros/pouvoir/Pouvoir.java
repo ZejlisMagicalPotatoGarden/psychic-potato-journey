@@ -4,6 +4,9 @@ import cartes.effets.Effet;
 import partie.autres.personnage.Personnage;
 
 public class Pouvoir extends Effet {
+	/**
+	 * Classe représentant un pouvoir
+	 */
 
 	private int nbUtilisations;
 	private Effet effet;

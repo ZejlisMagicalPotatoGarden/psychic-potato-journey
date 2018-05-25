@@ -15,6 +15,8 @@ public interface Personnage {
  * @see Cible
  * @see Serviteur
  * @see Heros
+ * 
+ * @param x Nombre de dégâts
  */
 	public abstract void prendreDegats(int x);
 	public abstract void mourir(Joueur j);

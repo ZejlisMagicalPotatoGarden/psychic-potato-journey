@@ -10,16 +10,9 @@ public class Gnome_lepreux extends Serviteur {
  * @author GRESSET Nathan
  * @author GRINWALD Louis
  * 
- * @see serviteurs
- * @see effets
- * @see carte
- * 
- * @param nom
- * @param cout
- * @param classe
- * @param vieMax
- * @param attaque
- * @param effet
+ * @see Serviteur
+ * @see Effet
+ * @see Carte
  */
 
 	public Gnome_lepreux() {
