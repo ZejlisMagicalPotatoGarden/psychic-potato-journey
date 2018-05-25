@@ -1,6 +1,7 @@
 package cartes.sorts;
 
 import cartes.effets.Pioche;
+import partie.partie.Partie;
 
 public class Intelligence_des_arcanes extends Sort {
 	/**
@@ -16,8 +17,8 @@ public class Intelligence_des_arcanes extends Sort {
 	 * @see effets
 	 */
 
-	public Intelligence_des_arcanes() {
-		super("Intelligence des arcanes", 2, new Pioche("Pioche 2 cartes","Intelligence des arcanes","Immédiat", 2), "Mage");
+	public Intelligence_des_arcanes(Partie partie) {
+		super("Intelligence des arcanes", 2, new Pioche("Pioche 2 cartes","Intelligence des arcanes","Immédiat", 2, partie), "Mage");
 	}
 
 }

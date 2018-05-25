@@ -21,6 +21,8 @@ public class InterfacePouvoirHeroique extends Interface {
 		//Exception
 		if(p.getJoueurQuiJoue().getManaDispo() < p.getJoueurQuiJoue().getHeros().getPouvoir().getCout())
 			System.out.println("Vous n'avez pas assez de mana");
+		if(!p.getJoueurQuiJoue().getHeros().getPouvoir().isActivable())
+			System.out.println("Pouvoir déja utilisé");
 		
 		if(pouvoir.getEffet().isCiblable()){
 			if(pouvoir.getEffet().isActivable())
@@ -31,5 +33,7 @@ public class InterfacePouvoirHeroique extends Interface {
 		}
 		else
 			pouvoir.getEffet().activer(null);
-		}
+		p.getJoueurQuiJoue().setManaDispo(p.getJoueurQuiJoue().getManaDispo() - p.getJoueurQuiJoue().getHeros().getPouvoir().getCout());
+		p.checkMorts();
+	}
 }

@@ -1,6 +1,7 @@
 package partie.joueur.deck;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import cartes.carte.Carte;
 import partie.joueur.main.Main;
@@ -16,6 +17,8 @@ public class Deck {
 	 * @see decks
 	 */
 
+	public final static int NB_MAX_CARTES = 15;
+	
 	private ArrayList<Carte> cartes;
 
 	public Deck() {
@@ -65,4 +68,18 @@ public class Deck {
 		}
 	}
 	
+	public void melanger(){
+		Random random = new Random();
+		Deck deckMelange = new Deck();
+		int rand, i = 1;
+
+		while(i < NB_MAX_CARTES){
+			rand = random.nextInt(NB_MAX_CARTES - i);
+			deckMelange.addCarte(this.cartes.get(rand));
+			cartes.remove(rand);
+			i++;
+		}
+		deckMelange.addCarte(this.cartes.get(0));
+		setCartes(deckMelange.cartes);
+	}
 }

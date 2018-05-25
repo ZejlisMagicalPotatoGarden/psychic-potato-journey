@@ -27,14 +27,14 @@ public class Invocation extends Effet {
 	private int nbInvocs;
 	
 	
-	public Invocation(String description, String nom, String type, Serviteur serviteur, int nbInvocs) {
+	public Invocation(String description, String nom, String type, Serviteur serviteur, int nbInvocs, Partie partie) {
 		super(description, nom, type);
 		setServiteur(serviteur);
 		setDescription(description);
 		setNom(nom);
 		setType(type);
-		setPartie(null);
 		setNbInvocs(nbInvocs);
+		setPartie(partie);
 	}
 	
 	

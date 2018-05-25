@@ -23,5 +23,6 @@ public class InterfaceChoixCible extends Interface {
 	@Override
 	public void executerInteraction(Partie p){
 		effet.activer(cible);
+		p.checkMorts();
 	}
 }

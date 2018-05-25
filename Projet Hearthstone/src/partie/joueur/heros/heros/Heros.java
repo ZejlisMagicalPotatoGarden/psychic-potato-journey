@@ -104,4 +104,9 @@ public class Heros implements Personnage {
 		return 0;
 	}
 
+	@Override
+	public boolean isMort() {
+		return vie <= 0;
+	}
+
 }

@@ -5,15 +5,26 @@ import java.util.ArrayList;
 import cartes.carte.Carte;
 import cartes.serviteurs.Archimage;
 import cartes.serviteurs.Busard_affame;
+import cartes.serviteurs.Champion_de_Hurlevent;
 import cartes.serviteurs.Chasse_maree_murloc;
 import cartes.serviteurs.Chef_de_raid;
+import cartes.serviteurs.Garde_de_baie_du_butin;
 import cartes.serviteurs.Gnome_lepreux;
+import cartes.serviteurs.Golem_des_moissons;
 import cartes.serviteurs.L_ogre_magi;
 import cartes.serviteurs.La_missiliere_temeraire;
 import cartes.serviteurs.Serviteur;
+import cartes.sorts.Attaque_mentale;
 import cartes.sorts.Charge;
+import cartes.sorts.Choc_de_flamme;
+import cartes.sorts.Eclair_de_givre;
+import cartes.sorts.Explosion_pyrotechnique;
+import cartes.sorts.Image_mirroir;
 import cartes.sorts.Intelligence_des_arcanes;
+import cartes.sorts.Lachez_les_chiens;
+import cartes.sorts.Marque_du_chasseur;
 import cartes.sorts.Ordre_de_tuer;
+import cartes.sorts.Tir_des_arcanes;
 import console.Console;
 import interfaceConsole.Interface;
 import interfaceConsole.InterfaceAttaquer;
@@ -36,52 +47,56 @@ public class App {
 	//------------A mettre dans Partie.java ?-----------------
 	public static Partie initPartie(){
 		
-		Carte carte1 = new Archimage();
-		Carte carte2 = new Chasse_maree_murloc();
-		Carte carte3 = new Chef_de_raid();
-		Carte carte4 = new Gnome_lepreux();
-		Carte carte5 = new Intelligence_des_arcanes();
-		
-		Carte carte6 = new Busard_affame();
-		Carte carte7 = new L_ogre_magi();
-		Carte carte8 = new La_missiliere_temeraire();
-		Carte carte9 = new Charge();
-		Carte carte10 = new Ordre_de_tuer();
-		
+		//Création de la partie
 		Deck deck1 = new Deck();
 		Deck deck2 = new Deck();
 		Main main1 = new Main();
 		Main main2 = new Main();
 		Plateau plateau1 = new Plateau();
 		Plateau plateau2 = new Plateau();
-		Heros heros1 = new Chasseur();
-		Heros heros2 = new Mage();
-
-		deck1.addCarte(carte1);
-		deck1.addCarte(carte2);
-		deck1.addCarte(carte3);
-		deck1.addCarte(carte4);
-		deck1.addCarte(carte5);
-		deck1.addCarte(carte6);
-		deck1.addCarte(carte7);
-		deck1.addCarte(carte8);
-		deck1.addCarte(carte9);
-		deck1.addCarte(carte10);
+		Heros heros1 = new Mage();
+		Heros heros2 = new Chasseur();
 		
-		deck2.addCarte(carte1);
-		deck2.addCarte(carte2);
-		deck2.addCarte(carte3);
-		deck2.addCarte(carte4);
-		deck2.addCarte(carte5);
-		deck2.addCarte(carte6);
-		deck2.addCarte(carte7);
-		deck2.addCarte(carte8);
-		deck2.addCarte(carte9);
-		deck2.addCarte(carte10);
-		
-		Joueur joueur2 = new Joueur(main1,deck1,plateau1,heros1);
-		Joueur joueur1 = new Joueur(main2,deck2,plateau2,heros2);
+		Joueur joueur1 = new Joueur(main1,deck1,plateau1,heros1);
+		Joueur joueur2 = new Joueur(main2,deck2,plateau2,heros2);
 		Partie partie = new Partie(joueur1,joueur2);
+		
+		
+		//Remplissage des decks et création des cartes
+		deck1.addCarte(new Explosion_pyrotechnique());
+		deck1.addCarte(new Intelligence_des_arcanes(partie));
+		deck1.addCarte(new Choc_de_flamme());
+		deck1.addCarte(new Eclair_de_givre());
+		deck1.addCarte(new Image_mirroir(partie));
+		deck1.addCarte(new Golem_des_moissons(partie));
+		deck1.addCarte(new Champion_de_Hurlevent());
+		deck1.addCarte(new Archimage());
+		deck1.addCarte(new Gnome_lepreux());
+		deck1.addCarte(new L_ogre_magi());
+		deck1.addCarte(new La_missiliere_temeraire());
+		deck1.addCarte(new Chasse_maree_murloc(partie));
+		deck1.addCarte(new Chasse_maree_murloc(partie));
+		deck1.addCarte(new Garde_de_baie_du_butin());
+		deck1.addCarte(new Attaque_mentale());
+		
+		deck2.addCarte(new Ordre_de_tuer());
+		deck2.addCarte(new Lachez_les_chiens(partie));
+		deck2.addCarte(new Tir_des_arcanes());
+		deck2.addCarte(new Marque_du_chasseur());
+		deck2.addCarte(new Busard_affame(partie));
+		deck2.addCarte(new La_missiliere_temeraire());
+		deck2.addCarte(new Garde_de_baie_du_butin());
+		deck2.addCarte(new L_ogre_magi());
+		deck2.addCarte(new Chef_de_raid());
+		deck2.addCarte(new Charge());
+		deck2.addCarte(new Gnome_lepreux());
+		deck2.addCarte(new Chasse_maree_murloc(partie));
+		deck2.addCarte(new Champion_de_Hurlevent());
+		deck2.addCarte(new Golem_des_moissons(partie));
+		deck2.addCarte(new Chasse_maree_murloc(partie));
+		
+		deck1.melanger();
+		deck2.melanger();
 		
 		partie.setTourJ1(true);
 		joueur1.piocher(4);
@@ -217,6 +232,12 @@ public class App {
 			jAllie.piocher(1);
 			jAllie.setManaMax(jAllie.getManaMax() + 1);
 			jAllie.setManaDispo(jAllie.getManaMax());
+			for (Serviteur s : jAllie.getPlateau().getServiteurs()) {
+				s.setNbAttaques(1);
+			}
+			for (Serviteur s : jEnnemi.getPlateau().getServiteurs()) {
+				s.setNbAttaques(1);
+			}
 			
 			while (!choix.equals(new InterfacePasserTour(null).getDescription())) {
 				afficherTout(partie);

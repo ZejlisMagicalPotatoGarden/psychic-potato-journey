@@ -1,5 +1,6 @@
 package partie.partie;
 
+import cartes.serviteurs.Serviteur;
 import partie.joueur.joueur.Joueur;
 
 public class Partie {
@@ -77,5 +78,19 @@ public class Partie {
 			return this.joueur2;
 		else
 			return this.joueur1;
+	}
+	public void checkMorts(){
+		if(joueur1.getHeros().isMort())
+			joueur1.getHeros().mourir(joueur2);
+		if(joueur2.getHeros().isMort())
+			joueur2.getHeros().mourir(joueur1);
+		for (Serviteur s : joueur1.getPlateau().getServiteurs()) {
+			if(s.isMort())
+				s.mourir(joueur1);
+		}
+		for (Serviteur s : joueur2.getPlateau().getServiteurs()) {
+			if(s.isMort())
+				s.mourir(joueur2);
+		}
 	}
 }

@@ -26,6 +26,7 @@ public class Serviteur extends Carte implements Personnage {
 	private int vieMax;
 	private int vie;
 	private int attaque;
+	private int nbAttaques;
 	private Effet effet;
 	
 
@@ -36,6 +37,10 @@ public class Serviteur extends Carte implements Personnage {
 		setVie(vieMax);
 		setAttaque(attaque);
 		setEffet(effet);
+		if(checkEffet("Charge"))
+			setNbAttaques(1);
+		else
+			setNbAttaques(0);
 	}
 
 	
@@ -60,6 +65,12 @@ public class Serviteur extends Carte implements Personnage {
 	public Effet getEffet() {
 		return effet;
 	}
+	public int getNbAttaques() {
+		return nbAttaques;
+	}
+	public void setNbAttaques(int nbAttaques) {
+		this.nbAttaques = nbAttaques;
+	}
 	public void setEffet(Effet effet) {
 		this.effet = effet;
 	}
@@ -81,24 +92,27 @@ public class Serviteur extends Carte implements Personnage {
 				return false;
 		} else if (!effet.equals(other.effet))
 			return false;
+		if (nbAttaques != other.nbAttaques)
+			return false;
 		if (vie != other.vie)
 			return false;
 		if (vieMax != other.vieMax)
 			return false;
 		return true;
 	}
-	
+
+
 	@Override
 	public String toString() {
-		return "Serviteur [vieMax=" + vieMax + ", vie=" + vie + ", attaque=" + attaque + ", effet=" + effet + "]";
+		return "Serviteur [vieMax=" + vieMax + ", vie=" + vie + ", attaque=" + attaque + ", nbAttaques=" + nbAttaques
+				+ ", effet=" + effet + "]";
 	}
 
 
 	@Override
 	public void prendreDegats(int x) {
 		this.vie = this.vie - x;
-		System.out.printf("%s prend %d point(s) de dégats\n",super.getNom(),x);
-		
+		System.out.printf("%s prend %d point(s) de dégats\n",super.getNom(),x);	
 	}
 
 	@Override
@@ -167,5 +181,9 @@ public class Serviteur extends Carte implements Personnage {
 
 	public boolean isMort(){
 		return(this.vie <= 0);
+	}
+	
+	public boolean isCapableAttaquer(){
+		return getNbAttaques() > 0;
 	}
 }

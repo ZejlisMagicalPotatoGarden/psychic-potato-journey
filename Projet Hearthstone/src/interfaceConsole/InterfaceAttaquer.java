@@ -29,15 +29,18 @@ public class InterfaceAttaquer extends Interface {
 		
 		if(jQuiJoue.getPlateau().getServiteurs().isEmpty())
 			//Exception
-			System.out.println("Vous n'avez pas de serviteurs capables d'attaquer");
+			System.out.println("Vous n'avez pas de serviteurs");
 		else
 		{
 			System.out.println("Avec quel serviteur ?");
 			for(Serviteur s : jQuiJoue.getPlateau().getServiteurs())
 			{
-				ihm = new InterfaceChoixServiteurAllie(ihm, s);
+				if(s.isCapableAttaquer())
+					ihm = new InterfaceChoixServiteurAllie(ihm, s);
 			}
 		}
+		if(ihm == null)
+			System.out.println("Vous n'avez pas de serviteurs capables d'attaquer");
 		
 		ArrayList<String>	menu = new ArrayList<String>();
 		Interface i = ihm;

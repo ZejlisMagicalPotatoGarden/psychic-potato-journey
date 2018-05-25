@@ -1,6 +1,7 @@
 package cartes.serviteurs;
 
 import cartes.effets.Pioche;
+import partie.partie.Partie;
 
 public class Busard_affame extends Serviteur {
 	/**
@@ -15,8 +16,8 @@ public class Busard_affame extends Serviteur {
 	 * @see carte
 	 */
 
-	public Busard_affame() {
-		super("Busard affamé", 5, "Chasseur", 3, 2, new Pioche("Pioche une carte","Pioche","Entrée",1));
+	public Busard_affame(Partie partie) {
+		super("Busard affamé", 5, "Chasseur", 3, 2, new Pioche("Pioche une carte","Pioche","Entrée",1, partie));
 	}
 	
 

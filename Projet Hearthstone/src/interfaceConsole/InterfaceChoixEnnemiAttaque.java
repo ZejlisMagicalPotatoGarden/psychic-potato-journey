@@ -36,5 +36,6 @@ public class InterfaceChoixEnnemiAttaque extends Interface {
 	@Override
 	public void executerInteraction(Partie p) throws Exception {
 		attaquant.attaquer(personnage);
+		p.checkMorts();
 	}
 }

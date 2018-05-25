@@ -19,10 +19,10 @@ public class Pioche extends Effet {
 	private int nbPioche;
 	private Partie partie;
 	
-	public Pioche(String description, String nom, String type, int nbPioche) {
+	public Pioche(String description, String nom, String type, int nbPioche, Partie partie) {
 		super(description, nom, type);
 		setNbPioche(nbPioche);
-		setPartie(null);
+		setPartie(partie);
 	}
 	
 	public Partie getPartie() {
