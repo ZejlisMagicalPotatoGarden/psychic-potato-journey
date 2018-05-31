@@ -13,7 +13,6 @@ public class Joueur {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see joueur
 	 */
 
 	private Main main;
@@ -122,7 +121,7 @@ public class Joueur {
 		
 		return choix;
 	}
-	public void piocher(int nbPioche){
+	public void piocher(int nbPioche) throws Exception{
 		this.deck.piocher(nbPioche, this.main);
 	}
 	

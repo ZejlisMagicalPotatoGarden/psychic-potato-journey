@@ -10,8 +10,6 @@ public class L_ogre_magi extends Serviteur {
 	 * @author GRINWALD Louis
 	 * 
 	 * @see Serviteur
-	 * @see Effet
-	 * @see Carte
 	 * 
 	 */
 

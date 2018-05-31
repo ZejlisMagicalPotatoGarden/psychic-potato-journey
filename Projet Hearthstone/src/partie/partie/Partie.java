@@ -13,8 +13,6 @@ public class Partie {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see joueur
-	 * @see partie
 	 */
 
 	private Joueur joueur1;
@@ -91,7 +89,7 @@ public class Partie {
 		else
 			return this.joueur1;
 	}
-	public void checkMorts(){
+	public void checkMorts() throws Exception{
 		if(joueur1.getHeros().isMort())
 			joueur1.getHeros().mourir(joueur2);
 		if(joueur2.getHeros().isMort())

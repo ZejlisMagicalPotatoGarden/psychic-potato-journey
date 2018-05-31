@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import cartes.serviteurs.Serviteur;
 import console.Console;
+import exceptions.HeartstoneException;
 import partie.joueur.joueur.Joueur;
 import partie.partie.Partie;
 
@@ -37,8 +38,7 @@ public class InterfaceAttaquer extends Interface {
 		Joueur jQuiJoue = p.getJoueurQuiJoue();
 		
 		if(jQuiJoue.getPlateau().getServiteurs().isEmpty())
-			//Exception
-			System.out.println("Vous n'avez pas de serviteurs");
+			throw new HeartstoneException("Vous n'avez pas de serviteurs");
 		else
 		{
 			System.out.println("Avec quel serviteur ?");
@@ -49,7 +49,7 @@ public class InterfaceAttaquer extends Interface {
 			}
 		}
 		if(ihm == null)
-			System.out.println("Vous n'avez pas de serviteurs capables d'attaquer");
+			throw new HeartstoneException("Vous n'avez pas de serviteurs capables d'attaquer");
 		
 		ArrayList<String>	menu = new ArrayList<String>();
 		Interface i = ihm;
@@ -73,7 +73,7 @@ public class InterfaceAttaquer extends Interface {
 			ihm.interagir(choixEnChaine, p);
 		}
 		catch (Exception e) {
-			e.printStackTrace();
+			e.getMessage();
 		}
 	}
 

@@ -11,8 +11,6 @@ public class Champion_de_Hurlevent extends Serviteur {
 	 * @author GRINWALD Louis
 	 * 
 	 * @see Serviteur
-	 * @see Effet
-	 * @see Carte
 	 * 
 	 */
 

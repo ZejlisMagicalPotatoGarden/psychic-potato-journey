@@ -10,8 +10,7 @@ public class Tir_des_arcanes extends Sort {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see Effet
-	 * @see Carte
+	 * @see Sort
 	 * 
 	 */
 

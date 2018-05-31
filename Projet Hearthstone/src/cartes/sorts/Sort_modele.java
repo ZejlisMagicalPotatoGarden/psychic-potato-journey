@@ -11,8 +11,6 @@ public class Sort_modele extends Sort {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see Effet
-	 * @see Serviteur
 	 * @see Sort
 	 */
 

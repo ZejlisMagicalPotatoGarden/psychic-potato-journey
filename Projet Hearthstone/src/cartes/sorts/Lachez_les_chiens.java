@@ -14,14 +14,7 @@ public class Lachez_les_chiens extends Sort {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see Effet
-	 * @see Carte
-	 * @see Serviteur
-	 * 
-	 * @param nom Nom du sort
-	 * @param cout Cout en mana
-	 * @param effet Effet
-	 * @param classe Neutre, mage ou chasseur
+	 * @see Sort
 	 */
 
 	public Lachez_les_chiens(Partie partie) {

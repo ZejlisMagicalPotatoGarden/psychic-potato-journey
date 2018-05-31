@@ -95,7 +95,7 @@ public class Sort extends Carte {
 
 
 	@Override
-	public void jouerCarte(Plateau p) {
+	public void jouerCarte(Plateau p) throws Exception {
 		
 		this.effet.activer(null);
 	}

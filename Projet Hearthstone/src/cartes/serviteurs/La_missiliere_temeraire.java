@@ -10,8 +10,6 @@ public class La_missiliere_temeraire extends Serviteur {
 	 * @author GRINWALD Louis
 	 * 
 	 * @see Serviteur
-	 * @see Effet
-	 * @see Carte
 	 * 
 	 */
 

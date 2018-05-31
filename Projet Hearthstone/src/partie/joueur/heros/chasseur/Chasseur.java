@@ -11,10 +11,7 @@ public class Chasseur extends Heros {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see heros
-	 * @see chasseur
-	 * @see effets
-	 * @see serviteurs
+	 * @see Heros
 	 */
 
 	public Chasseur(Partie p){

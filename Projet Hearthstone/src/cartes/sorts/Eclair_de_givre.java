@@ -10,8 +10,6 @@ public class Eclair_de_givre extends Sort {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see Carte
-	 * @see Effet
 	 * @see Sort
 	 */
 

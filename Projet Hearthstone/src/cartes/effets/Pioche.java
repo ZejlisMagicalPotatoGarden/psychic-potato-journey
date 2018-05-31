@@ -55,7 +55,7 @@ public class Pioche extends Effet {
 
 	
 	@Override
-	public void activer(Personnage p) {
+	public void activer(Personnage p) throws Exception {
 		partie.getJoueurQuiJoue().piocher(getNbPioche());
 	}
 	

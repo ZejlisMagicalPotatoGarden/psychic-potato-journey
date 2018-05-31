@@ -123,7 +123,7 @@ public class Serviteur extends Carte implements Personnage {
 	}
 
 	@Override
-	public void mourir(Joueur j) {
+	public void mourir(Joueur j) throws Exception {
 		System.out.printf("%s est mort",super.getNom());
 		if(checkEffet("Mort") && this.effet.isActivable()){
 			//Un effet de mort ne demande jamais a l'utilisateur une cible
@@ -191,6 +191,6 @@ public class Serviteur extends Carte implements Personnage {
 	}
 	
 	public boolean isCapableAttaquer(){
-		return getNbAttaques() > 0;
+		return (getNbAttaques() > 0 && getAttaque() > 0);
 	}
 }

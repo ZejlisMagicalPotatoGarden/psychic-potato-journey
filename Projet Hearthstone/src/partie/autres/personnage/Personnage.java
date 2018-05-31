@@ -13,13 +13,10 @@ public interface Personnage {
  * @author GRINWALD Louis
  * 
  * @see Cible
- * @see Serviteur
- * @see Heros
  * 
- * @param x Nombre de dégâts
  */
 	public abstract void prendreDegats(int x);
-	public abstract void mourir(Joueur j);
+	public abstract void mourir(Joueur j) throws Exception;
 	public abstract void augmenterAttaque(int bonusAttaque);
 	public abstract void augmenterVie(int bonusVie);
 	public abstract int getAttaque();

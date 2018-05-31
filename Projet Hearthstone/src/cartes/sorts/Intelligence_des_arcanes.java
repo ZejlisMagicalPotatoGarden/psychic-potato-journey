@@ -11,9 +11,6 @@ public class Intelligence_des_arcanes extends Sort {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see Carte
-	 * @see Effet
-	 * @see Serviteur
 	 * @see Sort
 	 */
 

@@ -12,8 +12,6 @@ public class Busard_affame extends Serviteur {
 	 * @author GRINWALD Louis
 	 * 
 	 * @see Serviteur
-	 * @see Effet
-	 * @see Carte
 	 */
 
 	public Busard_affame(Partie partie) {

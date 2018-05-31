@@ -12,10 +12,6 @@ public abstract class Carte {
  * @author GRESSET Nathan
  * @author GRINWALD Louis
  * 
- * @see Deck
- * @see Main
- * @see Serviteur
- * @see Sort
  */
 	
 	private String nom;

@@ -10,10 +10,7 @@ public class Archimage extends Serviteur {
 	 * @author GRINWALD Louis
 	 * 
 	 * @see Serviteur
-	 * @see Effet
-	 * @see Carte
 	 */
-
 	public Archimage() {
 		super("Archimage", 6, "Neutre", 7, 4, new Provocation());
 	}

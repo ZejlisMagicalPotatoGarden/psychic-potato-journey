@@ -13,12 +13,10 @@ public class Heros implements Personnage {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see heros
-	 * @see chasseur
-	 * @see mage
+	 * @see Personnage
 	 */
 
-	//VIE MAX ?------------------------------------
+	private final static int VIE_MAX = 15;
 	private String nom;
 	private int vie;
 	private Pouvoir pouvoir;

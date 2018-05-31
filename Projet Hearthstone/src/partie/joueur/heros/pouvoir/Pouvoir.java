@@ -5,7 +5,12 @@ import partie.autres.personnage.Personnage;
 
 public class Pouvoir extends Effet {
 	/**
-	 * Classe représentant un pouvoir
+	 * Classe représentant un pouvoir, les classes du pouvoir du mage et du chasseur hériteront de cette classe.
+	 * 
+	 * @author GRESSET Nathan
+	 * @author GRINWALD Louis
+	 * 
+	 * @see Effet
 	 */
 
 	private int nbUtilisations;
@@ -41,7 +46,7 @@ public class Pouvoir extends Effet {
 
 
 	@Override
-	public void activer(Personnage p) {
+	public void activer(Personnage p) throws Exception {
 		this.effet.activer(p);
 		this.nbUtilisations = this.nbUtilisations - 1;
 	}

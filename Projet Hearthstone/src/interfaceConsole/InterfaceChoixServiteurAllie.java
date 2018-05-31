@@ -81,7 +81,7 @@ public class InterfaceChoixServiteurAllie extends Interface {
 			ihm.interagir(choixEnChaine, p);
 		}
 		catch (Exception e) {
-			e.printStackTrace();
+			e.getMessage();
 		}
 	}
 

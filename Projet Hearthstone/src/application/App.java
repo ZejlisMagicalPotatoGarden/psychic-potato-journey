@@ -101,9 +101,12 @@ public class App {
 		deck2.melanger();
 		
 		partie.setTourJ1(true);
-		joueur1.piocher(4);
-		joueur2.piocher(5);
-		//joueur2.getMain().addCarte(new Piece());
+		try {
+			joueur1.piocher(4);
+			joueur2.piocher(5);
+		} catch (Exception e) {
+			e.getMessage();
+		}
 		
 		return partie;
 	}
@@ -217,7 +220,6 @@ public class App {
 		
 		Partie partie = initPartie();
 		
-		//
 		Interface ihm = initialiserInterfaces();
 		
 		if (ihm==null) {
@@ -231,7 +233,13 @@ public class App {
 				jEnnemi = partie.getJoueur2();
 			else
 				jEnnemi = partie.getJoueur1();
-			jAllie.piocher(1);
+			
+			try {
+				jAllie.piocher(1);
+			} catch (Exception e1) {
+				e1.getMessage();
+			}
+			
 			jAllie.setManaMax(jAllie.getManaMax() + 1);
 			jAllie.setManaDispo(jAllie.getManaMax());
 			for (Serviteur s : jAllie.getPlateau().getServiteurs()) {
@@ -249,7 +257,7 @@ public class App {
 					ihm.interagir(choix, partie);
 				} 
 				catch (Exception e) {
-					e.printStackTrace();
+					e.getMessage();
 				}
 			}
 		}

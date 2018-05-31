@@ -10,8 +10,6 @@ public class Marque_du_chasseur extends Sort {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see Effet
-	 * @see Carte
 	 * @see Sort
 	 * 
 	 */
@@ -19,5 +17,4 @@ public class Marque_du_chasseur extends Sort {
 	public Marque_du_chasseur() {
 		super("Marque du chasseur", 1, new Degats_vie_a_x("Abaisse à 1 les points de vie du serviteur ciblé", "Marque du chasseur", "Immédiat", 1), "Chasseur");
 	}
-
 }
