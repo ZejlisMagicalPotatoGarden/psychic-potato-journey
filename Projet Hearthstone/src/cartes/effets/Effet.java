@@ -82,7 +82,7 @@ public abstract class Effet {
 	}
 
 
-	public abstract void activer(Personnage p);
+	public abstract void activer(Personnage p) throws Exception;
 	public abstract boolean isActivable();
 	public abstract boolean isCiblable();
 

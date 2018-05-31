@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import cartes.carte.Carte;
+import exceptions.HeartstoneException;
 import partie.joueur.main.Main;
 
 public class Deck {
@@ -59,7 +60,10 @@ public class Deck {
 		this.cartes.remove(this.cartes.indexOf(c));
 	}
 	
-	public void piocher(int nbPioche, Main m){
+	public void piocher(int nbPioche, Main m) throws Exception{
+		if(getCartes().size() <= 0)
+			throw new HeartstoneException("Le deck est vide");
+		
 		for(int i=0;i<nbPioche;i++){
 			Carte c = getCartes().get(0);
 			m.addCarte(c);

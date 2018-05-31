@@ -121,7 +121,7 @@ public class Joueur {
 		
 		return choix;
 	}
-	public void piocher(int nbPioche){
+	public void piocher(int nbPioche) throws Exception{
 		this.deck.piocher(nbPioche, this.main);
 	}
 	

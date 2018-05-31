@@ -28,7 +28,6 @@ public class InterfaceJouerCarte extends Interface {
 		
 		Interface ihm = null;
 		
-		//Mettre une exception la
 		if(jQuiJoue.getMain().getCartes().isEmpty())
 			throw new HeartstoneException("Vous n'avez pas de carte pour faire cela");
 	

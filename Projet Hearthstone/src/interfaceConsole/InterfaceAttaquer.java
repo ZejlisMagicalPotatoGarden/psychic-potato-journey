@@ -49,7 +49,7 @@ public class InterfaceAttaquer extends Interface {
 			}
 		}
 		if(ihm == null)
-			System.out.println("Vous n'avez pas de serviteurs capables d'attaquer");
+			throw new HeartstoneException("Vous n'avez pas de serviteurs capables d'attaquer");
 		
 		ArrayList<String>	menu = new ArrayList<String>();
 		Interface i = ihm;
