@@ -15,10 +15,6 @@ public class Marque_du_chasseur extends Sort {
 	 */
 
 	public Marque_du_chasseur() {
-<<<<<<< HEAD
 		super("Marque du chasseur", 1, new Degats_vie_a_x("Abaisse à 1 les points de vie du serviteur ciblé", "Marque du chasseur", "Immédiat", 1), "Chasseur");
-=======
-		super("Marque du chasseur", 1, new Degats("Baisse de 1 les points de vie du serviteur ciblé", "Marque du chasseur", "Immédiat", 0), "Mage");
->>>>>>> refs/remotes/origin/master
 	}
 }
