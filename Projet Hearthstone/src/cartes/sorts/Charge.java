@@ -9,8 +9,6 @@ public class Charge extends Sort {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see Carte
-	 * @see Effet
 	 * @see Sort
 	 */
 

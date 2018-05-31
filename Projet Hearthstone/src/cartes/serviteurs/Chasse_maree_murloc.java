@@ -11,8 +11,6 @@ public class Chasse_maree_murloc extends Serviteur {
 	 * @author GRINWALD Louis
 	 * 
 	 * @see Serviteur
-	 * @see Effet
-	 * @see Carte
 	 * 
 	 */
 

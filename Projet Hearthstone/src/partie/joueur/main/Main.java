@@ -3,6 +3,7 @@ package partie.joueur.main;
 import java.util.ArrayList;
 
 import cartes.carte.Carte;
+import exceptions.HeartstoneException;
 import partie.joueur.plateau.Plateau;
 
 public class Main {
@@ -60,11 +61,10 @@ public class Main {
 		}
 		return carte;
 	}
-	public void jouerCarte(String nom, Plateau p){
+	public void jouerCarte(String nom, Plateau p) throws Exception{
 		Carte carte = getCarte(nom);
 		if(carte == null){
-			System.out.printf("%s n'est pas dans cette main\n",nom);
-			//Erreur, faire une exception
+			throw new HeartstoneException("Cette carte n'est pas dans cette main");
 		}
 		if(carte.isJouable(p)){
 			try {
@@ -75,8 +75,7 @@ public class Main {
 			this.removeCarte(carte);
 		}
 		else
-			//La aussi mettre une exception
-			System.out.printf("%s n'est pas jouable",carte);
+			throw new HeartstoneException("Cette carte n'est pas jouable");
 	}
 
 }

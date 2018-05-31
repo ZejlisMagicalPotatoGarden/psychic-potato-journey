@@ -10,8 +10,8 @@ public class Pouvoir_mage extends Pouvoir {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see Carte
 	 * @see Mage
+	 * @see Pouvoir
 	 */
 
 	public Pouvoir_mage() {

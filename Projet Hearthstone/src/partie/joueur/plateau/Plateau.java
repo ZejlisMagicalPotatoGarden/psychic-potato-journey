@@ -11,8 +11,6 @@ public class Plateau {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see Plateau
-	 * @see Serviteur
 	 */
 
 	public final static int NB_SERVITEURS_MAX = 7;

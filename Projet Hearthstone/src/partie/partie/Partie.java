@@ -11,8 +11,6 @@ public class Partie {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see joueur
-	 * @see partie
 	 */
 
 	private Joueur joueur1;

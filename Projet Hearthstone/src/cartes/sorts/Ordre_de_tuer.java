@@ -10,13 +10,7 @@ public class Ordre_de_tuer extends Sort {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see Effet
-	 * @see Carte
-	 * 
-	 * @param nom Nom du sort
-	 * @param cout Cout en mana
-	 * @param effet Effet
-	 * @param classe Neutre, mage ou chasseur
+	 * @see Sort
 	 */
 
 	public Ordre_de_tuer() {

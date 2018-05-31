@@ -12,8 +12,6 @@ public class Golem_des_moissons extends Serviteur {
 	 * @author GRINWALD Louis
 	 * 
 	 * @see Serviteur
-	 * @see Effet
-	 * @see Carte
 	 * 
 	 */
 

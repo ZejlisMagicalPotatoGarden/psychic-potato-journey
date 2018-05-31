@@ -12,7 +12,6 @@ public class Provocation extends Effet {
 	 * @author GRINWALD Louis
 	 * 
 	 * @see Effet
-	 * @see Serviteur
 	 *
 	 */
 	

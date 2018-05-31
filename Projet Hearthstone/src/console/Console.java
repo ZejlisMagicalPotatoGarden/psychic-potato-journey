@@ -1,37 +1,6 @@
 package console;
 import java.io.*;
 
-/**
-*Classe permettant d'utiliser le clavier comme entree.
-<DT>Organisation possible des repertoires :
-<PRE>HOME
-  |
-  outils
-    |
-    +--classes--outils--fichiers compiles dont <B>Console.class</B>
-    |
-    +--doc--outils--fichiers de documentation  dont <B>Console.html</B>
-    |
-    +--src--outils--fichiers sources dont <B>Console.java</B>
-</PRE>
-*Mettre .../outils/classes dans le CLASSPATH.
-*<DT>sous Unix ou Linux
-<PRE><B>setenv CLASSPATH .:${HOME}/outils/classes</B>
-</PRE>
-*<DT>Utilisation habituelle pour saisie au clavier:
-*<PRE>
-    Console es = new Console();
-    //saisie :
-    es.print("Nom : ?");
-    String nom = es.readLine();
-    es.println("Bonjour "+nom);
-    es.print(es.readLine());
-    es.println(". Termine ");
-    .................................
-</PRE>
- @return rien
- */
-
 public class Console {
 
   protected BufferedReader fluxEntree = new BufferedReader(

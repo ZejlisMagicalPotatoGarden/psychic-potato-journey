@@ -13,7 +13,6 @@ public class Joueur {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see joueur
 	 */
 
 	private Main main;

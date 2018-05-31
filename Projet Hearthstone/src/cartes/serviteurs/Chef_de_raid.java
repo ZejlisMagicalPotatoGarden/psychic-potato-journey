@@ -10,8 +10,6 @@ public class Chef_de_raid extends Serviteur {
 	 * @author GRINWALD Louis 
 	 * 
 	 * @see Serviteur
-	 * @see Effet
-	 * @see Carte
 	 * 
 	 */
 

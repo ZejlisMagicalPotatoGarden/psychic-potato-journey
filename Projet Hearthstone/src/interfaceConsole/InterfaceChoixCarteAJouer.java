@@ -1,6 +1,7 @@
 package interfaceConsole;
 
 import cartes.carte.Carte;
+import exceptions.HeartstoneException;
 import partie.joueur.joueur.Joueur;
 import partie.partie.Partie;
 
@@ -39,9 +40,8 @@ public class InterfaceChoixCarteAJouer extends Interface {
 	public void executerInteraction(Partie p) throws Exception{
 		Joueur jQuiJoue = p.getJoueurQuiJoue();
 		
-		//exception
 		if(p.getJoueurQuiJoue().getManaDispo() < carte.getCout())
-			System.out.println("Vous n'avez pas assez de mana");
+			throw new HeartstoneException("Vous n'avez pas assez de mana pour faire cela");
 		
 		if(carte.checkEffet("Entrée") || carte.checkEffet("Immédiat")){
 			if(carte.getEffet().isCiblable()){

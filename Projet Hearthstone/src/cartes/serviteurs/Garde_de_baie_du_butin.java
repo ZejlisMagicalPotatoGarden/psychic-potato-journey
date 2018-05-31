@@ -10,9 +10,6 @@ public class Garde_de_baie_du_butin extends Serviteur {
 	 * @author GRINWALD Louis
 	 * 
 	 * @see Serviteur
-	 * @see Effet
-	 * @see Carte
-	 * 
 	 */
 
 	public Garde_de_baie_du_butin() {

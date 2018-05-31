@@ -13,8 +13,7 @@ public class Deck {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see carte
-	 * @see decks
+	 * @see Deck
 	 */
 
 	public final static int NB_MAX_CARTES = 15;

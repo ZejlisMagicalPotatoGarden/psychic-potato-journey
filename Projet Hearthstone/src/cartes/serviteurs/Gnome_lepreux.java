@@ -11,8 +11,6 @@ public class Gnome_lepreux extends Serviteur {
  * @author GRINWALD Louis
  * 
  * @see Serviteur
- * @see Effet
- * @see Carte
  */
 
 	public Gnome_lepreux() {
