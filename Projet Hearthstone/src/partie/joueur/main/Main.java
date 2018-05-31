@@ -55,7 +55,6 @@ public class Main {
 		for(Carte c : getCartes()){
 			if(c.getNom().equals(nom)){
 				carte = c;
-				break;
 			}
 		}
 		return carte;
@@ -72,7 +71,9 @@ public class Main {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			this.removeCarte(carte);
+			finally{
+				this.removeCarte(carte);
+			}
 		}
 		else
 			//La aussi mettre une exception

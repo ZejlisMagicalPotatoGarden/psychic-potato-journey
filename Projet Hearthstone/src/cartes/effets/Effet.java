@@ -78,7 +78,7 @@ public abstract class Effet {
 	}
 	@Override
 	public String toString() {
-		return "Effet [description=" + description + ", nom=" + nom + ", type=" + type + "]";
+		return description;
 	}
 
 

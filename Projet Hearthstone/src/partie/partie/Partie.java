@@ -1,5 +1,7 @@
 package partie.partie;
 
+import java.util.ArrayList;
+
 import cartes.serviteurs.Serviteur;
 import partie.joueur.joueur.Joueur;
 
@@ -94,13 +96,21 @@ public class Partie {
 			joueur1.getHeros().mourir(joueur2);
 		if(joueur2.getHeros().isMort())
 			joueur2.getHeros().mourir(joueur1);
+		
+		ArrayList<Serviteur> morts = new ArrayList<Serviteur>();
 		for (Serviteur s : joueur1.getPlateau().getServiteurs()) {
 			if(s.isMort())
-				s.mourir(joueur1);
+				morts.add(s);
 		}
+		for(Serviteur s : morts)
+			s.mourir(joueur1);
+		
+		morts = new ArrayList<Serviteur>();
 		for (Serviteur s : joueur2.getPlateau().getServiteurs()) {
 			if(s.isMort())
-				s.mourir(joueur2);
+				morts.add(s);
 		}
+		for(Serviteur s : morts)
+			s.mourir(joueur2);
 	}
 }

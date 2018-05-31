@@ -1,5 +1,6 @@
 package cartes.effets;
 
+import cartes.serviteurs.Serviteur;
 import partie.autres.personnage.Personnage;
 
 public class E_Charge extends Effet {
@@ -10,15 +11,14 @@ public class E_Charge extends Effet {
 	
 	@Override
 	public void activer(Personnage p) {
-		//Cet effet ne s'active jamais
+		((Serviteur) p).setNbAttaques(1);
 	}
 	@Override
 	public boolean isActivable() {
-		//cet effet ne s'active jamais
-		return false;
+		return true;
 	}
 	@Override
 	public boolean isCiblable(){
-		return false;
+		return true;
 	}
 }

@@ -116,19 +116,14 @@ public class Invocation extends Effet {
 	}
 
 	@Override
-	public String toString() {
-		return "Invocation [serviteur=" + serviteur + ", description=" + description + ", nom=" + nom + ", type=" + type
-				+ ", nbInvocs=" + nbInvocs + "]";
-	}
-
-
-	@Override
 	public void activer(Personnage p) {
 		int i = 0;
+		Serviteur s;
 		
 		while(!this.partie.getJoueurQuiJoue().getPlateau().isPlein() && i < nbInvocs)
 		{
-			this.serviteur.invoquer(this.partie.getJoueurQuiJoue().getPlateau());
+			s = new Serviteur(serviteur);
+			s.invoquer(this.partie.getJoueurQuiJoue().getPlateau());
 			i++;
 		}
 	}

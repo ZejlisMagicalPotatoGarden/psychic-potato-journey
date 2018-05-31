@@ -42,7 +42,15 @@ public class Serviteur extends Carte implements Personnage {
 		else
 			setNbAttaques(0);
 	}
-
+	public Serviteur(Serviteur s)
+	{
+		super(s.getNom(),s.getCout(),s.getClasse());
+		setVieMax(s.getVieMax());
+		setVie(s.getVieMax());
+		setAttaque(s.getAttaque());
+		setEffet(s.getEffet());
+		setNbAttaques(s.getNbAttaques());
+	}
 	
 	public int getVieMax() {
 		return vieMax;
@@ -62,14 +70,14 @@ public class Serviteur extends Carte implements Personnage {
 	public void setAttaque(int attaque) {
 		this.attaque = attaque;
 	}
-	public Effet getEffet() {
-		return effet;
-	}
 	public int getNbAttaques() {
 		return nbAttaques;
 	}
 	public void setNbAttaques(int nbAttaques) {
 		this.nbAttaques = nbAttaques;
+	}
+	public Effet getEffet() {
+		return effet;
 	}
 	public void setEffet(Effet effet) {
 		this.effet = effet;
@@ -104,8 +112,7 @@ public class Serviteur extends Carte implements Personnage {
 
 	@Override
 	public String toString() {
-		return "Serviteur [vieMax=" + vieMax + ", vie=" + vie + ", attaque=" + attaque + ", nbAttaques=" + nbAttaques
-				+ ", effet=" + effet + "]";
+		return "Serviteur " + getNom() + " cout=" + getCout() + " vie=" + vie + ", attaque=" + attaque + ", " + effet;
 	}
 
 

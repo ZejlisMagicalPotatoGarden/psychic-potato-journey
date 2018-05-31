@@ -1,6 +1,7 @@
 package cartes.serviteurs;
 
-import cartes.effets.Degats;
+import cartes.effets.Degats_heros_adverse;
+import partie.partie.Partie;
 
 public class Gnome_lepreux extends Serviteur {
 /**
@@ -15,8 +16,8 @@ public class Gnome_lepreux extends Serviteur {
  * @see Carte
  */
 
-	public Gnome_lepreux() {
-		super("Gnome lépreux", 1, "Neutre", 1, 1, new Degats("Inflige 2 points de dégâts au héros", "Attaque du lépreux", "Mort", 2));
+	public Gnome_lepreux(Partie p) {
+		super("Gnome lépreux", 1, "Neutre", 1, 1, new Degats_heros_adverse("Inflige 2 points de dégâts au héros", "Attaque du lépreux", "Mort", 2, p));
 	}
 
 }

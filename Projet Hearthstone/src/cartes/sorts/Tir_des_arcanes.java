@@ -1,6 +1,6 @@
 package cartes.sorts;
 
-import cartes.effets.Degats;
+import cartes.effets.Degats_cible;
 
 public class Tir_des_arcanes extends Sort {
 	/**
@@ -16,7 +16,7 @@ public class Tir_des_arcanes extends Sort {
 	 */
 
 	public Tir_des_arcanes() {
-		super("Tir des arcanes", 1, new Degats("Inflige 2 points de dégâts au personnage ciblé", "Tir des arcanes", "Immédiat", 10), "Mage");
+		super("Tir des arcanes", 1, new Degats_cible("Inflige 2 points de dégâts au personnage ciblé", "Tir des arcanes", "Immédiat", 2), "Chasseur");
 	}
 
 }

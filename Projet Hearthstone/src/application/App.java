@@ -48,6 +48,8 @@ public class App {
 	public static Partie initPartie(){
 		
 		//Création de la partie
+		Partie partie = null;
+		
 		Deck deck1 = new Deck();
 		Deck deck2 = new Deck();
 		Main main1 = new Main();
@@ -55,29 +57,29 @@ public class App {
 		Plateau plateau1 = new Plateau();
 		Plateau plateau2 = new Plateau();
 		Heros heros1 = new Mage();
-		Heros heros2 = new Chasseur();
+		Heros heros2 = new Chasseur(partie);
 		
 		Joueur joueur1 = new Joueur(main1,deck1,plateau1,heros1);
 		Joueur joueur2 = new Joueur(main2,deck2,plateau2,heros2);
-		Partie partie = new Partie(joueur1,joueur2);
 		
+		partie = new Partie(joueur1, joueur2);
 		
 		//Remplissage des decks et création des cartes
 		deck1.addCarte(new Explosion_pyrotechnique());
 		deck1.addCarte(new Intelligence_des_arcanes(partie));
-		deck1.addCarte(new Choc_de_flamme());
+		deck1.addCarte(new Choc_de_flamme(partie));
 		deck1.addCarte(new Eclair_de_givre());
 		deck1.addCarte(new Image_mirroir(partie));
 		deck1.addCarte(new Golem_des_moissons(partie));
 		deck1.addCarte(new Champion_de_Hurlevent());
 		deck1.addCarte(new Archimage());
-		deck1.addCarte(new Gnome_lepreux());
+		deck1.addCarte(new Gnome_lepreux(partie));
 		deck1.addCarte(new L_ogre_magi());
 		deck1.addCarte(new La_missiliere_temeraire());
 		deck1.addCarte(new Chasse_maree_murloc(partie));
 		deck1.addCarte(new Chasse_maree_murloc(partie));
 		deck1.addCarte(new Garde_de_baie_du_butin());
-		deck1.addCarte(new Attaque_mentale());
+		deck1.addCarte(new Attaque_mentale(partie));
 		
 		deck2.addCarte(new Ordre_de_tuer());
 		deck2.addCarte(new Lachez_les_chiens(partie));
@@ -89,7 +91,7 @@ public class App {
 		deck2.addCarte(new L_ogre_magi());
 		deck2.addCarte(new Chef_de_raid());
 		deck2.addCarte(new Charge());
-		deck2.addCarte(new Gnome_lepreux());
+		deck2.addCarte(new Gnome_lepreux(partie));
 		deck2.addCarte(new Chasse_maree_murloc(partie));
 		deck2.addCarte(new Champion_de_Hurlevent());
 		deck2.addCarte(new Golem_des_moissons(partie));

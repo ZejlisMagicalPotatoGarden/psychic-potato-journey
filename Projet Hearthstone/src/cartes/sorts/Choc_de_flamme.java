@@ -1,6 +1,7 @@
 package cartes.sorts;
 
-import cartes.effets.Degats;
+import cartes.effets.Degats_serviteurs_adverses;
+import partie.partie.Partie;
 
 public class Choc_de_flamme extends Sort {
 	/**
@@ -15,8 +16,8 @@ public class Choc_de_flamme extends Sort {
 	 * @see Sort
 	 */
 
-	public Choc_de_flamme() {
-		super("Choc de flamme", 7, new Degats("Inflige 4 points de dégâts à tous les serviteurs adverses", "Attaque massive", "Immédiat", 4), "Mage");
+	public Choc_de_flamme(Partie p) {
+		super("Choc de flamme", 7, new Degats_serviteurs_adverses("Inflige 4 points de dégâts à tous les serviteurs adverses", "Attaque massive", "Immédiat", 4, p), "Mage");
 	}
 
 }

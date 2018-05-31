@@ -90,7 +90,7 @@ public class Sort extends Carte {
 	}
 	@Override
 	public String toString() {
-		return "Sort [nom=" + nom + ", cout=" + cout + ", classe=" + classe + ", effet=" + effet + "]";
+		return "Sort " + nom + ", cout=" + cout + ", " + effet;
 	}
 
 

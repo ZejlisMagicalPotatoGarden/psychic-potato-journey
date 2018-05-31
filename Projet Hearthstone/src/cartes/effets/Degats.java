@@ -2,7 +2,7 @@ package cartes.effets;
 
 import partie.autres.personnage.Personnage;
 
-public class Degats extends Effet {
+public abstract class Degats extends Effet {
 	/**
 	 * Classe représentant l'effet dégâts qui consiste à connaître le nombre de dégât que la cible va subir,
 	 * elle possède un nombre de dégâts.
@@ -42,23 +42,14 @@ public class Degats extends Effet {
 			return false;
 		return true;
 	}
-
-	@Override
-	public String toString() {
-		return "Effet_degats [nbDegats=" + nbDegats + "]";
-	}
-
 	
-	@Override
-	public void activer(Personnage p) {
-		p.prendreDegats(nbDegats);
-	}
 	@Override
 	public boolean isActivable() {
 		return true;
 	}
-	@Override
-	public boolean isCiblable(){
-		return true;
-	}
+
+	
+	public abstract boolean isCiblable();
+	public abstract void activer(Personnage p);
+	
 }

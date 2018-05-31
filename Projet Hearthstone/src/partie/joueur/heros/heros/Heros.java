@@ -74,7 +74,7 @@ public class Heros implements Personnage {
 	}
 	@Override
 	public String toString() {
-		return "Heros [nom=" + nom + ", vie=" + vie + ", pouvoir=" + pouvoir + "]";
+		return "Heros "+nom+", vie : "+vie;
 	}
 
 	

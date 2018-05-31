@@ -1,6 +1,6 @@
 package cartes.sorts;
 
-import cartes.effets.Degats;
+import cartes.effets.Degats_cible;
 
 public class Explosion_pyrotechnique extends Sort {
 	/**
@@ -16,7 +16,7 @@ public class Explosion_pyrotechnique extends Sort {
 	 */
 
 	public Explosion_pyrotechnique() {
-		super("Explosion pyrotechnique", 10, new Degats("Inflige 10 points de dégâts au personnage ciblé", "Explosion pyrotechnique", "Immédiat", 10), "Mage");
+		super("Explosion pyrotechnique", 10, new Degats_cible("Inflige 10 points de dégâts au personnage ciblé", "Explosion pyrotechnique", "Immédiat", 10), "Mage");
 	}
 
 }

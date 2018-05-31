@@ -24,6 +24,7 @@ public interface Personnage {
 	public abstract void augmenterVie(int bonusVie);
 	public abstract int getAttaque();
 	public abstract int getVie();
+	public abstract void setVie(int vie);
 	public abstract boolean isMort();
 	
 }

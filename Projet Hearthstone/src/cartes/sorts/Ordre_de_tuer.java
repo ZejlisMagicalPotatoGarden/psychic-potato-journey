@@ -1,6 +1,6 @@
 package cartes.sorts;
 
-import cartes.effets.Degats;
+import cartes.effets.Degats_cible;
 
 public class Ordre_de_tuer extends Sort {
 	/**
@@ -20,7 +20,7 @@ public class Ordre_de_tuer extends Sort {
 	 */
 
 	public Ordre_de_tuer() {
-		super("Ordre de tuer", 3, new Degats("Inflige 3 points de dégâts au personnage ciblé", "Ordre de tuer", "Immédiat", 3), "Mage");
+		super("Ordre de tuer", 3, new Degats_cible("Inflige 3 points de dégâts au personnage ciblé", "Ordre de tuer", "Immédiat", 3), "Mage");
 	}
 
 }

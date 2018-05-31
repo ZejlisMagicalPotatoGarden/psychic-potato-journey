@@ -52,11 +52,6 @@ public class Pioche extends Effet {
 			return false;
 		return true;
 	}
-	
-	@Override
-	public String toString() {
-		return "Effet_pioche [nbPioche=" + nbPioche + "]";
-	}
 
 	
 	@Override

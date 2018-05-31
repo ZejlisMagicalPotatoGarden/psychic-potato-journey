@@ -1,6 +1,7 @@
 package partie.joueur.heros.chasseur;
 
 import partie.joueur.heros.heros.Heros;
+import partie.partie.Partie;
 
 public class Chasseur extends Heros {
 	/**
@@ -16,8 +17,8 @@ public class Chasseur extends Heros {
 	 * @see serviteurs
 	 */
 
-	public Chasseur(){
-		super("Rexxar",15,new Pouvoir_chasseur());
+	public Chasseur(Partie p){
+		super("Rexxar",15,new Pouvoir_chasseur(p));
 	}
 }
 

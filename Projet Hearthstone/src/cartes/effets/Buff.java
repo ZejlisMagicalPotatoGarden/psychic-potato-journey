@@ -52,12 +52,6 @@ public class Buff extends Effet {
 		return true;
 	}
 
-	@Override
-	public String toString() {
-		return "Effet_buff [bonusAttaque=" + bonusAttaque + ", bonusVie=" + bonusVie + "]";
-	}
-
-
 
 	@Override
 	public void activer(Personnage p) {
