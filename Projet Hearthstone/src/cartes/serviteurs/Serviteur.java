@@ -125,13 +125,14 @@ public class Serviteur extends Carte implements Personnage {
 
 	@Override
 	public void mourir(Joueur j) throws Exception {
-		System.out.printf("%s est mort",super.getNom());
+		System.out.printf("%s est mort\n",super.getNom());
 		if(checkEffet("Mort")){
 			//Un effet de mort ne demande jamais a l'utilisateur une cible
 			this.effet.activer(null);
 		}
 		else if(checkEffet("Aura"))
 		{
+			this.effet.activer(null);
 			for(Serviteur s : j.getPlateau().getServiteurs())
 				this.effet.activer(s);
 		}
@@ -155,6 +156,11 @@ public class Serviteur extends Carte implements Personnage {
 		{
 			for(Serviteur s : p.getServiteurs())
 				this.effet.activer(s);
+		}
+		for(Serviteur s : p.getServiteurs())
+		{
+			if(s.checkEffet("Aura"))
+				s.getEffet().activer(this);
 		}
 		invoquer(p);
 	}

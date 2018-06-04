@@ -3,6 +3,7 @@ package cartes.sorts;
 import cartes.carte.Carte;
 import cartes.effets.Effet;
 import cartes.serviteurs.Serviteur;
+import exceptions.HearthstoneException;
 import interfaceConsole.Interface;
 import interfaceConsole.InterfaceCiblage;
 import partie.joueur.plateau.Plateau;

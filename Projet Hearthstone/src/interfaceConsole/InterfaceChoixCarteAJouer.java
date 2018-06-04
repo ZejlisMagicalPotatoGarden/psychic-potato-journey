@@ -45,6 +45,7 @@ public class InterfaceChoixCarteAJouer extends Interface {
 		
 		jQuiJoue.getMain().jouerCarte(carte.getNom(), jQuiJoue.getPlateau());
 		jQuiJoue.setManaDispo(jQuiJoue.getManaDispo() - carte.getCout());
+		p.checkMorts();
 	}
 
 }

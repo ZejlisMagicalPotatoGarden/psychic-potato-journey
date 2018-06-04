@@ -62,16 +62,22 @@ public class Buff_Aura extends Effet {
 
 	@Override
 	public void activer(Personnage p) {
-		if(isUtilise())
+		if(p == null)
 		{
-			p.augmenterAttaque(-bonusAttaque);
-			p.augmenterVie(-bonusVie);
+			setUtilise(true);
 		}
 		else
 		{
-			p.augmenterVie(bonusVie);
-			p.augmenterAttaque(bonusAttaque);
-			setUtilise(true);
+			if(isUtilise())
+			{
+				p.augmenterAttaque(-bonusAttaque);
+				p.augmenterVie(-bonusVie);
+			}
+			else
+			{
+				p.augmenterVie(bonusVie);
+				p.augmenterAttaque(bonusAttaque);
+			}
 		}
 	}
 	@Override
