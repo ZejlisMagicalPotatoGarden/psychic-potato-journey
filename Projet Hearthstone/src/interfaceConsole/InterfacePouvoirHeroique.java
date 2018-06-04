@@ -1,6 +1,6 @@
 package interfaceConsole;
 
-import exceptions.HeartstoneException;
+import exceptions.HearthstoneException;
 import partie.joueur.heros.pouvoir.Pouvoir;
 import partie.partie.Partie;
 
@@ -20,10 +20,10 @@ public class InterfacePouvoirHeroique extends Interface {
 		Pouvoir pouvoir = p.getJoueurQuiJoue().getHeros().getPouvoir();
 		
 		if(p.getJoueurQuiJoue().getManaDispo() < p.getJoueurQuiJoue().getHeros().getPouvoir().getCout())
-			throw new HeartstoneException("Vous n'avez pas assez de mana");
+			throw new HearthstoneException("Vous n'avez pas assez de mana");
 		
 		if(!p.getJoueurQuiJoue().getHeros().getPouvoir().isActivable())
-			throw new HeartstoneException("Ce pouvoir a déjà été utilisé");
+			throw new HearthstoneException("Ce pouvoir a déjà été utilisé");
 		
 		if(pouvoir.getEffet().isCiblable()){
 			if(pouvoir.getEffet().isActivable())

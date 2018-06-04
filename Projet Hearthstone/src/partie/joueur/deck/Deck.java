@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import cartes.carte.Carte;
-import exceptions.HeartstoneException;
+import exceptions.HearthstoneException;
 import partie.joueur.main.Main;
 
 public class Deck {
@@ -62,7 +62,7 @@ public class Deck {
 	
 	public void piocher(int nbPioche, Main m) throws Exception{
 		if(getCartes().size() <= 0)
-			throw new HeartstoneException("Le deck est vide");
+			throw new HearthstoneException("Le deck est vide");
 		
 		for(int i=0;i<nbPioche;i++){
 			Carte c = getCartes().get(0);
