@@ -28,4 +28,3 @@ public class Degats_cible extends Degats {
 		return true;
 	}
 }
-

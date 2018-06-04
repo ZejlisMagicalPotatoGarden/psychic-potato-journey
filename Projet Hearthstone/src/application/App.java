@@ -45,7 +45,7 @@ public class App {
 	public final static Console es = new Console();
 
 	//------------A mettre dans Partie.java ?-----------------
-	public static Partie initPartie(){
+	public static Partie initPartie() throws Exception{
 		
 		//Création de la partie
 		Partie partie = new Partie(null, null);
@@ -214,7 +214,7 @@ public class App {
 				jEnnemi.getManaMax());
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		
 		Joueur jAllie, jEnnemi;
 		String choix;

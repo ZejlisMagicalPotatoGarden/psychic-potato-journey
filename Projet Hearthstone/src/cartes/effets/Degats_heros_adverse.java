@@ -47,5 +47,4 @@ public class Degats_heros_adverse extends Degats {
 	public void activer(Personnage p) {
 		partie.getJoueurQuiJouePas().getHeros().prendreDegats(getNbDegats());
 	}
-
 }
