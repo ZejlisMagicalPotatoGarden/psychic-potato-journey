@@ -20,7 +20,7 @@ import cartes.sorts.Choc_de_flamme;
 import cartes.sorts.Eclair_de_givre;
 import cartes.sorts.Explosion_pyrotechnique;
 import cartes.sorts.Image_mirroir;
-import cartes.sorts.Intelligence_des_arcanes;
+//import cartes.sorts.Intelligence_des_arcanes;
 import cartes.sorts.Lachez_les_chiens;
 import cartes.sorts.Marque_du_chasseur;
 import cartes.sorts.Ordre_de_tuer;
@@ -45,7 +45,7 @@ public class App {
 	public final static Console es = new Console();
 
 	//------------A mettre dans Partie.java ?-----------------
-	public static Partie initPartie(){
+	public static Partie initPartie() throws Exception{
 		
 		//Création de la partie
 		Deck deck1 = new Deck();
@@ -64,7 +64,7 @@ public class App {
 		
 		//Remplissage des decks et création des cartes
 		deck1.addCarte(new Explosion_pyrotechnique());
-		deck1.addCarte(new Intelligence_des_arcanes(partie));
+		//deck1.addCarte(new Intelligence_des_arcanes(partie));
 		deck1.addCarte(new Choc_de_flamme());
 		deck1.addCarte(new Eclair_de_givre());
 		deck1.addCarte(new Image_mirroir(partie));
@@ -208,7 +208,7 @@ public class App {
 				jEnnemi.getManaMax());
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		
 		Joueur jAllie, jEnnemi;
 		String choix;

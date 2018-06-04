@@ -46,7 +46,7 @@ public class Pouvoir extends Effet {
 
 
 	@Override
-	public void activer(Personnage p) {
+	public void activer(Personnage p) throws Exception {
 		this.effet.activer(p);
 		this.nbUtilisations = this.nbUtilisations - 1;
 	}

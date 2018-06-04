@@ -30,7 +30,7 @@ public class InterfaceChoixCible extends Interface {
 	}
 
 	@Override
-	public void executerInteraction(Partie p){
+	public void executerInteraction(Partie p) throws Exception{
 		effet.activer(cible);
 		p.checkMorts();
 	}
