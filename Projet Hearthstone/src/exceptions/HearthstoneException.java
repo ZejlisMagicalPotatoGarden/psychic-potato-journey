@@ -1,13 +1,13 @@
 package exceptions;
 
-public class HeartstoneException extends Exception {
+public class HearthstoneException extends Exception {
 	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public HeartstoneException(String msg) {
+	public HearthstoneException(String msg) {
 		super(msg);
 	}
 	

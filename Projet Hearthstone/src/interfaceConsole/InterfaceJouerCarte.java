@@ -3,7 +3,7 @@ package interfaceConsole;
 import java.util.ArrayList;
 
 import console.Console;
-import exceptions.HeartstoneException;
+import exceptions.HearthstoneException;
 import partie.joueur.joueur.Joueur;
 import partie.partie.Partie;
 
@@ -29,7 +29,7 @@ public class InterfaceJouerCarte extends Interface {
 		Interface ihm = null;
 		
 		if(jQuiJoue.getMain().getCartes().isEmpty())
-			throw new HeartstoneException("Vous n'avez pas de carte pour faire cela");
+			throw new HearthstoneException("Vous n'avez pas de carte en main");
 	
 		
 		for(int i=1; i<=jQuiJoue.getMain().getCartes().size(); i++)

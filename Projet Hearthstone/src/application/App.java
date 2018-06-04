@@ -48,7 +48,7 @@ public class App {
 	public static Partie initPartie(){
 		
 		//Création de la partie
-		Partie partie = null;
+		Partie partie = new Partie(null, null);
 		
 		Deck deck1 = new Deck();
 		Deck deck2 = new Deck();
@@ -62,7 +62,8 @@ public class App {
 		Joueur joueur1 = new Joueur(main1,deck1,plateau1,heros1);
 		Joueur joueur2 = new Joueur(main2,deck2,plateau2,heros2);
 		
-		partie = new Partie(joueur1, joueur2);
+		partie.setJoueur1(joueur1);
+		partie.setJoueur2(joueur2);
 		
 		//Remplissage des decks et création des cartes
 		deck1.addCarte(new Explosion_pyrotechnique());
@@ -159,10 +160,10 @@ public class App {
 		System.out.printf("Votre pouvoir est %s, %s, il coute %d mana",
 				jAllie.getHeros().getPouvoir().getNom(),jAllie.getHeros().getPouvoir().getDescription(),
 				jAllie.getHeros().getPouvoir().getCout());
-		if(jAllie.getHeros().getPouvoir().getNbUtilisations() == 0)
-			es.println(" et il n'est plus utilisable ce tour ci");
-		else
+		if(jAllie.getHeros().getPouvoir().isActivable())
 			es.println(" et il est utilisable ce tour ci");
+		else
+			es.println(" et il n'est plus utilisable ce tour ci");
 		es.println("-------------------------------------------------------------------------------");
 		System.out.printf("Vous avez %d carte(s) dans votre deck\n",
 				jAllie.getDeck().getCartes().size());
@@ -248,6 +249,8 @@ public class App {
 			for (Serviteur s : jEnnemi.getPlateau().getServiteurs()) {
 				s.setNbAttaques(1);
 			}
+			jAllie.getHeros().getPouvoir().setNbUtilisations(1);
+			jEnnemi.getHeros().getPouvoir().setNbUtilisations(1);
 			
 			while (!choix.equals(new InterfacePasserTour(null).getDescription())) {
 				afficherTout(partie);

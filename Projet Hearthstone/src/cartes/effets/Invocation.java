@@ -21,18 +21,12 @@ public class Invocation extends Effet {
 
 	private Partie partie;
 	private Serviteur serviteur;
-	private String description;
-	private String nom;
-	private String type;
 	private int nbInvocs;
 	
 	
 	public Invocation(String description, String nom, String type, Serviteur serviteur, int nbInvocs, Partie partie) {
 		super(description, nom, type);
 		setServiteur(serviteur);
-		setDescription(description);
-		setNom(nom);
-		setType(type);
 		setNbInvocs(nbInvocs);
 		setPartie(partie);
 	}
@@ -43,24 +37,6 @@ public class Invocation extends Effet {
 	}
 	public void setServiteur(Serviteur serviteur) {
 		this.serviteur = serviteur;
-	}
-	public String getDescription() {
-		return description;
-	}
-	public void setDescription(String description) {
-		this.description = description;
-	}
-	public String getNom() {
-		return nom;
-	}
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
-	public String getType() {
-		return type;
-	}
-	public void setType(String type) {
-		this.type = type;
 	}
 	public Partie getPartie() {
 		return partie;
@@ -85,17 +61,7 @@ public class Invocation extends Effet {
 		if (getClass() != obj.getClass())
 			return false;
 		Invocation other = (Invocation) obj;
-		if (description == null) {
-			if (other.description != null)
-				return false;
-		} else if (!description.equals(other.description))
-			return false;
 		if (nbInvocs != other.nbInvocs)
-			return false;
-		if (nom == null) {
-			if (other.nom != null)
-				return false;
-		} else if (!nom.equals(other.nom))
 			return false;
 		if (partie == null) {
 			if (other.partie != null)
@@ -107,13 +73,9 @@ public class Invocation extends Effet {
 				return false;
 		} else if (!serviteur.equals(other.serviteur))
 			return false;
-		if (type == null) {
-			if (other.type != null)
-				return false;
-		} else if (!type.equals(other.type))
-			return false;
 		return true;
 	}
+
 
 	@Override
 	public void activer(Personnage p) {

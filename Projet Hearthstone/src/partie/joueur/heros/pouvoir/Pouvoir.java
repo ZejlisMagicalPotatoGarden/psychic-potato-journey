@@ -48,7 +48,7 @@ public class Pouvoir extends Effet {
 	@Override
 	public void activer(Personnage p) throws Exception {
 		this.effet.activer(p);
-		this.nbUtilisations = this.nbUtilisations - 1;
+		setNbUtilisations(getNbUtilisations() - 1);
 	}
 	@Override
 	public boolean isActivable() {
@@ -83,7 +83,7 @@ public class Pouvoir extends Effet {
 
 	@Override
 	public String toString() {
-		return "Pouvoir [nbUtilisations=" + nbUtilisations + ", effet=" + effet + ", cout=" + cout + "]";
+		return effet.toString();
 	}
 	
 }

@@ -3,6 +3,8 @@ package cartes.sorts;
 import cartes.carte.Carte;
 import cartes.effets.Effet;
 import cartes.serviteurs.Serviteur;
+import interfaceConsole.Interface;
+import interfaceConsole.InterfaceCiblage;
 import partie.joueur.plateau.Plateau;
 
 public class Sort extends Carte {
@@ -96,9 +98,17 @@ public class Sort extends Carte {
 
 	@Override
 	public void jouerCarte(Plateau p) throws Exception {
-		
-		this.effet.activer(null);
+		if(this.effet.isCiblable()){
+			if(this.effet.isActivable())
+			{
+				Interface ihm = new InterfaceCiblage(null,this.getEffet());
+				ihm.interagir("Choisir un personnage à cibler pour "+effet, null);
+			}
+		}
+		else
+			this.effet.activer(null);
 	}
+	
 	@Override
 	public boolean isJouable(Plateau p) {
 		return this.effet.isActivable();
