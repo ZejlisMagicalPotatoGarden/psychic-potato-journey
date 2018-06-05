@@ -15,7 +15,7 @@ public class Chef_de_raid extends Serviteur {
 
 
 	public Chef_de_raid() {
-		super("Chef de raid", 3,"Neutre", 2, 2, new Buff_Aura("Effet permanent sur les autres serviteurs alliés donnant un bonus +1/+1","Bonus du chef de raid", 1,1));
+		super("Chef de raid", 3,"Neutre", 2, 2, new Buff_Aura("Effet permanent sur les autres serviteurs alliés donnant un bonus +1/+0","Bonus du chef de raid", 1,0));
 	}
 
 }

@@ -7,6 +7,7 @@ import interfaceConsole.InterfaceCiblage;
 import partie.autres.personnage.Personnage;
 import partie.joueur.joueur.Joueur;
 import partie.joueur.plateau.Plateau;
+import partie.partie.Partie;
 
 public class Serviteur extends Carte implements Personnage {
 	/**
@@ -140,13 +141,13 @@ public class Serviteur extends Carte implements Personnage {
 	}
 
 	@Override
-	public void jouerCarte(Plateau p) throws Exception {
+	public void jouerCarte(Partie p) throws Exception {
 		if(checkEffet("Entrée")){
 			if(this.effet.isCiblable()){
 				if(this.effet.isActivable())
 				{
 					Interface ihm = new InterfaceCiblage(null,this.getEffet());
-					ihm.interagir("Choisir un personnage à cibler pour "+effet, null);
+					ihm.interagir("Choisir un personnage à cibler pour "+effet, p);
 				}
 			}
 			else
@@ -154,18 +155,18 @@ public class Serviteur extends Carte implements Personnage {
 		}
 		else if(checkEffet("Aura"))
 		{
-			for(Serviteur s : p.getServiteurs())
+			for(Serviteur s : p.getJoueurQuiJoue().getPlateau().getServiteurs())
 				this.effet.activer(s);
 		}
+		invoquer(p.getJoueurQuiJoue().getPlateau());
+	}
+	
+	public void invoquer(Plateau p) throws Exception{
 		for(Serviteur s : p.getServiteurs())
 		{
 			if(s.checkEffet("Aura"))
 				s.getEffet().activer(this);
 		}
-		invoquer(p);
-	}
-	
-	public void invoquer(Plateau p){
 		p.addServiteur(this);
 	}
 	

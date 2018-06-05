@@ -21,9 +21,9 @@ public class Heros implements Personnage {
 	private int vie;
 	private Pouvoir pouvoir;
 
-	public Heros(String nom, int vie, Pouvoir pouvoir) {
+	public Heros(String nom, Pouvoir pouvoir) {
 		setNom(nom);
-		setVie(vie);
+		setVie(VIE_MAX);
 		setPouvoir(pouvoir);
 	}
 	

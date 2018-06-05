@@ -43,7 +43,7 @@ public class InterfaceChoixCarteAJouer extends Interface {
 		if(p.getJoueurQuiJoue().getManaDispo() < carte.getCout())
 			throw new HearthstoneException("Vous n'avez pas assez de mana pour faire cela");
 		
-		jQuiJoue.getMain().jouerCarte(carte.getNom(), jQuiJoue.getPlateau());
+		jQuiJoue.getMain().jouerCarte(carte.getNom(), p);
 		jQuiJoue.setManaDispo(jQuiJoue.getManaDispo() - carte.getCout());
 		p.checkMorts();
 	}

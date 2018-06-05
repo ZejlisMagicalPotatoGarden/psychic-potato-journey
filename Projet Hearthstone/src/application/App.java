@@ -260,7 +260,7 @@ public class App {
 					ihm.interagir(choix, partie);
 				} 
 				catch (Exception e) {
-					e.getMessage();
+					System.out.println(e.getMessage());
 				}
 			}
 		}

@@ -15,7 +15,7 @@ public class Chasseur extends Heros {
 	 */
 
 	public Chasseur(Partie p){
-		super("Rexxar",15,new Pouvoir_chasseur(p));
+		super("Rexxar",new Pouvoir_chasseur(p));
 	}
 }
 

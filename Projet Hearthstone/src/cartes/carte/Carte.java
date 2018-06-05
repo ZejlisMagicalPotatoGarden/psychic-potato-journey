@@ -2,6 +2,7 @@ package cartes.carte;
 
 import cartes.effets.Effet;
 import partie.joueur.plateau.Plateau;
+import partie.partie.Partie;
 
 public abstract class Carte {
 /**
@@ -74,7 +75,7 @@ public abstract class Carte {
 	}
 
 	
-	public abstract void jouerCarte(Plateau p) throws Exception;
+	public abstract void jouerCarte(Partie p) throws Exception;
 	public abstract boolean isJouable(Plateau p);
 	public abstract boolean checkEffet(String type);
 	public abstract Effet getEffet();

@@ -5,11 +5,13 @@ import java.util.ArrayList;
 import cartes.carte.Carte;
 import exceptions.HearthstoneException;
 import partie.joueur.plateau.Plateau;
+import partie.partie.Partie;
 
 public class Main {
 	
+	public final static int NB_MAX_CARTES_MAIN = 10;
+	
 	private ArrayList<Carte> cartes;
-
 	
 	public Main() {
 		this.cartes = new ArrayList<Carte>();
@@ -60,20 +62,19 @@ public class Main {
 		}
 		return carte;
 	}
-	public void jouerCarte(String nom, Plateau p) throws Exception{
+	
+	public void jouerCarte(String nom, Partie p) throws Exception{
 		Carte carte = getCarte(nom);
 		if(carte == null){
 			throw new HearthstoneException("Cette carte n'est pas dans cette main");
 		}
-		if(carte.isJouable(p)){
+		if(carte.isJouable(p.getJoueurQuiJoue().getPlateau())){
 			try {
 				carte.jouerCarte(p);
 			} catch (Exception e) {
-				e.getMessage();
+				System.out.println(e.getMessage());
 			}
-			finally{
-				this.removeCarte(carte);
-			}
+			this.removeCarte(carte);
 		}
 		else
 			throw new HearthstoneException("Cette carte n'est pas jouable");

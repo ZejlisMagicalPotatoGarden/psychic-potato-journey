@@ -1,7 +1,6 @@
 package cartes.sorts;
 
 import cartes.effets.Effet_modele;
-import cartes.serviteurs.Serviteur;
 
 
 public class Sort_modele extends Sort {

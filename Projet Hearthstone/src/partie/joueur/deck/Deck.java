@@ -17,7 +17,7 @@ public class Deck {
 	 * @see Deck
 	 */
 
-	public final static int NB_MAX_CARTES = 15;
+	public final static int NB_MAX_CARTES_DECK = 15;
 	
 	private ArrayList<Carte> cartes;
 
@@ -65,6 +65,13 @@ public class Deck {
 			throw new HearthstoneException("Le deck est vide");
 		
 		for(int i=0;i<nbPioche;i++){
+			if(getCartes().size() <= 0)
+				throw new HearthstoneException("Le deck est vide");
+			if(m.getCartes().size() == Main.NB_MAX_CARTES_MAIN){
+				Carte c = getCartes().get(0);
+				removeCarte(c);
+				throw new HearthstoneException("Vous avez trop de cartes en main !");
+			}
 			Carte c = getCartes().get(0);
 			m.addCarte(c);
 			removeCarte(c);
@@ -76,8 +83,8 @@ public class Deck {
 		Deck deckMelange = new Deck();
 		int rand, i = 1;
 
-		while(i < NB_MAX_CARTES){
-			rand = random.nextInt(NB_MAX_CARTES - i);
+		while(i < NB_MAX_CARTES_DECK){
+			rand = random.nextInt(NB_MAX_CARTES_DECK - i);
 			deckMelange.addCarte(this.cartes.get(rand));
 			cartes.remove(rand);
 			i++;

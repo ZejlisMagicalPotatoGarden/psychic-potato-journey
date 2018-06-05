@@ -34,8 +34,12 @@ public class InterfaceJouerCarte extends Interface {
 		
 		for(int i=1; i<=jQuiJoue.getMain().getCartes().size(); i++)
 		{
-			ihm = new InterfaceChoixCarteAJouer(ihm, jQuiJoue.getMain().getCartes().get(i - 1));
+			if(jQuiJoue.getMain().getCartes().get(i - 1).isJouable(jQuiJoue.getPlateau()) && jQuiJoue.getManaDispo() >= jQuiJoue.getMain().getCartes().get(i - 1).getCout())
+				ihm = new InterfaceChoixCarteAJouer(ihm, jQuiJoue.getMain().getCartes().get(i - 1));
 		}
+		
+		if(ihm == null)
+			throw new HearthstoneException("Vous n'avez pas de carte jouable");
 		
 		ArrayList<String>	menu = new ArrayList<String>();
 		Interface i = ihm;

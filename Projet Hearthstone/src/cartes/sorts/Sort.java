@@ -7,6 +7,7 @@ import exceptions.HearthstoneException;
 import interfaceConsole.Interface;
 import interfaceConsole.InterfaceCiblage;
 import partie.joueur.plateau.Plateau;
+import partie.partie.Partie;
 
 public class Sort extends Carte {
 	/**
@@ -98,13 +99,15 @@ public class Sort extends Carte {
 
 
 	@Override
-	public void jouerCarte(Plateau p) throws Exception {
+	public void jouerCarte(Partie p) throws Exception {
 		if(this.effet.isCiblable()){
 			if(this.effet.isActivable())
 			{
 				Interface ihm = new InterfaceCiblage(null,this.getEffet());
-				ihm.interagir("Choisir un personnage à cibler pour "+effet, null);
+				ihm.interagir("Choisir un personnage à cibler pour "+effet, p);
 			}
+			else 
+				throw new HearthstoneException("Cet effet n'est pas activable");
 		}
 		else
 			this.effet.activer(null);

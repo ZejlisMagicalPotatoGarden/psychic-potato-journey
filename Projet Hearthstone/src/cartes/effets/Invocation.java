@@ -78,7 +78,7 @@ public class Invocation extends Effet {
 
 
 	@Override
-	public void activer(Personnage p) {
+	public void activer(Personnage p) throws Exception {
 		int i = 0;
 		Serviteur s;
 		

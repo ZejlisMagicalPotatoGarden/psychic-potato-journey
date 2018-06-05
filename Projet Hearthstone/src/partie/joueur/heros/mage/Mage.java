@@ -14,6 +14,6 @@ public class Mage extends Heros {
 	 */
 
 	public Mage(){
-		super("Jaina Portvaillant",15,new Pouvoir_mage());
+		super("Jaina Portvaillant",new Pouvoir_mage());
 	}
 }
