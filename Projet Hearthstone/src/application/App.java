@@ -45,6 +45,9 @@ import partie.partie.Partie;
 
 public class App extends Application{
 	
+	public final static boolean IS_GRAPHIQUE = true;
+	public static FenetrePrincipale f;
+	
 	public final static Console es = new Console();
 
 	//------------A mettre dans Partie.java ?-----------------
@@ -220,7 +223,7 @@ public class App extends Application{
 	@Override
 	public void start(Stage s) throws Exception {
 		try {
-			new FenetrePrincipale(s, initPartie());
+			App.f = new FenetrePrincipale(s, initPartie());
 		} 
 		catch(Exception e) {
 			e.printStackTrace();
@@ -229,55 +232,60 @@ public class App extends Application{
 	
 	public static void main(String[] args) throws Exception {
 		
-		Joueur jAllie, jEnnemi;
-		String choix;
-		
-		Partie partie = initPartie();
-		
-		Interface ihm = initialiserInterfaces();
-		
-		if (ihm==null) {
-			System.out.println("L'application ne sais rien faire....");
-			System.exit(0);
-		}	
-		while(true){
-			choix = "";
-			jAllie = partie.getJoueurQuiJoue();
-			if(jAllie.equals(partie.getJoueur1()))
-				jEnnemi = partie.getJoueur2();
-			else
-				jEnnemi = partie.getJoueur1();
+		if(!IS_GRAPHIQUE)
+		{
+			Joueur jAllie, jEnnemi;
+			String choix;
 			
-			try {
-				jAllie.piocher(1);
-			} catch (Exception e1) {
-				e1.getMessage();
-			}
+			Partie partie = initPartie();
 			
-			jAllie.setManaMax(jAllie.getManaMax() + 1);
-			jAllie.setManaDispo(jAllie.getManaMax());
-			for (Serviteur s : jAllie.getPlateau().getServiteurs()) {
-				s.setNbAttaques(1);
-			}
-			for (Serviteur s : jEnnemi.getPlateau().getServiteurs()) {
-				s.setNbAttaques(1);
-			}
-			jAllie.getHeros().getPouvoir().setNbUtilisations(1);
-			jEnnemi.getHeros().getPouvoir().setNbUtilisations(1);
+			Interface ihm = initialiserInterfaces();
 			
-			/*while (!choix.equals(new InterfacePasserTour(null).getDescription())) {
-				afficherTout(partie);
+			if (ihm==null) {
+				System.out.println("L'application ne sais rien faire....");
+				System.exit(0);
+			}	
+			while(true){
+				choix = "";
+				jAllie = partie.getJoueurQuiJoue();
+				if(jAllie.equals(partie.getJoueur1()))
+					jEnnemi = partie.getJoueur2();
+				else
+					jEnnemi = partie.getJoueur1();
 				
-				choix = menu(ihm);
 				try {
-					ihm.interagir(choix, partie);
-				} 
-				catch (Exception e) {
-					System.out.println(e.getMessage());
+					jAllie.piocher(1);
+				} catch (Exception e1) {
+					e1.getMessage();
 				}
+				
+				jAllie.setManaMax(jAllie.getManaMax() + 1);
+				jAllie.setManaDispo(jAllie.getManaMax());
+				for (Serviteur s : jAllie.getPlateau().getServiteurs()) {
+					s.setNbAttaques(1);
+				}
+				for (Serviteur s : jEnnemi.getPlateau().getServiteurs()) {
+					s.setNbAttaques(1);
+				}
+				jAllie.getHeros().getPouvoir().setNbUtilisations(1);
+				jEnnemi.getHeros().getPouvoir().setNbUtilisations(1);
+				
+				while (!choix.equals(new InterfacePasserTour(null).getDescription())) {
+					afficherTout(partie);
+					
+					choix = menu(ihm);
+					try {
+						ihm.interagir(choix, partie);
+					} 
+					catch (Exception e) {
+						System.out.println(e.getMessage());
+					}
+				}
+				
+				
 			}
-			*/
-			launch(args);
 		}
+		else
+			launch(args);
 	}
 }

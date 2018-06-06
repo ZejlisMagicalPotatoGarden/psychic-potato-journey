@@ -2,7 +2,15 @@ package partie.partie;
 
 import java.util.ArrayList;
 
+import application.App;
+import interfaceGraphique.FenetrePrincipale;
 import cartes.serviteurs.Serviteur;
+import javafx.geometry.Insets;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import partie.joueur.joueur.Joueur;
 
 public class Partie {
@@ -75,7 +83,30 @@ public class Partie {
 
 	
 	public static void Gagner(Joueur gagnant){
-		System.out.printf("%s (%s) a gagné\n",gagnant,gagnant.getHeros().getNom());
+		if(!App.IS_GRAPHIQUE)
+			System.out.printf("%s (%s) a gagné\n",gagnant,gagnant.getHeros().getNom());
+		else
+		{
+			VBox root = new VBox();
+			root.setPadding(new Insets(5,5,5,5));
+			root.setSpacing(5);
+			
+			Scene scene = new Scene(root, 400, 200);	
+			FenetrePrincipale f = App.f;
+			Stage s = new Stage();
+			s.setTitle("Fin de la partie");
+			s.initModality(Modality.WINDOW_MODAL);
+			s.initOwner(f.getStage());
+			
+			s.setScene(scene);
+			
+			Label gagnanttexte = new Label(gagnant.getHeros().getNom() + " a gagné");
+			root.getChildren().add(gagnanttexte);
+			
+			s.show();
+		}
+			
+		System.exit(0);
 	}
 	public Joueur getJoueurQuiJoue(){
 		if(this.tourJ1)
@@ -89,6 +120,7 @@ public class Partie {
 		else
 			return this.joueur1;
 	}
+	
 	public void checkMorts() throws Exception{
 		if(joueur1.getHeros().isMort())
 			joueur1.getHeros().mourir(joueur2);

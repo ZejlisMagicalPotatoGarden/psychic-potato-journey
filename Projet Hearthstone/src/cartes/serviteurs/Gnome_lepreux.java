@@ -21,7 +21,7 @@ public class Gnome_lepreux extends Serviteur {
 	private Joueur jCible;
 	
 	public Gnome_lepreux(Partie p) {
-		super("Gnome lépreux", 1, "Neutre", 1, 1, new Degats_cible("Inflige 2 points de dégâts au héros", "Attaque du lépreux", "Mort", 2));
+		super("Gnome lépreux", 1, "Neutre", 1, 1, new Degats_heros_adverse("Inflige 2 points de dégâts au héros", "Attaque du lépreux", "Mort", 2, p));
 	}
 
 	@Override
@@ -32,8 +32,7 @@ public class Gnome_lepreux extends Serviteur {
 	
 	@Override
 	public void mourir(Joueur j) throws Exception{
-		System.out.printf("%s est mort\n",super.getNom());
-		this.getEffet().activer(jCible.getHeros());
+		new Degats_cible("","","", 2).activer(jCible.getHeros());
 		j.getPlateau().removeServiteur(this);
 	}
 }

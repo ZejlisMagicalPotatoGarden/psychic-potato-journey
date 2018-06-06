@@ -47,8 +47,8 @@ public class Pouvoir extends Effet {
 
 	@Override
 	public void activer(Personnage p) throws Exception {
-		this.effet.activer(p);
 		setNbUtilisations(getNbUtilisations() - 1);
+		this.effet.activer(p);
 	}
 	@Override
 	public boolean isActivable() {
@@ -83,7 +83,7 @@ public class Pouvoir extends Effet {
 
 	@Override
 	public String toString() {
-		return effet.toString();
+		return effet.toString()+ "\n" + getCout() + " mana";
 	}
 	
 }

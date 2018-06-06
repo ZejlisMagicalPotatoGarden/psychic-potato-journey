@@ -1,5 +1,6 @@
 package cartes.sorts;
 
+import application.App;
 import cartes.carte.Carte;
 import cartes.effets.Effet;
 import cartes.serviteurs.Serviteur;
@@ -105,8 +106,15 @@ public class Sort extends Carte {
 		if(this.effet.isCiblable()){
 			if(this.effet.isActivable())
 			{
-				Interface ihm = new InterfaceCiblage(null,this.getEffet());
-				ihm.interagir("Choisir un personnage à cibler pour "+effet, p);
+				if(App.IS_GRAPHIQUE)
+				{
+					App.f.afficherCible(this);
+				}
+				else
+				{
+					Interface ihm = new InterfaceCiblage(null,this.getEffet());
+					ihm.interagir("Choisir un personnage à cibler pour "+effet, p);
+				}
 			}
 			else 
 				throw new HearthstoneException("Cet effet n'est pas activable");
