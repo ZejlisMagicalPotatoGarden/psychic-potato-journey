@@ -6,8 +6,8 @@ public abstract class Effet {
 /**
  * Classe abstraite représentant un effet quelconque, il possède un nom, une description et
  * un type(entrée, mort, attaque, immédiat ...)
- * Il peut etre activé sur un personnage
- * Les sorts, les pouvoirs et parfois les erviteurs possèdent des effets
+ * Il peut etre activé sur un personnage, on peut savoir si il est activable et ciblable
+ * Les sorts, les pouvoirs et parfois les serviteurs possèdent des effets
  * 
  * @author GRESSET Nathan
  * @author GRINWALD Louis

@@ -17,6 +17,8 @@ public class Cible {
  * @author GRESSET Nathan
  * @author GRINWALD Louis
  * 
+ * @deprecated
+ * 
  * @see Effet
  * @see Personnage
  * @see Plateau

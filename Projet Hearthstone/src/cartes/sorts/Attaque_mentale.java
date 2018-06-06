@@ -5,7 +5,7 @@ import partie.partie.Partie;
 
 public class Attaque_mentale extends Sort {
 	/**
-	 * Classe représentant le sort Attaque mentale, inflige 5 points de dégâts.
+	 * Classe représentant le sort Attaque mentale, inflige 5 points de dégâts au héros adverse.
 	 * Possède une effet de dégâts au héros adverse.
 	 * 
 	 * @author GRESSET Nathan

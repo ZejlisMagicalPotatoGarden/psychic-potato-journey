@@ -4,13 +4,14 @@ import partie.autres.personnage.Personnage;;
 
 public class Buff_Aura extends Effet {
 	/**
-	 * Classe représentant l'effet Buff qui consiste à augmenter à la fois la vie et l'attaque, il possède un bonus d'attaque,
-	 * et un bonus de vie.
+	 * Classe représentant l'effet Buff_Aura qui consiste à augmenter à la fois la vie et l'attaque des autres
+	 * serviteurs sur le terrain
+	 * il possède un bonus d'attaque, et un bonus de vie.
 	 * 
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see effets
+	 * @see Effet
 	 */
 
 	private int bonusAttaque;

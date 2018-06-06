@@ -15,6 +15,8 @@ public class Sort extends Carte {
 	 * une classe et un cout en mana. Il est utilisé par le joueur et peut être pioché, certains
 	 * sorts sont propres à un héros.
 	 * 
+	 * Hérite de Carte
+	 * 
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
@@ -94,7 +96,7 @@ public class Sort extends Carte {
 	}
 	@Override
 	public String toString() {
-		return "Sort " + nom + ", cout=" + cout + ", " + effet;
+		return "Sort " + nom + "\n" + effet + "\n" + cout + " mana";
 	}
 
 

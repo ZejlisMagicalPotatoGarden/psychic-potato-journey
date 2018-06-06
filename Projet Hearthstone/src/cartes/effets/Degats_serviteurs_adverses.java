@@ -5,8 +5,18 @@ import partie.autres.personnage.Personnage;
 import partie.partie.Partie;
 
 public class Degats_serviteurs_adverses extends Degats {
-
-private Partie partie;
+	/**
+	 * Classe représentant l'effet dégâts_serviteurs_adverses qui inflige des dégats à
+	 * tous les serviteurs adverses
+	 * Hérite de dégats.
+	 * 
+	 * @author GRESSET Nathan
+	 * @author GRINWALD Louis
+	 * 
+	 * @see Degats
+	 */
+	
+	private Partie partie;
 	
 	public Degats_serviteurs_adverses(String description, String nom, String type, int nbDegats, Partie partie) {
 		super(description, nom, type, nbDegats);

@@ -5,7 +5,7 @@ import cartes.effets.Buff_Aura;
 public class Champion_de_Hurlevent extends Serviteur {
 	/**
 	 * Classe représentant le serviteur Champion de Hurlevent, permet un effet permanent sur tous les serviteurs
-	 * de +1/+1, c'est un effet Buff.
+	 * de +1/+1, c'est un effet Buff d'aura.
 	 * 
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis

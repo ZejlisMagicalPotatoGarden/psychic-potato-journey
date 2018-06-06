@@ -31,6 +31,9 @@ import interfaceConsole.InterfaceAttaquer;
 import interfaceConsole.InterfaceJouerCarte;
 import interfaceConsole.InterfacePasserTour;
 import interfaceConsole.InterfacePouvoirHeroique;
+import interfaceGraphique.FenetrePrincipale;
+import javafx.application.Application;
+import javafx.stage.Stage;
 import partie.joueur.deck.Deck;
 import partie.joueur.heros.chasseur.Chasseur;
 import partie.joueur.heros.heros.Heros;
@@ -40,7 +43,7 @@ import partie.joueur.main.Main;
 import partie.joueur.plateau.Plateau;
 import partie.partie.Partie;
 
-public class App {
+public class App extends Application{
 	
 	public final static Console es = new Console();
 
@@ -214,6 +217,16 @@ public class App {
 				jEnnemi.getManaMax());
 	}
 	
+	@Override
+	public void start(Stage s) throws Exception {
+		try {
+			new FenetrePrincipale(s, initPartie());
+		} 
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public static void main(String[] args) throws Exception {
 		
 		Joueur jAllie, jEnnemi;
@@ -252,7 +265,7 @@ public class App {
 			jAllie.getHeros().getPouvoir().setNbUtilisations(1);
 			jEnnemi.getHeros().getPouvoir().setNbUtilisations(1);
 			
-			while (!choix.equals(new InterfacePasserTour(null).getDescription())) {
+			/*while (!choix.equals(new InterfacePasserTour(null).getDescription())) {
 				afficherTout(partie);
 				
 				choix = menu(ihm);
@@ -263,6 +276,8 @@ public class App {
 					System.out.println(e.getMessage());
 				}
 			}
+			*/
+			launch(args);
 		}
 	}
 }

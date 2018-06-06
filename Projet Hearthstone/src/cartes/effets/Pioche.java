@@ -6,7 +6,7 @@ import partie.partie.Partie;
 public class Pioche extends Effet {
 	/**
 	 * Représente le tirage d'une carte, elle possède un nombre de cartes à piocher,
-	 * les joueurs l'utilise pour enrichir leur deck
+	 * les joueurs l'utilise pour enrichir leur main
 	 * 
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis

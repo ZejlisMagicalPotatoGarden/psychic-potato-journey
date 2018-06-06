@@ -8,7 +8,8 @@ public abstract class Carte {
 /**
  * Classe abstraite représentant une carte dans le jeu Hearthstone, elle possède un nom,
  * un coût et une classe à laquelle elle appartient(mage, chasseur, neutre)
- * On peut jouer une carte et vérifier qu'elle est jouable
+ * On peut jouer une carte, vérifier qu'elle est jouable, récupérer son effet ou directement récupérer
+ * le type de celui-ci
  * 
  * @author GRESSET Nathan
  * @author GRINWALD Louis

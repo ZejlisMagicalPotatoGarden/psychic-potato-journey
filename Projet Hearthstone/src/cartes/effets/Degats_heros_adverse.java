@@ -4,7 +4,17 @@ import partie.autres.personnage.Personnage;
 import partie.partie.Partie;
 
 public class Degats_heros_adverse extends Degats {
-
+	/**
+	 * Classe représentant l'effet dégâts_héros_adverse qui inflige des dégats au héros dont ce n'est pas
+	 * le tour
+	 * Hérite de dégats.
+	 * 
+	 * @author GRESSET Nathan
+	 * @author GRINWALD Louis
+	 * 
+	 * @see Degats
+	 */
+	
 	private Partie partie;
 	
 	public Degats_heros_adverse(String description, String nom, String type, int nbDegats, Partie partie) {

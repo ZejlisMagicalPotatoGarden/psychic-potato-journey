@@ -10,7 +10,7 @@ public class Degats_cible extends Degats {
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
 	 * 
-	 * @see Effet
+	 * @see Degats
 	 */
 	
 	public Degats_cible(String description, String nom, String type, int nbDegats) {

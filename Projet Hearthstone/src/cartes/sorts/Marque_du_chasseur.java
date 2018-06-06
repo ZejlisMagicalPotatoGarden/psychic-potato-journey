@@ -4,7 +4,7 @@ import cartes.effets.Degats_vie_a_x;
 
 public class Marque_du_chasseur extends Sort {
 	/**
-	 * Classe représentant le sort Marque du chasseur, permet un effet de dégât de 1 point à la cible.
+	 * Classe représentant le sort Marque du chasseur, met la vie d'une cible à 1
 	 * Spécifique au chasseur.
 	 * 
 	 * @author GRESSET Nathan

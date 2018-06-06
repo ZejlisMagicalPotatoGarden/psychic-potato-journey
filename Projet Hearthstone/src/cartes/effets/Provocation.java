@@ -6,7 +6,7 @@ public class Provocation extends Effet {
 	/**
 	 * Classe représentant l'effet provocation, si un serviteur possède une provocation il sera obligatoirement 
 	 * la cible prioritaire de l'adversaire.
-	 * L'effet est porté par les serviteurs.
+	 * L'effet est porté uniquement par les serviteurs.
 	 * 
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis

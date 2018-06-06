@@ -14,6 +14,9 @@ public class Serviteur extends Carte implements Personnage {
 	 * Classe représentant un serviteur, un serviteur hérite de la classe Carte et possède un effet,
 	 * il est utilisé par le joueur et peut être pioché. Il possède une vie max et une vie courante
 	 * ainsi qu'une attaque.
+	 * Un serviteur peut attaquer un autre s'il en est capable
+	 * 
+	 * Hérite de Carte et Personnage
 	 * 
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis
@@ -114,7 +117,7 @@ public class Serviteur extends Carte implements Personnage {
 
 	@Override
 	public String toString() {
-		return "Serviteur " + getNom() + " cout=" + getCout() + " vie=" + vie + ", attaque=" + attaque + ", " + effet;
+		return "Serviteur " + getNom() + ", " + attaque + "/" + vie + "\n" + effet + "\n" + getCout() + " mana";
 	}
 
 

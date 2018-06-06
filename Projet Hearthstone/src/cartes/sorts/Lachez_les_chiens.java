@@ -8,7 +8,9 @@ import partie.partie.Partie;
 
 public class Lachez_les_chiens extends Sort {
 	/**
-	 * Classe représentant le sort lachez les chiens, permet un effet d'invocation de deux chiens 1/1.
+	 * Classe représentant le sort lachez les chiens, permet un effet d'invocation d' autant de chiens que
+	 * votre adversaire à de serviteurs, il fuat donc calculer lenombre de chiens au moment ou la carte
+	 * est jouée
 	 * Spécifique au chasseur.
 	 * 
 	 * @author GRESSET Nathan

@@ -4,7 +4,7 @@ import cartes.effets.E_Charge;
 
 public class Charge extends Sort {
 	/**
-	 * Classe représentant le sort charge, possède un effet charge.
+	 * Classe représentant le sort charge, donne un effet charge à un serviteur.
 	 * 
 	 * @author GRESSET Nathan
 	 * @author GRINWALD Louis

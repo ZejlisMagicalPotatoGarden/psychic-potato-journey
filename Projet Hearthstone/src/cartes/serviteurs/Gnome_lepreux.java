@@ -9,7 +9,8 @@ import partie.partie.Partie;
 public class Gnome_lepreux extends Serviteur {
 /**
  * Classe représentant le serviteur Gnome lepreux, permet un effet de dégât infligeant 2 points
- * de dégats au héros adverse.
+ * de dégats au héros adverse. Comme il peut mourir pendant n'importe quel tour, il faut sauvegarder le joueur
+ * qui va prendre les dégats
  * 
  * @author GRESSET Nathan
  * @author GRINWALD Louis

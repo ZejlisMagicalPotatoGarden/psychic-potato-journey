@@ -6,6 +6,7 @@ import partie.partie.Partie;
 public class Golem_des_moissons extends Serviteur {
 	/**
 	 * Classe représentant le Golem des moissons, permet d'invoquer un golem endommagé +2/+1 sans capacité
+	 * à sa mort
 	 * C'est un effet d'invocation.
 	 * 
 	 * @author GRESSET Nathan
